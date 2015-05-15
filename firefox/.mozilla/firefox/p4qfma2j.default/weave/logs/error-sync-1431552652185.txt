@@ -1,0 +1,1011 @@
+1431552610300	Sync.Service	INFO	Loading Weave 1.40.0
+1431552610301	Sync.Engine.Clients	DEBUG	Engine initialized
+1431552610302	Sync.Engine.Clients	DEBUG	Resetting clients last sync time
+1431552610307	Sync.Engine.Bookmarks	DEBUG	Engine initialized
+1431552610310	Sync.Engine.Forms	DEBUG	Engine initialized
+1431552610315	Sync.Engine.History	DEBUG	Engine initialized
+1431552610320	Sync.Engine.Passwords	DEBUG	Engine initialized
+1431552610323	Sync.Engine.Prefs	DEBUG	Engine initialized
+1431552610326	Sync.Engine.Tabs	DEBUG	Engine initialized
+1431552610326	Sync.Engine.Tabs	DEBUG	Resetting tabs last sync time
+1431552610330	Sync.Engine.Addons	DEBUG	Engine initialized
+1431552610331	Sync.Service	INFO	Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0
+1431552610334	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1431552610335	Sync.Status	DEBUG	Status.login: success.login => error.login.reason.no_username
+1431552610335	Sync.Status	DEBUG	Status.service: success.status_ok => service.client_not_configured
+1431552610335	Sync.Status	DEBUG	Status.login: error.login.reason.no_username => error.login.reason.no_username
+1431552610335	Sync.Status	DEBUG	Status.service: service.client_not_configured => service.client_not_configured
+1431552610349	Sync.Status	DEBUG	Status.login: error.login.reason.no_username => error.login.reason.no_username
+1431552610349	Sync.Status	DEBUG	Status.service: service.client_not_configured => service.client_not_configured
+1431552610350	FirefoxAccounts	DEBUG	setSignedInUser - aborting any existing flows
+1431552610351	Sync.Tracker.Clients	WARN	Changed IDs file clients contains non-object value.
+1431552610357	Sync.Tracker.Bookmarks	WARN	Changed IDs file bookmarks contains non-object value.
+1431552610358	Sync.Tracker.Forms	WARN	Changed IDs file forms contains non-object value.
+1431552610359	Sync.Tracker.History	WARN	Changed IDs file history contains non-object value.
+1431552610360	Sync.Tracker.Passwords	WARN	Changed IDs file passwords contains non-object value.
+1431552610364	Sync.Tracker.Addons	WARN	Changed IDs file addons contains non-object value.
+1431552610365	FirefoxAccounts	INFO	An accountState promise was resolved, but was actually rejected due to a different user being signed in. Originally resolved with: null
+1431552610370	FirefoxAccounts	DEBUG	Notifying observers of fxaccounts:onlogin
+1431552610370	Sync.BrowserIDManager	DEBUG	observed fxaccounts:onlogin
+1431552610371	Sync.BrowserIDManager	INFO	Username changed. Removing stored credentials.
+1431552610371	Sync.BrowserIDManager	INFO	Waiting for user to be verified.
+1431552610371	FirefoxAccounts	DEBUG	already verified
+1431552610372	Sync.BrowserIDManager	INFO	Starting fetch for key bundle.
+1431552610372	FirefoxAccounts	DEBUG	already verified
+1431552610372	Sync.BrowserIDManager	INFO	Fetching new keys
+1431552610372	FirefoxAccounts	DEBUG	fetchKeys: true
+1431552610698	Hawk	DEBUG	(Response) /account/keys: code: 200 - Status text: OK
+1431552610698	Sync.RESTResponse	TRACE	Processing response headers.
+1431552610699	Hawk	DEBUG	Clock offset vs https://api.accounts.firefox.com/v1: -699
+1431552610702	FirefoxAccounts	DEBUG	Keys Obtained: kA=true, kB=true
+1431552610714	FirefoxAccounts	DEBUG	Notifying observers of fxaccounts:onverified
+1431552610716	Sync.BrowserIDManager	INFO	Getting an assertion from: https://token.services.mozilla.com/1.0/sync/1.5
+1431552610716	FirefoxAccounts	DEBUG	enter getAssertion()
+1431552610729	FirefoxAccounts	DEBUG	got keyPair
+1431552610729	FirefoxAccounts	DEBUG	getCertificateSigned: true true
+1431552611214	Hawk	DEBUG	(Response) /certificate/sign: code: 200 - Status text: OK
+1431552611214	Sync.RESTResponse	TRACE	Processing response headers.
+1431552611215	Hawk	DEBUG	Clock offset vs https://api.accounts.firefox.com/v1: -215
+1431552611215	FirefoxAccounts	DEBUG	getCertificate got a new one: true
+1431552611215	FirefoxAccounts	DEBUG	getAssertionFromCert
+1431552611219	FirefoxAccounts	DEBUG	getAssertionFromCert returning signed: true
+1431552611220	Sync.BrowserIDManager	DEBUG	Getting a token
+1431552611220	Common.TokenServerClient	DEBUG	Beginning BID assertion exchange: https://token.services.mozilla.com/1.0/sync/1.5
+1431552612192	Common.TokenServerClient	DEBUG	Got token response: 200
+1431552612192	Sync.RESTResponse	TRACE	Processing response headers.
+1431552612193	Common.TokenServerClient	DEBUG	Successful token response
+1431552612193	Sync.BrowserIDManager	DEBUG	Successfully got a sync token
+1431552612195	Sync.BulkKeyBundle	INFO	BulkKeyBundle being created for undefined
+1431552612195	Sync.BrowserIDManager	INFO	Background fetch for key bundle done
+1431552612195	Sync.Status	DEBUG	Status.login: error.login.reason.no_username => success.login
+1431552612195	Sync.Status	DEBUG	Status.service: service.client_not_configured => success.status_ok
+1431552612195	Sync.BrowserIDManager	INFO	Doing initial sync actions
+1431552612229	Sync.Status	DEBUG	Status.service: success.status_ok => success.status_ok
+1431552612229	Sync.AddonsReconciler	INFO	Registering as Add-on Manager listener.
+1431552612229	Sync.AddonsReconciler	DEBUG	Adding change listener.
+1431552612230	Sync.Tracker.History	INFO	Adding Places observer.
+1431552612238	Sync.Service	DEBUG	User-Agent: Firefox/38.0 FxSync/1.40.0.20150512170515.
+1431552612238	Sync.Service	INFO	Starting sync at 2015-05-13 23:30:12
+1431552612238	Sync.Service	DEBUG	In sync: should login.
+1431552612239	Sync.Status	DEBUG	Status.service: success.status_ok => success.status_ok
+1431552612239	Sync.Status	DEBUG	Status.service: success.status_ok => success.status_ok
+1431552612241	Sync.Service	INFO	Logging in the user.
+1431552612241	Sync.BrowserIDManager	DEBUG	unlockAndVerifyAuthState already has (or can fetch) sync keys
+1431552612242	Sync.Service	DEBUG	Fetching unlocked auth state returned success.status_ok
+1431552612242	Sync.BrowserIDManager	DEBUG	_ensureValidToken already has one
+1431552612242	Sync.BrowserIDManager	DEBUG	_findCluster returning https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/
+1431552612242	Sync.Service	DEBUG	Cluster value = https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/
+1431552612242	Sync.Service	DEBUG	Setting cluster to https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/
+1431552612243	Sync.Service	DEBUG	Caching URLs under storage user base: https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/
+1431552612244	Sync.BrowserIDManager	DEBUG	_ensureValidToken already has one
+1431552613349	Sync.Resource	DEBUG	mesg: GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/info/collections
+1431552613349	Sync.Resource	DEBUG	GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/info/collections
+1431552613349	Sync.Service	DEBUG	Fetching global metadata record
+1431552613350	Sync.RecordManager	TRACE	Importing record: https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/meta/global
+1431552613350	Sync.BrowserIDManager	DEBUG	_ensureValidToken already has one
+1431552613674	Sync.Resource	DEBUG	mesg: GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/meta/global
+1431552613674	Sync.Resource	DEBUG	GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/meta/global
+1431552613675	Sync.Service	DEBUG	Clearing cached meta record. metaModified is undefined, setting to 1418161439.29
+1431552613675	Sync.RecordManager	TRACE	Importing record: https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/meta/global
+1431552613676	Sync.BrowserIDManager	DEBUG	_ensureValidToken already has one
+1431552613961	Sync.Resource	DEBUG	mesg: GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/meta/global
+1431552613961	Sync.Resource	DEBUG	GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/meta/global
+1431552613961	Sync.Service	DEBUG	Weave Version: 1.40.0 Local Storage: 5 Remote Storage: 5
+1431552613962	Sync.Service	INFO	Sync IDs differ. Local is 2QMqZyKwyTNH, remote is u6zJT22FpyQ4
+1431552613962	Sync.Service	INFO	Service reset.
+1431552613963	Sync.Engine.Clients	DEBUG	Resetting clients last sync time
+1431552613964	Sync.Engine.Bookmarks	DEBUG	Resetting bookmarks last sync time
+1431552613964	Sync.Engine.Forms	DEBUG	Resetting forms last sync time
+1431552613965	Sync.Engine.History	DEBUG	Resetting history last sync time
+1431552613966	Sync.Engine.Passwords	DEBUG	Resetting passwords last sync time
+1431552613966	Sync.Engine.Prefs	DEBUG	Resetting prefs last sync time
+1431552613967	Sync.Engine.Tabs	DEBUG	Resetting tabs last sync time
+1431552613967	Sync.Engine.Addons	DEBUG	Resetting addons last sync time
+1431552613968	Sync.CollectionKeyManager	INFO	Clearing collection keys...
+1431552613968	Sync.Service	DEBUG	Clear cached values and take syncId: u6zJT22FpyQ4
+1431552613968	Sync.Service	INFO	Sync key is up-to-date: no need to upgrade.
+1431552613969	Sync.Service	DEBUG	Fetching and verifying -- or generating -- symmetric keys.
+1431552613969	Sync.Service	INFO	Testing info/collections: {"passwords":1431432495.61,"tabs":1431543903.35,"clients":1431541875.95,"crypto":1418161360.67,"forms":1431449101.77,"meta":1418161439.29,"prefs":1431449216.16,"bookmarks":1431541878.76,"addons":1431449216.94,"history":1431543904.37}
+1431552613969	Sync.CollectionKeyManager	INFO	Testing for updateNeeded. Last modified: 0
+1431552613969	Sync.Service	INFO	collection keys reports that a key update is needed.
+1431552613970	Sync.BrowserIDManager	DEBUG	_ensureValidToken already has one
+1431552614309	Sync.Resource	DEBUG	mesg: GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/crypto/keys
+1431552614309	Sync.Resource	DEBUG	GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/crypto/keys
+1431552614309	Sync.CollectionKeyManager	INFO	Updating collection keys...
+1431552614312	Sync.CollectionKeyManager	INFO	Setting collection keys contents. Our last modified: 0, input modified: 1418161360.67.
+1431552614312	Sync.BulkKeyBundle	INFO	BulkKeyBundle being created for [default]
+1431552614312	Sync.CollectionKeyManager	INFO	Processing downloaded per-collection keys.
+1431552614312	Sync.CollectionKeyManager	INFO	Clearing collection keys...
+1431552614312	Sync.CollectionKeyManager	INFO	Saving downloaded keys.
+1431552614312	Sync.CollectionKeyManager	INFO	Bumping last modified to 1418161360.67
+1431552614312	Sync.CollectionKeyManager	INFO	Collection keys updated.
+1431552614312	Sync.BrowserIDManager	DEBUG	unlockAndVerifyAuthState already has (or can fetch) sync keys
+1431552614313	Sync.Service	DEBUG	Fetching unlocked auth state returned success.status_ok
+1431552614314	Sync.BrowserIDManager	DEBUG	_ensureValidToken already has one
+1431552614609	Sync.Resource	DEBUG	mesg: GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/info/collections
+1431552614609	Sync.Resource	DEBUG	GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/info/collections
+1431552614609	Sync.Service	DEBUG	Fetching global metadata record
+1431552614609	Sync.RecordManager	TRACE	Importing record: https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/meta/global
+1431552614610	Sync.BrowserIDManager	DEBUG	_ensureValidToken already has one
+1431552614902	Sync.Resource	DEBUG	mesg: GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/meta/global
+1431552614902	Sync.Resource	DEBUG	GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/meta/global
+1431552614902	Sync.Service	DEBUG	Weave Version: 1.40.0 Local Storage: 5 Remote Storage: 5
+1431552614903	Sync.Service	INFO	Sync key is up-to-date: no need to upgrade.
+1431552614903	Sync.Service	DEBUG	Fetching and verifying -- or generating -- symmetric keys.
+1431552614903	Sync.Service	INFO	Testing info/collections: {"passwords":1431432495.61,"tabs":1431543903.35,"clients":1431541875.95,"crypto":1418161360.67,"forms":1431449101.77,"meta":1418161439.29,"prefs":1431449216.16,"bookmarks":1431541878.76,"addons":1431449216.94,"history":1431543904.37}
+1431552614903	Sync.CollectionKeyManager	INFO	Testing for updateNeeded. Last modified: 1418161360.67
+1431552614903	Sync.Status	DEBUG	Status.login: success.login => success.login
+1431552614903	Sync.Status	DEBUG	Status.service: success.status_ok => success.status_ok
+1431552614903	Sync.Status	DEBUG	Status.login: success.login => success.login
+1431552614903	Sync.Status	DEBUG	Status.service: success.status_ok => success.status_ok
+1431552614905	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1431552614911	Sync.Status	INFO	Resetting Status.
+1431552614911	Sync.Status	DEBUG	Status.service: success.status_ok => success.status_ok
+1431552614911	Sync.BrowserIDManager	DEBUG	_ensureValidToken already has one
+1431552615211	Sync.Resource	DEBUG	mesg: GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/info/collections?v=1.40.0
+1431552615211	Sync.Resource	DEBUG	GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/info/collections?v=1.40.0
+1431552615213	Sync.Service	DEBUG	Fetching global metadata record
+1431552615213	Sync.Service	DEBUG	Weave Version: 1.40.0 Local Storage: 5 Remote Storage: 5
+1431552615213	Sync.Service	INFO	Sync key is up-to-date: no need to upgrade.
+1431552615213	Sync.Service	DEBUG	Fetching and verifying -- or generating -- symmetric keys.
+1431552615213	Sync.Service	INFO	Testing info/collections: {"passwords":1431432495.61,"tabs":1431543903.35,"clients":1431541875.95,"crypto":1418161360.67,"forms":1431449101.77,"meta":1418161439.29,"prefs":1431449216.16,"bookmarks":1431541878.76,"addons":1431449216.94,"history":1431543904.37}
+1431552615213	Sync.CollectionKeyManager	INFO	Testing for updateNeeded. Last modified: 1418161360.67
+1431552615213	Sync.Synchronizer	DEBUG	Refreshing client list.
+1431552615215	Sync.Engine.Clients	DEBUG	Engine syncIDs: kbX8nVtlHjXB,sx2M7V1RDj5z
+1431552615215	Sync.Engine.Clients	DEBUG	Resetting clients last sync time
+1431552615216	Sync.Engine.Clients	DEBUG	First sync, uploading all items
+1431552615216	Sync.Engine.Clients	INFO	1 outgoing items pre-reconciliation
+1431552615218	Sync.BrowserIDManager	DEBUG	_ensureValidToken already has one
+1431552615536	Sync.Collection	DEBUG	mesg: GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/clients?full=1
+1431552615536	Sync.Collection	DEBUG	GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/clients?full=1
+1431552615537	Sync.Engine.Clients	INFO	Records: 5 applied, 5 successfully, 0 failed to apply, 0 newly failed to apply, 0 reconciled.
+1431552615539	Sync.Engine.Clients	INFO	Uploading all of 1 records
+1431552615540	Sync.BrowserIDManager	DEBUG	_ensureValidToken already has one
+1431552615540	Sync.Collection	DEBUG	POST Length: 485
+1431552615887	Sync.Collection	DEBUG	mesg: POST success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/clients
+1431552615887	Sync.Collection	DEBUG	POST success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/clients
+1431552615888	Sync.SyncScheduler	DEBUG	Client count: 0 -> 6
+1431552615889	Sync.Engine.Prefs	DEBUG	Resetting prefs last sync time
+1431552615890	Sync.Engine.Passwords	DEBUG	Resetting passwords last sync time
+1431552615890	Sync.Engine.Tabs	DEBUG	Resetting tabs last sync time
+1431552615891	Sync.Engine.Bookmarks	DEBUG	Resetting bookmarks last sync time
+1431552615892	Sync.Engine.Addons	DEBUG	Resetting addons last sync time
+1431552615892	Sync.Engine.Forms	DEBUG	Resetting forms last sync time
+1431552615892	Sync.Engine.History	DEBUG	Resetting history last sync time
+1431552615893	Sync.Synchronizer	INFO	Updating enabled engines: 6 clients.
+1431552615894	Sync.EngineManager	DEBUG	Could not get engine: greasemonkey
+1431552615894	Sync.EngineManager	DEBUG	Engines are: ["bookmarks","forms","history","passwords","prefs","tabs","addons"]
+1431552615896	Sync.Engine.Prefs	DEBUG	Engine syncIDs: Gkrn-MJiwUw8,UOEyFb_uPjlN
+1431552615896	Sync.Engine.Prefs	DEBUG	Resetting prefs last sync time
+1431552615897	Sync.Engine.Prefs	DEBUG	First sync, uploading all items
+1431552615897	Sync.Engine.Prefs	INFO	1 outgoing items pre-reconciliation
+1431552615898	Sync.BrowserIDManager	DEBUG	_ensureValidToken already has one
+1431552616217	Sync.Tracker.Clients	DEBUG	Saving changed IDs to clients
+1431552617330	Sync.Engine.Prefs	WARN	DATA LOSS: Both local and remote changes to record: e2VjODAzMGY3LWMyMGEtNDY0Zi05YjBlLTEzYTNhOWU5NzM4NH0=
+1431552617338	Sync.Collection	DEBUG	mesg: GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/prefs?full=1
+1431552617338	Sync.Collection	DEBUG	GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/prefs?full=1
+1431552617338	Sync.Engine.Prefs	INFO	Records: 1 applied, 1 successfully, 0 failed to apply, 0 newly failed to apply, 0 reconciled.
+1431552617347	Sync.Engine.Prefs	INFO	Uploading all of 1 records
+1431552617347	Sync.BrowserIDManager	DEBUG	_ensureValidToken already has one
+1431552617348	Sync.Collection	DEBUG	POST Length: 11819
+1431552617436	Sync.SyncScheduler	DEBUG	Global Score threshold hit, triggering sync.
+1431552617437	Sync.Service	DEBUG	User-Agent: Firefox/38.0 FxSync/1.40.0.20150512170515.
+1431552617437	Sync.Service	INFO	Starting sync at 2015-05-13 23:30:17
+1431552617437	Sync.Service	DEBUG	Exception: Could not acquire lock. Label: "service.js: sync". No traceback available
+1431552617437	Sync.Service	INFO	Cannot start sync: already syncing?
+1431552618076	Sync.Collection	DEBUG	mesg: POST success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/prefs
+1431552618076	Sync.Collection	DEBUG	POST success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/prefs
+1431552618077	Sync.Engine.Passwords	DEBUG	Engine syncIDs: lhkp6GjsqSvf,wBZJbMimcOX4
+1431552618078	Sync.Engine.Passwords	DEBUG	Resetting passwords last sync time
+1431552618078	Sync.Engine.Passwords	DEBUG	First sync, uploading all items
+1431552618080	Sync.Engine.Passwords	INFO	0 outgoing items pre-reconciliation
+1431552618082	Sync.BrowserIDManager	DEBUG	_ensureValidToken already has one
+1431552619088	Sync.Tracker.Passwords	DEBUG	Saving changed IDs to passwords
+1431552619814	Sync.Store.Passwords	DEBUG	Adding login for https://www.1und1.de
+1431552619818	Sync.Store.Passwords	DEBUG	Adding login for https://www.sharelatex.com
+1431552619820	Sync.Store.Passwords	DEBUG	Adding login for https://signin.ebay.com
+1431552619823	Sync.Store.Passwords	DEBUG	Adding login for chrome://simplemail/1/smtp/
+1431552619825	Sync.Store.Passwords	DEBUG	Adding login for chrome://simplemail/1/pop3/
+1431552619827	Sync.Store.Passwords	DEBUG	Adding login for https://moodle.kkst.s.schule-bw.de
+1431552619829	Sync.Store.Passwords	DEBUG	Adding login for https://www.amazon.de
+1431552619830	Sync.Store.Passwords	DEBUG	Adding login for http://www.quakelive.com
+1431552619832	Sync.Store.Passwords	DEBUG	Adding login for https://m.ebay.de
+1431552619834	Sync.Store.Passwords	DEBUG	Adding login for https://www.mouser.de
+1431552619836	Sync.Store.Passwords	DEBUG	Adding login for http://192.168.178.100
+1431552619838	Sync.Store.Passwords	DEBUG	Adding login for http://192.168.178.100:81
+1431552619840	Sync.Store.Passwords	DEBUG	Adding login for http://fritz.box:81
+1431552619842	Sync.Store.Passwords	DEBUG	Adding login for http://fritz.box
+1431552619844	Sync.Store.Passwords	DEBUG	Adding login for http://192.168.178.1
+1431552619846	Sync.Store.Passwords	DEBUG	Adding login for http://myanimelist.net
+1431552619848	Sync.Store.Passwords	DEBUG	Adding login for http://192.168.178.44:5000
+1431552619850	Sync.Store.Passwords	DEBUG	Adding login for https://accounts.google.com
+1431552619852	Sync.Store.Passwords	DEBUG	Adding login for https://webmailer.1und1.de
+1431552619854	Sync.Store.Passwords	DEBUG	Adding login for https://www.1und1.de
+1431552619857	Sync.Store.Passwords	DEBUG	Adding login for https://developer.mbed.org
+1431552619859	Sync.Store.Passwords	DEBUG	Adding login for https://login.yahoo.com
+1431552619861	Sync.Store.Passwords	DEBUG	Adding login for https://github.com
+1431552619862	Sync.Store.Passwords	DEBUG	Adding login for https://www.1und1.de
+1431552619864	Sync.Store.Passwords	DEBUG	Adding login for https://accounts.google.com
+1431552619867	Sync.Store.Passwords	DEBUG	Adding login for http://myanimelist.net
+1431552619870	Sync.Store.Passwords	DEBUG	Adding login for https://www.paypal.com
+1431552619872	Sync.Store.Passwords	DEBUG	Adding login for https://signin.ebay.de
+1431552619874	Sync.Store.Passwords	DEBUG	Adding login for https://login.yahoo.com
+1431552619877	Sync.Store.Passwords	DEBUG	Adding login for http://141.31.128.163
+1431552619879	Sync.Store.Passwords	DEBUG	Adding login for http://parts.io
+1431552619881	Sync.Store.Passwords	DEBUG	Adding login for https://fyp.ebay.de
+1431552619883	Sync.Store.Passwords	DEBUG	Adding login for http://localhost:631
+1431552619885	Sync.Store.Passwords	DEBUG	Adding login for https://account.1und1.de
+1431552619887	Sync.Store.Passwords	DEBUG	Adding login for https://www.johanniter-schulmensa.de
+1431552619890	Sync.Store.Passwords	DEBUG	Adding login for https://login.1und1.de
+1431552619892	Sync.Store.Passwords	DEBUG	Adding login for https://gitlab.com
+1431552619893	Sync.Store.Passwords	DEBUG	Adding login for http://m.redmine.org
+1431552619895	Sync.Store.Passwords	DEBUG	Adding login for https://www.mikrocontroller.net
+1431552619897	Sync.Store.Passwords	DEBUG	Adding login for http://localhost:631
+1431552619900	Sync.Store.Passwords	DEBUG	Adding login for https://api.twitter.com
+1431552619902	Sync.Store.Passwords	DEBUG	Adding login for https://188.104.179.81:48149
+1431552619903	Sync.Store.Passwords	DEBUG	Adding login for https://www.1und1.de
+1431552619905	Sync.Store.Passwords	DEBUG	Adding login for https://www.codeschool.com
+1431552619907	Sync.Store.Passwords	DEBUG	Adding login for http://www.reddit.com
+1431552619909	Sync.Store.Passwords	DEBUG	Adding login for https://forum.1und1.de
+1431552619911	Sync.Store.Passwords	DEBUG	Adding login for https://www.netzclub.net
+1431552619913	Sync.Store.Passwords	DEBUG	Adding login for https://profil.netzclub.net
+1431552619918	Sync.Store.Passwords	DEBUG	Adding login for https://m.ebay.com
+1431552619920	Sync.Store.Passwords	DEBUG	Adding login for https://github.com
+1431552620877	Sync.Store.Passwords	DEBUG	Adding login for https://profil.netzclub.net
+1431552620880	Sync.Store.Passwords	DEBUG	Adding login for https://account.1und1.de
+1431552620883	Sync.Store.Passwords	DEBUG	Adding login for https://passwort.1und1.de
+1431552620886	Sync.Store.Passwords	DEBUG	Adding login for https://forum.manjaro.org
+1431552620888	Sync.Store.Passwords	DEBUG	Adding login for http://downloads.khinsider.com
+1431552620891	Sync.Store.Passwords	DEBUG	Adding login for https://www.sparkfun.com
+1431552620894	Sync.Store.Passwords	DEBUG	Adding login for https://accounts.google.com
+1431552620903	Sync.Store.Passwords	DEBUG	Adding login for https://www.reddit.com
+1431552620906	Sync.Store.Passwords	DEBUG	Adding login for https://webmail2.1und1.de
+1431552620908	Sync.Store.Passwords	DEBUG	Adding login for https://www.alternate.de
+1431552620911	Sync.Store.Passwords	DEBUG	Adding login for https://account.mojang.com
+1431552620914	Sync.Store.Passwords	DEBUG	Adding login for https://dakesew.wordpress.com
+1431552620916	Sync.Store.Passwords	DEBUG	Adding login for https://www.humblebundle.com
+1431552620919	Sync.Store.Passwords	DEBUG	Adding login for https://electronics.stackexchange.com
+1431552620921	Sync.Store.Passwords	DEBUG	Adding login for https://openid.stackexchange.com
+1431552620924	Sync.Store.Passwords	DEBUG	Adding login for http://www.edaboard.com
+1431552620926	Sync.Store.Passwords	DEBUG	Adding login for https://secure1.store.apple.com
+1431552620929	Sync.Store.Passwords	DEBUG	Adding login for https://signup.wordpress.com
+1431552620931	Sync.Store.Passwords	DEBUG	Adding login for https://newsblur.com
+1431552620934	Sync.Store.Passwords	DEBUG	Adding login for https://twitter.com
+1431552620937	Sync.Store.Passwords	DEBUG	Adding login for https://eu.edit.yahoo.com
+1431552620939	Sync.Store.Passwords	DEBUG	Adding login for https://www.amazon.com
+1431552620983	Sync.Store.Passwords	DEBUG	Adding login for http://parts.io
+1431552620986	Sync.Store.Passwords	DEBUG	Adding login for https://www.mouser.de
+1431552620990	Sync.Store.Passwords	DEBUG	Adding login for https://www.mouser.de
+1431552620995	Sync.Store.Passwords	DEBUG	Adding login for https://oshpark.com
+1431552620998	Sync.Store.Passwords	DEBUG	Adding login for http://mobile.dsbcontrol.de
+1431552621000	Sync.Store.Passwords	DEBUG	Adding login for https://www.johanniter-schulmensa.de
+1431552621003	Sync.Store.Passwords	DEBUG	Adding login for https://secure.cypress.com
+1431552621005	Sync.Store.Passwords	DEBUG	Adding login for https://my.st.com
+1431552621008	Sync.Store.Passwords	DEBUG	Adding login for http://www.coocox.org
+1431552621010	Sync.Store.Passwords	DEBUG	Adding login for https://oshpark.com
+1431552621013	Sync.Store.Passwords	DEBUG	Adding login for http://us.ae.aliexpress.com
+1431552621015	Sync.Store.Passwords	DEBUG	Adding login for https://de.wordpress.com
+1431552621017	Sync.Store.Passwords	DEBUG	Adding login for https://secure.webmercs.com
+1431552621019	Sync.Store.Passwords	DEBUG	Adding login for https://www.hotsplots.de
+1431552621021	Sync.Store.Passwords	DEBUG	Adding login for http://www.reddit.com
+1431552621025	Sync.Store.Passwords	DEBUG	Adding login for https://flattr.com
+1431552621027	Sync.Store.Passwords	DEBUG	Adding login for https://api.twitter.com
+1431552621029	Sync.Store.Passwords	DEBUG	Adding login for https://www.conrad.de
+1431552621031	Sync.Store.Passwords	DEBUG	Adding login for http://forums.linuxmint.com
+1431552621033	Sync.Store.Passwords	DEBUG	Adding login for http://hackaday.io
+1431552621035	Sync.Store.Passwords	DEBUG	Adding login for https://play.spotify.com
+1431552621038	Sync.Store.Passwords	DEBUG	Adding login for http://www.lug-s.org
+1431552621041	Sync.Store.Passwords	DEBUG	Adding login for http://www.mentor.com
+1431552621043	Sync.Store.Passwords	DEBUG	Adding login for http://doodle.com
+1431552621045	Sync.Store.Passwords	DEBUG	Adding login for https://mobile.dsbcontrol.de
+1431552621047	Sync.Store.Passwords	DEBUG	Adding login for https://myportal.ti.com
+1431552621049	Sync.Store.Passwords	DEBUG	Adding login for https://m.ebay.de
+1431552621051	Sync.Store.Passwords	DEBUG	Adding login for https://signin.ebay.at
+1431552621095	Sync.Collection	DEBUG	mesg: GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/passwords?full=1
+1431552621095	Sync.Collection	DEBUG	GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/passwords?full=1
+1431552621095	Sync.Store.Passwords	DEBUG	Adding login for https://www.galileo-press.de
+1431552621098	Sync.Store.Passwords	DEBUG	Adding login for http://forums.linuxmint.com
+1431552621100	Sync.Store.Passwords	DEBUG	Adding login for http://www.gabotronics.com
+1431552621103	Sync.Store.Passwords	DEBUG	Adding login for https://www.evernote.com
+1431552621105	Sync.Store.Passwords	DEBUG	Adding login for https://hackaday.io
+1431552621108	Sync.Store.Passwords	DEBUG	Adding login for https://www.safaribooksonline.com
+1431552621110	Sync.Store.Passwords	DEBUG	Adding login for https://focus.ti.com
+1431552621113	Sync.Store.Passwords	DEBUG	Adding login for http://192.168.178.44
+1431552621115	Sync.Store.Passwords	DEBUG	Adding login for http://www.mentor.com
+1431552621117	Sync.Store.Passwords	DEBUG	Adding login for http://www.reddit.com
+1431552621121	Sync.Store.Passwords	DEBUG	Adding login for https://mm.1und1.de
+1431552621124	Sync.Store.Passwords	DEBUG	Adding login for https://www.ashampoo.com
+1431552621126	Sync.Store.Passwords	DEBUG	Adding login for https://www.pollin.de
+1431552621128	Sync.Store.Passwords	DEBUG	Adding login for http://www.minecraft.net
+1431552621131	Sync.Store.Passwords	DEBUG	Adding login for http://www.mikrocontroller.net
+1431552621133	Sync.Store.Passwords	DEBUG	Adding login for http://www.avrfreaks.net
+1431552621136	Sync.Store.Passwords	DEBUG	Adding login for https://extensions.gnome.org
+1431552621138	Sync.Engine.Passwords	INFO	Records: 117 applied, 117 successfully, 0 failed to apply, 0 newly failed to apply, 0 reconciled.
+1431552621140	Sync.BrowserIDManager	DEBUG	_ensureValidToken already has one
+1431552621449	Sync.Collection	DEBUG	mesg: DELETE success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/passwords?ids={6080c8fa-a9d7-4f49-9dbe-4ee74d457f19}
+1431552621449	Sync.Collection	DEBUG	DELETE success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/passwords?ids={6080c8fa-a9d7-4f49-9dbe-4ee74d457f19}
+1431552621449	Sync.Engine.Passwords	DEBUG	Delete result: {"modified": 1431552621.33}
+1431552621451	Sync.Engine.Tabs	DEBUG	Engine syncIDs: bdfOj6Ex38De,HOAKswdFEhi7
+1431552621451	Sync.Engine.Tabs	DEBUG	Resetting tabs last sync time
+1431552621452	Sync.Engine.Tabs	DEBUG	First sync, uploading all items
+1431552621453	Sync.Engine.Tabs	INFO	1 outgoing items pre-reconciliation
+1431552621454	Sync.BrowserIDManager	DEBUG	_ensureValidToken already has one
+1431552621727	Sync.Store.Tabs	DEBUG	Adding remote tabs from Firefox on ME173X
+1431552621729	Sync.Store.Tabs	DEBUG	Adding remote tabs from Firefox on XT1068
+1431552621731	Sync.Store.Tabs	DEBUG	Adding remote tabs from david's Firefox on DavidManjaroDesktop
+1431552621733	Sync.Store.Tabs	DEBUG	Adding remote tabs from sawatzkeds Firefox in Schule
+1431552621735	Sync.Store.Tabs	DEBUG	Adding remote tabs from david's Firefox on ManjaroLaptopDavid
+1431552621735	Sync.Collection	DEBUG	mesg: GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/tabs?full=1
+1431552621735	Sync.Collection	DEBUG	GET success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/tabs?full=1
+1431552621736	Sync.Engine.Tabs	INFO	Records: 5 applied, 5 successfully, 0 failed to apply, 0 newly failed to apply, 0 reconciled.
+1431552621756	Sync.Engine.Tabs	INFO	Uploading all of 1 records
+1431552621756	Sync.BrowserIDManager	DEBUG	_ensureValidToken already has one
+1431552621757	Sync.Collection	DEBUG	POST Length: 2936
+1431552622045	Sync.Collection	DEBUG	mesg: POST success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/tabs
+1431552622045	Sync.Collection	DEBUG	POST success 200 https://sync-180-us-west-2.sync.services.mozilla.com/1.5/15818629/storage/tabs
+1431552622046	Sync.Engine.Bookmarks	DEBUG	Engine syncIDs: sx-TqiEOoupD,w7Xy2qbt4th3
+1431552622047	Sync.Engine.Bookmarks	DEBUG	Resetting bookmarks last sync time
+1431552622047	Sync.Engine.Bookmarks	DEBUG	First sync, uploading all items
+1431552622050	Sync.Store.Bookmarks	DEBUG	No node for GUID mobile; returning no children.
+1431552622051	Sync.Engine.Bookmarks	INFO	12 outgoing items pre-reconciliation
+1431552622051	Sync.Engine.Bookmarks	DEBUG	Bookmarks backup starting.
+1431552622063	Sync.Engine.Bookmarks	DEBUG	Bookmarks backup done.
+1431552622064	Sync.BrowserIDManager	DEBUG	_ensureValidToken already has one
+1431552622626	Sync.Store.Bookmarks	DEBUG	No node for GUID mobile; returning no children.
+1431552622630	Sync.Engine.Bookmarks	WARN	DATA LOSS: Both local and remote changes to record: menu
+1431552622630	Sync.Store.Bookmarks	DEBUG	Applying record menu
+1431552622630	Sync.Store.Bookmarks	DEBUG	Processing special node: menu
+1431552622632	Sync.Store.Bookmarks	DEBUG	Applying record places
+1431552622632	Sync.Store.Bookmarks	DEBUG	Processing special node: places
+1431552622633	Sync.Engine.Bookmarks	WARN	DATA LOSS: Both local and remote changes to record: toolbar
+1431552622633	Sync.Store.Bookmarks	DEBUG	Applying record toolbar
+1431552622633	Sync.Store.Bookmarks	DEBUG	Processing special node: toolbar
+1431552622635	Sync.Store.Bookmarks	DEBUG	Applying record unfiled
+1431552622635	Sync.Store.Bookmarks	DEBUG	Processing special node: unfiled
+1431552622637	Sync.Engine.Bookmarks	DEBUG	4ULCqzpMLiiq mapped to undefined
+1431552622637	Sync.Store.Bookmarks	DEBUG	Applying record 4ULCqzpMLiiq
+1431552622637	Sync.Store.Bookmarks	DEBUG	Local parent is AIsHYFfE-sMK
+1431552622637	Sync.Store.Bookmarks	DEBUG	Parent is undefined; reparenting to unfiled.
+1431552622638	Sync.Store.Bookmarks	DEBUG	created folder 16 under 5 as All Bookmarks
+1431552622638	Sync.Store.Bookmarks	DEBUG	Reparenting orphans  to 16
+1431552622641	Sync.Engine.Bookmarks	DEBUG	AIsHYFfE-sMK mapped to undefined
+1431552622641	Sync.Store.Bookmarks	DEBUG	Applying record AIsHYFfE-sMK
+1431552622641	Sync.Store.Bookmarks	DEBUG	Local parent is places
+1431552622641	Sync.Store.Bookmarks	DEBUG	Record AIsHYFfE-sMK is not an orphan.
+1431552622641	Sync.Store.Bookmarks	DEBUG	created folder 17 under 1 as 
+1431552622642	Sync.Store.Bookmarks	DEBUG	Reparenting orphans 16 to 17
+1431552622644	Sync.Engine.Bookmarks	DEBUG	HJuMveEfzTKu mapped to undefined
+1431552622644	Sync.Store.Bookmarks	DEBUG	Applying record HJuMveEfzTKu
+1431552622644	Sync.Store.Bookmarks	DEBUG	Local parent is places
+1431552622644	Sync.Store.Bookmarks	DEBUG	Record HJuMveEfzTKu is not an orphan.
+1431552622645	Sync.Store.Bookmarks	DEBUG	created folder 18 under 1 as 
+1431552622645	Sync.Store.Bookmarks	DEBUG	Reparenting orphans  to 18
+1431552622646	Sync.Engine.Bookmarks	DEBUG	M91NDPLeAURO mapped to GDJjpYTinoLN
+1431552622646	Sync.Engine.Bookmarks	DEBUG	Switching local ID to incoming: GDJjpYTinoLN -> M91NDPLeAURO
+1431552622646	Sync.Store.Bookmarks	DEBUG	Changing GUID GDJjpYTinoLN to M91NDPLeAURO
+1431552622647	Sync.Engine.Bookmarks	DEBUG	Local item after duplication: age=1431552622.647; modified=true; exists=true
+1431552622647	Sync.Engine.Bookmarks	WARN	DATA LOSS: Both local and remote changes to record: M91NDPLeAURO
+1431552622647	Sync.Store.Bookmarks	DEBUG	Applying record M91NDPLeAURO
+1431552622647	Sync.Store.Bookmarks	DEBUG	Local parent is menu
+1431552622647	Sync.Store.Bookmarks	DEBUG	Record M91NDPLeAURO is not an orphan.
+1431552622648	Sync.Store.Bookmarks	DEBUG	Reparenting orphans  to 7
+1431552622649	Sync.Engine.Bookmarks	DEBUG	MUBlWDs0c9R8 mapped to undefined
+1431552622649	Sync.Store.Bookmarks	DEBUG	Applying record MUBlWDs0c9R8
+1431552622649	Sync.Store.Bookmarks	DEBUG	Local parent is HJuMveEfzTKu
+1431552622649	Sync.Store.Bookmarks	DEBUG	Record MUBlWDs0c9R8 is not an orphan.
+1431552622650	Sync.Store.Bookmarks	DEBUG	created folder 19 under 18 as All Bookmarks
+1431552622650	Sync.Store.Bookmarks	DEBUG	Reparenting orphans  to 19
+1431552622651	Sync.Engine.Bookmarks	DEBUG	UtyH24q8klsy mapped to GDJjpYTinoLN
+1431552622651	Sync.Engine.Bookmarks	DEBUG	Switching local ID to incoming: GDJjpYTinoLN -> UtyH24q8klsy
+1431552622651	Sync.Store.Bookmarks	DEBUG	Changing GUID GDJjpYTinoLN to UtyH24q8klsy
+1431552622652	Sync.Engine.Bookmarks	DEBUG	Local item after duplication: age=null; modified=false; exists=false
+1431552622652	Sync.Store.Bookmarks	DEBUG	Applying record UtyH24q8klsy
+1431552622652	Sync.Store.Bookmarks	DEBUG	Local parent is menu
+1431552622652	Sync.Store.Bookmarks	DEBUG	Record UtyH24q8klsy is not an orphan.
+1431552622652	Sync.Store.Bookmarks	DEBUG	created folder 20 under 2 as Mozilla Firefox
+1431552622653	Sync.Store.Bookmarks	DEBUG	Reparenting orphans  to 20
+1431552622654	Sync.Engine.Bookmarks	DEBUG	OLOWdehMeKVO mapped to undefined
+1431552622654	Sync.Store.Bookmarks	DEBUG	Applying record OLOWdehMeKVO
+1431552622654	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552622654	Sync.Store.Bookmarks	DEBUG	Record OLOWdehMeKVO is not an orphan.
+1431552622655	Sync.Store.Bookmarks	DEBUG	created bookmark 21 under 3 as Blog | Hackaday | Fresh hacks every day | Page 2 http://hackaday.com/blog/page/2/
+1431552622659	Sync.Engine.Bookmarks	DEBUG	FjpClBbx4Jtz mapped to undefined
+1431552622659	Sync.Store.Bookmarks	DEBUG	Applying record FjpClBbx4Jtz
+1431552622659	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552622659	Sync.Store.Bookmarks	DEBUG	Record FjpClBbx4Jtz is not an orphan.
+1431552622660	Sync.Store.Bookmarks	DEBUG	created bookmark 22 under 5 as KICAD quick library generator http://kicad.rohrbacher.net/quicklib.php
+1431552622662	Sync.Engine.Bookmarks	DEBUG	iEncRK-HdECR mapped to undefined
+1431552622662	Sync.Store.Bookmarks	DEBUG	Applying record iEncRK-HdECR
+1431552622662	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552622662	Sync.Store.Bookmarks	DEBUG	Record iEncRK-HdECR is not an orphan.
+1431552622663	Sync.Store.Bookmarks	DEBUG	created bookmark 23 under 5 as Computer Humor http://www.ganssle.com/jokes.htm
+1431552622665	Sync.Engine.Bookmarks	DEBUG	tI0YtWqE7duJ mapped to undefined
+1431552622665	Sync.Store.Bookmarks	DEBUG	Applying record tI0YtWqE7duJ
+1431552622665	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552622666	Sync.Store.Bookmarks	DEBUG	Record tI0YtWqE7duJ is not an orphan.
+1431552622667	Sync.Store.Bookmarks	DEBUG	created bookmark 25 under 24 as AVR Transistortester - Mikrocontroller.net http://www.mikrocontroller.net/articles/AVR_Transistortester
+1431552622669	Sync.Engine.Bookmarks	DEBUG	IotiimLeAB3T mapped to undefined
+1431552622669	Sync.Store.Bookmarks	DEBUG	Applying record IotiimLeAB3T
+1431552622670	Sync.Store.Bookmarks	DEBUG	Local parent is menu
+1431552622670	Sync.Store.Bookmarks	DEBUG	Record IotiimLeAB3T is not an orphan.
+1431552622671	Sync.Store.Bookmarks	DEBUG	created bookmark 26 under 2 as Manjaro Linux http://manjaro.org/
+1431552622675	Sync.Engine.Bookmarks	DEBUG	PoP5m-Jz57mD mapped to undefined
+1431552622675	Sync.Store.Bookmarks	DEBUG	Applying record PoP5m-Jz57mD
+1431552622675	Sync.Store.Bookmarks	DEBUG	Local parent is menu
+1431552622675	Sync.Store.Bookmarks	DEBUG	Record PoP5m-Jz57mD is not an orphan.
+1431552622676	Sync.Store.Bookmarks	DEBUG	created bookmark 30 under 2 as Daemons list - ArchWiki https://wiki.archlinux.org/index.php/Daemons_list
+1431552622678	Sync.Engine.Bookmarks	DEBUG	rnSx57MVMojr mapped to undefined
+1431552622678	Sync.Store.Bookmarks	DEBUG	Applying record rnSx57MVMojr
+1431552622678	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552622678	Sync.Store.Bookmarks	DEBUG	Record rnSx57MVMojr is not an orphan.
+1431552622679	Sync.Store.Bookmarks	DEBUG	created bookmark 31 under 5 as SmartDrive https://sd2.1und1.de/qx/1und1_de/index.html?username=70317621
+1431552622681	Sync.Engine.Bookmarks	DEBUG	2RrOaP_ztJN9 mapped to undefined
+1431552622681	Sync.Store.Bookmarks	DEBUG	Applying record 2RrOaP_ztJN9
+1431552622681	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552622681	Sync.Store.Bookmarks	DEBUG	Record 2RrOaP_ztJN9 is not an orphan.
+1431552622682	Sync.Store.Bookmarks	DEBUG	created bookmark 32 under 3 as Forums http://forums.linuxmint.com/
+1431552622684	Sync.Engine.Bookmarks	DEBUG	7ZoCDseZN-3i mapped to undefined
+1431552622684	Sync.Store.Bookmarks	DEBUG	Applying record 7ZoCDseZN-3i
+1431552622684	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552622684	Sync.Store.Bookmarks	DEBUG	Record 7ZoCDseZN-3i is not an orphan.
+1431552622684	Sync.Store.Bookmarks	DEBUG	created bookmark 33 under 3 as ElectronicsPoster.zip - Google Drive https://docs.google.com/file/d/0B10bwEhSnfbacXVDR1JjcVNuWTg/preview
+1431552622875	Sync.Engine.Bookmarks	DEBUG	Jjh1WrOByblk mapped to undefined
+1431552622875	Sync.Store.Bookmarks	DEBUG	Applying record Jjh1WrOByblk
+1431552622875	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552622875	Sync.Store.Bookmarks	DEBUG	Record Jjh1WrOByblk is not an orphan.
+1431552622877	Sync.Store.Bookmarks	DEBUG	created bookmark 34 under 3 as Taschenrecher http://web2.0rechner.de/widgets/horizontal/
+1431552622881	Sync.Engine.Bookmarks	DEBUG	PPM6w91Rt0N3 mapped to undefined
+1431552622882	Sync.Store.Bookmarks	DEBUG	Applying record PPM6w91Rt0N3
+1431552622882	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552622882	Sync.Store.Bookmarks	DEBUG	Record PPM6w91Rt0N3 is not an orphan.
+1431552622883	Sync.Store.Bookmarks	DEBUG	created bookmark 35 under 3 as Programming STM32 Microcontroller Flash in Linux http://startingelectronics.com/tutorials/STM32-microcontrollers/programming-STM32-flash-in-Linux/
+1431552622885	Sync.Engine.Bookmarks	DEBUG	SrabI3twpA3C mapped to undefined
+1431552622885	Sync.Store.Bookmarks	DEBUG	Applying record SrabI3twpA3C
+1431552622885	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552622885	Sync.Store.Bookmarks	DEBUG	Record SrabI3twpA3C is not an orphan.
+1431552622885	Sync.Store.Bookmarks	DEBUG	created bookmark 36 under 3 as Kick Ass javascript:var%20KICKASSVERSION='2.0';var%20s%20=%20document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='//hi.kickassapp.com/kickass.js';void(0);
+1431552622887	Sync.Engine.Bookmarks	DEBUG	XuW6KuPQMBB7 mapped to undefined
+1431552622887	Sync.Store.Bookmarks	DEBUG	Applying record XuW6KuPQMBB7
+1431552622887	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552622887	Sync.Store.Bookmarks	DEBUG	Record XuW6KuPQMBB7 is not an orphan.
+1431552622888	Sync.Store.Bookmarks	DEBUG	created bookmark 37 under 3 as Community http://community.linuxmint.com/
+1431552622889	Sync.Engine.Bookmarks	DEBUG	YeOqLdnlIIKW mapped to undefined
+1431552622889	Sync.Store.Bookmarks	DEBUG	Applying record YeOqLdnlIIKW
+1431552622889	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552622889	Sync.Store.Bookmarks	DEBUG	Record YeOqLdnlIIKW is not an orphan.
+1431552622890	Sync.Store.Bookmarks	DEBUG	created bookmark 38 under 3 as Electronics-Lab.com Blog » AVR http://www.electronics-lab.com/blog/?tag=avr&paged=11
+1431552622892	Sync.Engine.Bookmarks	DEBUG	gZdlnanFaoLa mapped to undefined
+1431552622892	Sync.Store.Bookmarks	DEBUG	Applying record gZdlnanFaoLa
+1431552622892	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552622892	Sync.Store.Bookmarks	DEBUG	Record gZdlnanFaoLa is not an orphan.
+1431552622892	Sync.Store.Bookmarks	DEBUG	created bookmark 39 under 3 as Push to break http://animuchan.net/moz_game/
+1431552622894	Sync.Engine.Bookmarks	DEBUG	hqS66SCzwGh- mapped to undefined
+1431552622894	Sync.Store.Bookmarks	DEBUG	Applying record hqS66SCzwGh-
+1431552622894	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552622894	Sync.Store.Bookmarks	DEBUG	Record hqS66SCzwGh- is not an orphan.
+1431552622895	Sync.Store.Bookmarks	DEBUG	created bookmark 40 under 3 as YouTube Video Download als MP3 kostenlos und einfach http://www.filsh.net/
+1431552622897	Sync.Engine.Bookmarks	DEBUG	nD85JNMQsdUq mapped to undefined
+1431552622897	Sync.Store.Bookmarks	DEBUG	Applying record nD85JNMQsdUq
+1431552622897	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552622897	Sync.Store.Bookmarks	DEBUG	Record nD85JNMQsdUq is not an orphan.
+1431552622898	Sync.Store.Bookmarks	DEBUG	created bookmark 41 under 3 as DaveHistory http://daveola.com/History/
+1431552622900	Sync.Engine.Bookmarks	DEBUG	omWGzkZhX2dk mapped to undefined
+1431552622900	Sync.Store.Bookmarks	DEBUG	Applying record omWGzkZhX2dk
+1431552622901	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552622901	Sync.Store.Bookmarks	DEBUG	Record omWGzkZhX2dk is not an orphan.
+1431552622901	Sync.Store.Bookmarks	DEBUG	created bookmark 42 under 3 as Blog http://blog.linuxmint.com/
+1431552622903	Sync.Engine.Bookmarks	DEBUG	rFlQTZDhM2Qa mapped to undefined
+1431552622903	Sync.Store.Bookmarks	DEBUG	Applying record rFlQTZDhM2Qa
+1431552622903	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552622903	Sync.Store.Bookmarks	DEBUG	Record rFlQTZDhM2Qa is not an orphan.
+1431552622904	Sync.Store.Bookmarks	DEBUG	created bookmark 43 under 3 as Linux Mint http://www.linuxmint.com/
+1431552622906	Sync.Engine.Bookmarks	DEBUG	yuj_LoGX7Nct mapped to rVfupbf-ySVA
+1431552622906	Sync.Engine.Bookmarks	DEBUG	Switching local ID to incoming: rVfupbf-ySVA -> yuj_LoGX7Nct
+1431552622906	Sync.Store.Bookmarks	DEBUG	Changing GUID rVfupbf-ySVA to yuj_LoGX7Nct
+1431552622906	Sync.Engine.Bookmarks	DEBUG	Local item after duplication: age=1431552622.906; modified=true; exists=true
+1431552622908	Sync.Engine.Bookmarks	DEBUG	zs244v6vp4sR mapped to undefined
+1431552622908	Sync.Store.Bookmarks	DEBUG	Applying record zs244v6vp4sR
+1431552622908	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552622908	Sync.Store.Bookmarks	DEBUG	Record zs244v6vp4sR is not an orphan.
+1431552622909	Sync.Store.Bookmarks	DEBUG	created bookmark 44 under 3 as     Firebug Lite javascript:(function(F,i,r,e,b,u,g,L,I,T,E){if(F.getElementById(b))return;E=F[i+'NS']&&F.documentElement.namespaceURI;E=E?F[i+'NS'](E,'script'):F[i]('script');E[r]('id',b);E[r]('src',I+g+T);E[r](b,u);(F[e]('head')[0]||F[e]('body')[0]).appendChild(E);E=new%20Image;E[r]('src',I+L);})(document,'createElement','setAttribute','getElementsByTagName','FirebugLite','4','firebug-lite.js','releases/lite/latest/skin/xp/sprite.png','https://getfirebug.com/','#startOpened');
+1431552622911	Sync.Engine.Bookmarks	DEBUG	6OglpByD9nhD mapped to undefined
+1431552622911	Sync.Store.Bookmarks	DEBUG	Applying record 6OglpByD9nhD
+1431552622911	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552622911	Sync.Store.Bookmarks	DEBUG	Record 6OglpByD9nhD is not an orphan.
+1431552622912	Sync.Store.Bookmarks	DEBUG	created bookmark 45 under 3 as Manjaro Wiki http://wiki.manjaro.org/index.php/Main_Page
+1431552622914	Sync.Engine.Bookmarks	DEBUG	8sSdeG1MCYgB mapped to undefined
+1431552622914	Sync.Store.Bookmarks	DEBUG	Applying record 8sSdeG1MCYgB
+1431552622914	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552622914	Sync.Store.Bookmarks	DEBUG	Record 8sSdeG1MCYgB is not an orphan.
+1431552622915	Sync.Store.Bookmarks	DEBUG	created bookmark 46 under 3 as Homepage http://manjaro.org/
+1431552622919	Sync.Engine.Bookmarks	DEBUG	L3B-NATFu4uy mapped to undefined
+1431552622919	Sync.Store.Bookmarks	DEBUG	Applying record L3B-NATFu4uy
+1431552622919	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552622919	Sync.Store.Bookmarks	DEBUG	Record L3B-NATFu4uy is not an orphan.
+1431552622920	Sync.Store.Bookmarks	DEBUG	created bookmark 49 under 3 as News http://manjaro.org/blog/
+1431552622922	Sync.Engine.Bookmarks	DEBUG	rifuMB6lJbYg mapped to undefined
+1431552622922	Sync.Store.Bookmarks	DEBUG	Applying record rifuMB6lJbYg
+1431552622922	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552622922	Sync.Store.Bookmarks	DEBUG	Record rifuMB6lJbYg is not an orphan.
+1431552622923	Sync.Store.Bookmarks	DEBUG	created bookmark 50 under 3 as Forum http://forum.manjaro.org/
+1431552622925	Sync.Engine.Bookmarks	DEBUG	ZVBWvlcxHiKw mapped to undefined
+1431552622925	Sync.Store.Bookmarks	DEBUG	Applying record ZVBWvlcxHiKw
+1431552622925	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552622925	Sync.Store.Bookmarks	DEBUG	Record ZVBWvlcxHiKw is not an orphan.
+1431552622925	Sync.Store.Bookmarks	DEBUG	created bookmark 51 under 3 as Erste Schritte https://www.mozilla.org/de/firefox/central/
+1431552622930	Sync.Engine.Bookmarks	DEBUG	BfnXPXyQUOSl mapped to undefined
+1431552622930	Sync.Store.Bookmarks	DEBUG	Applying record BfnXPXyQUOSl
+1431552622930	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552622930	Sync.Store.Bookmarks	DEBUG	Record BfnXPXyQUOSl is not an orphan.
+1431552622931	Sync.Store.Bookmarks	DEBUG	created bookmark 52 under 5 as How-to: Launchpad programming with Linux | Hackaday http://hackaday.com/2010/08/11/how-to-launchpad-programming-with-linux/
+1431552622932	Sync.Engine.Bookmarks	DEBUG	dczKSzRX3xGL mapped to undefined
+1431552622932	Sync.Store.Bookmarks	DEBUG	Applying record dczKSzRX3xGL
+1431552622932	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552622932	Sync.Store.Bookmarks	DEBUG	Record dczKSzRX3xGL is not an orphan.
+1431552622933	Sync.Store.Bookmarks	DEBUG	created bookmark 53 under 5 as PDF.js viewer http://www.cs.indiana.edu/~geobrown/book.pdf
+1431552622935	Sync.Engine.Bookmarks	DEBUG	ciFzAckF3c5T mapped to undefined
+1431552622935	Sync.Store.Bookmarks	DEBUG	Applying record ciFzAckF3c5T
+1431552622935	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552622935	Sync.Store.Bookmarks	DEBUG	Record ciFzAckF3c5T is not an orphan.
+1431552622936	Sync.Store.Bookmarks	DEBUG	created bookmark 54 under 5 as STM8/128-EVAL LED and timer Tutorial http://www.colecovision.eu/stm8/128-EVAL%20LED.shtml
+1431552622940	Sync.Engine.Bookmarks	DEBUG	N-fQNbuGEyuy mapped to undefined
+1431552622940	Sync.Store.Bookmarks	DEBUG	Applying record N-fQNbuGEyuy
+1431552622940	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552622940	Sync.Store.Bookmarks	DEBUG	Record N-fQNbuGEyuy is not an orphan.
+1431552622941	Sync.Store.Bookmarks	DEBUG	created bookmark 55 under 5 as dict.cc | sicher | English Dictionary http://www.dict.cc/?s=sicher
+1431552623051	Sync.Tracker.Bookmarks	DEBUG	Saving changed IDs to bookmarks
+1431552623128	Sync.Engine.Bookmarks	DEBUG	QSL9kAJWOZTU mapped to undefined
+1431552623128	Sync.Store.Bookmarks	DEBUG	Applying record QSL9kAJWOZTU
+1431552623128	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623128	Sync.Store.Bookmarks	DEBUG	Record QSL9kAJWOZTU is not an orphan.
+1431552623129	Sync.Store.Bookmarks	DEBUG	created bookmark 56 under 5 as The White House Names Dr. Ed Felten as Deputy U.S. Chief Technology Officer | The White House https://www.whitehouse.gov/blog/2015/05/11/white-house-names-dr-ed-felten-deputy-us-chief-technology-officer
+1431552623134	Sync.Engine.Bookmarks	DEBUG	SWMcllOgXclk mapped to undefined
+1431552623134	Sync.Store.Bookmarks	DEBUG	Applying record SWMcllOgXclk
+1431552623134	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623134	Sync.Store.Bookmarks	DEBUG	Record SWMcllOgXclk is not an orphan.
+1431552623135	Sync.Store.Bookmarks	DEBUG	created bookmark 57 under 5 as bgamari.github.com - SWD with OpenOCD and a Bus Blaster http://smart-cactus.org/~ben/posts/2014-08-23-swd-with-busblaster-and-openocd.html
+1431552623140	Sync.Engine.Bookmarks	DEBUG	cb5dXIXzlKi5 mapped to undefined
+1431552623140	Sync.Store.Bookmarks	DEBUG	Applying record cb5dXIXzlKi5
+1431552623140	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623140	Sync.Store.Bookmarks	DEBUG	Record cb5dXIXzlKi5 is not an orphan.
+1431552623141	Sync.Store.Bookmarks	DEBUG	created bookmark 58 under 5 as Soldering stations - JBC Soldering Tools http://www.jbctools.com/soldering-stations-category-1-menu-1.html
+1431552623143	Sync.Engine.Bookmarks	DEBUG	xnKmzP0aB67f mapped to undefined
+1431552623144	Sync.Store.Bookmarks	DEBUG	Applying record xnKmzP0aB67f
+1431552623144	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623144	Sync.Store.Bookmarks	DEBUG	Record xnKmzP0aB67f is not an orphan.
+1431552623145	Sync.Store.Bookmarks	DEBUG	created bookmark 59 under 5 as Emacs-RefSheet.pdf http://www.statistik.tu-dortmund.de/fileadmin/user_upload/Lehrstuehle/Genetik/Bib-Datei/Emacs-RefSheet.pdf
+1431552623148	Sync.Engine.Bookmarks	DEBUG	zp2ZB04QYXCQ mapped to undefined
+1431552623148	Sync.Store.Bookmarks	DEBUG	Applying record zp2ZB04QYXCQ
+1431552623148	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623148	Sync.Store.Bookmarks	DEBUG	Record zp2ZB04QYXCQ is not an orphan.
+1431552623149	Sync.Store.Bookmarks	DEBUG	created bookmark 60 under 5 as stm32.jpg (JPEG Image, 760 × 504 pixels) https://www.mikrocontroller.net/attachment/240247/stm32.jpg
+1431552623151	Sync.Engine.Bookmarks	DEBUG	TO7hnxcuswfT mapped to undefined
+1431552623151	Sync.Store.Bookmarks	DEBUG	Applying record TO7hnxcuswfT
+1431552623151	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623151	Sync.Store.Bookmarks	DEBUG	Record TO7hnxcuswfT is not an orphan.
+1431552623152	Sync.Store.Bookmarks	DEBUG	created bookmark 61 under 24 as Introduction: Programming STM32 ARMs under Linux: A Tutorial from Scratch http://www.triplespark.net/elec/pdev/arm/stm32.html
+1431552623154	Sync.Engine.Bookmarks	DEBUG	Lt4fHQpJ5cfX mapped to undefined
+1431552623154	Sync.Store.Bookmarks	DEBUG	Applying record Lt4fHQpJ5cfX
+1431552623154	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623154	Sync.Store.Bookmarks	DEBUG	Record Lt4fHQpJ5cfX is not an orphan.
+1431552623155	Sync.Store.Bookmarks	DEBUG	created bookmark 62 under 24 as Kleiner Funktionsgenerator mit Tiny2313 - Mikrocontroller.net http://www.mikrocontroller.net/topic/120124#new
+1431552623158	Sync.Engine.Bookmarks	DEBUG	73Dfg6QOf-dR mapped to undefined
+1431552623158	Sync.Store.Bookmarks	DEBUG	Applying record 73Dfg6QOf-dR
+1431552623158	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552623158	Sync.Store.Bookmarks	DEBUG	Record 73Dfg6QOf-dR is not an orphan.
+1431552623164	Sync.Store.Bookmarks	DEBUG	Created livemark 63 under 3 as heise online News, http://www.heise.de/newsticker/, http://heise.de.feedsportal.com/c/35207/f/653902/index.rss, GUID 73Dfg6QOf-dR
+1431552623171	Sync.Engine.Bookmarks	DEBUG	GoZDJl53DIuQ mapped to undefined
+1431552623172	Sync.Store.Bookmarks	DEBUG	Applying record GoZDJl53DIuQ
+1431552623172	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552623172	Sync.Store.Bookmarks	DEBUG	Record GoZDJl53DIuQ is not an orphan.
+1431552623173	Sync.Store.Bookmarks	DEBUG	Created livemark 64 under 3 as Hackaday, http://hackaday.com/, http://feeds2.feedburner.com/hackaday/LgoM, GUID GoZDJl53DIuQ
+1431552623175	Sync.Engine.Bookmarks	DEBUG	O6vg9Z7urvSe mapped to undefined
+1431552623175	Sync.Store.Bookmarks	DEBUG	Applying record O6vg9Z7urvSe
+1431552623175	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623175	Sync.Store.Bookmarks	DEBUG	Record O6vg9Z7urvSe is not an orphan.
+1431552623176	Sync.Store.Bookmarks	DEBUG	created bookmark 65 under 5 as Journal | embedded projects http://www.embedded-projects.net/journal/pdf.php
+1431552623179	Sync.Engine.Bookmarks	DEBUG	ScoYC4rmBd68 mapped to undefined
+1431552623179	Sync.Store.Bookmarks	DEBUG	Applying record ScoYC4rmBd68
+1431552623180	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552623180	Sync.Store.Bookmarks	DEBUG	Record ScoYC4rmBd68 is not an orphan.
+1431552623182	Sync.Store.Bookmarks	DEBUG	Created livemark 66 under 3 as SPIEGEL ONLINE - Schlagzeilen, http://www.spiegel.de/, http://www.spiegel.de/schlagzeilen/index.rss, GUID ScoYC4rmBd68
+1431552623184	Sync.Store.Bookmarks	DEBUG	Applying record dxuy-L-gtFqd
+1431552623184	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552623184	Sync.Store.Bookmarks	DEBUG	Record dxuy-L-gtFqd is not an orphan.
+1431552623186	Sync.Store.Bookmarks	DEBUG	created bookmark 67 under 3 as Most Visited place:sort=8&maxResults=10
+1431552623189	Sync.Engine.Bookmarks	DEBUG	e2bujoGVV1h8 mapped to XtXRkf6jzqN3
+1431552623189	Sync.Engine.Bookmarks	DEBUG	Switching local ID to incoming: XtXRkf6jzqN3 -> e2bujoGVV1h8
+1431552623189	Sync.Store.Bookmarks	DEBUG	Changing GUID XtXRkf6jzqN3 to e2bujoGVV1h8
+1431552623189	Sync.Engine.Bookmarks	DEBUG	Local item after duplication: age=1431552623.189; modified=true; exists=true
+1431552623190	Sync.Engine.Bookmarks	WARN	DATA LOSS: Both local and remote changes to record: e2bujoGVV1h8
+1431552623190	Sync.Store.Bookmarks	DEBUG	Applying record e2bujoGVV1h8
+1431552623190	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552623190	Sync.Store.Bookmarks	DEBUG	Record e2bujoGVV1h8 is not an orphan.
+1431552623193	Sync.Engine.Bookmarks	DEBUG	lkGs3XQd6-GV mapped to undefined
+1431552623193	Sync.Store.Bookmarks	DEBUG	Applying record lkGs3XQd6-GV
+1431552623193	Sync.Store.Bookmarks	DEBUG	Local parent is toolbar
+1431552623193	Sync.Store.Bookmarks	DEBUG	Record lkGs3XQd6-GV is not an orphan.
+1431552623195	Sync.Store.Bookmarks	DEBUG	Created livemark 68 under 3 as Neue Beiträge in allen Foren, http://www.mikrocontroller.net/forum, http://www.mikrocontroller.net/feed/global, GUID lkGs3XQd6-GV
+1431552623196	Sync.Engine.Bookmarks	DEBUG	292bBqwtnynh mapped to undefined
+1431552623196	Sync.Store.Bookmarks	DEBUG	Applying record 292bBqwtnynh
+1431552623196	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623197	Sync.Store.Bookmarks	DEBUG	Record 292bBqwtnynh is not an orphan.
+1431552623197	Sync.Store.Bookmarks	DEBUG	created bookmark 69 under 5 as MSP430 Launchpad on Linux: Firts steps to work with msp430 launchpad on linux http://launchpadlinux.blogspot.de/2012/10/firts-steps-to-work-with-msp430.html
+1431552623199	Sync.Engine.Bookmarks	DEBUG	5YH3VRW7bTXN mapped to undefined
+1431552623199	Sync.Store.Bookmarks	DEBUG	Applying record 5YH3VRW7bTXN
+1431552623199	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623199	Sync.Store.Bookmarks	DEBUG	Record 5YH3VRW7bTXN is not an orphan.
+1431552623200	Sync.Store.Bookmarks	DEBUG	created bookmark 70 under 24 as STM32/Cortex-M3 HOWTO: Development under Ubuntu. http://fun-tech.se/stm32/index.php
+1431552623201	Sync.Engine.Bookmarks	DEBUG	AG9-kj9uHV2u mapped to undefined
+1431552623201	Sync.Store.Bookmarks	DEBUG	Applying record AG9-kj9uHV2u
+1431552623201	Sync.Store.Bookmarks	DEBUG	Local parent is menu
+1431552623201	Sync.Store.Bookmarks	DEBUG	Record AG9-kj9uHV2u is not an orphan.
+1431552623202	Sync.Store.Bookmarks	DEBUG	created bookmark 71 under 2 as Fingers elektrische Welt • Thema anzeigen - [Links] Grundlagen und Einstieg in die Elektronik http://www.fingers-welt.de/phpBB/viewtopic.php?f=3&t=69
+1431552623210	Sync.Engine.Bookmarks	DEBUG	BUsC_0sWKMk6 mapped to undefined
+1431552623210	Sync.Store.Bookmarks	DEBUG	Applying record BUsC_0sWKMk6
+1431552623210	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623210	Sync.Store.Bookmarks	DEBUG	Record BUsC_0sWKMk6 is not an orphan.
+1431552623212	Sync.Store.Bookmarks	DEBUG	created bookmark 72 under 5 as Die_Lernbetty - Die_Lernbetty.pdf http://www.mikrocontroller.net/attachment/160723/Die_Lernbetty.pdf
+1431552623214	Sync.Engine.Bookmarks	DEBUG	FJZ1K3B1eDOv mapped to undefined
+1431552623214	Sync.Store.Bookmarks	DEBUG	Applying record FJZ1K3B1eDOv
+1431552623214	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623214	Sync.Store.Bookmarks	DEBUG	Record FJZ1K3B1eDOv is not an orphan.
+1431552623215	Sync.Store.Bookmarks	DEBUG	created bookmark 73 under 5 as Scientific Instruments Using the TI MSP430 http://mspsci.blogspot.de/
+1431552623216	Sync.Engine.Bookmarks	DEBUG	Fw36BGr797dp mapped to undefined
+1431552623216	Sync.Store.Bookmarks	DEBUG	Applying record Fw36BGr797dp
+1431552623216	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623216	Sync.Store.Bookmarks	DEBUG	Record Fw36BGr797dp is not an orphan.
+1431552623217	Sync.Store.Bookmarks	DEBUG	created bookmark 74 under 5 as Your Pocs https://www.dbook.org/pocs/
+1431552623219	Sync.Engine.Bookmarks	DEBUG	IwnJ2c8xsdxU mapped to undefined
+1431552623219	Sync.Store.Bookmarks	DEBUG	Applying record IwnJ2c8xsdxU
+1431552623219	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623219	Sync.Store.Bookmarks	DEBUG	Record IwnJ2c8xsdxU is not an orphan.
+1431552623220	Sync.Store.Bookmarks	DEBUG	created bookmark 75 under 5 as View topic - Free Online Books on Electronics :: AVR Freaks http://www.avrfreaks.net/index.php?name=PNphpBB2&file=viewtopic&t=25970
+1431552623222	Sync.Engine.Bookmarks	DEBUG	M0QDv1afS-De mapped to undefined
+1431552623222	Sync.Store.Bookmarks	DEBUG	Applying record M0QDv1afS-De
+1431552623222	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623222	Sync.Store.Bookmarks	DEBUG	Record M0QDv1afS-De is not an orphan.
+1431552623222	Sync.Store.Bookmarks	DEBUG	created bookmark 76 under 5 as Scripting Debug Sessions: Python for GDB Remote Serial Protocol http://hackaday.com/2014/09/22/scripting-debug-sessions-python-for-gdb-remote-serial-protocol/
+1431552623224	Sync.Engine.Bookmarks	DEBUG	MPp5f9BXKT68 mapped to undefined
+1431552623224	Sync.Store.Bookmarks	DEBUG	Applying record MPp5f9BXKT68
+1431552623224	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623225	Sync.Store.Bookmarks	DEBUG	Record MPp5f9BXKT68 is not an orphan.
+1431552623225	Sync.Store.Bookmarks	DEBUG	created bookmark 77 under 5 as Niederlande: Mustafa Karasahin aus Dordrecht droht Gefängnis - SPIEGEL ONLINE http://www.spiegel.de/panorama/justiz/niederlande-mustafa-karasahin-aus-dordrecht-droht-gefaengnis-a-993759.html
+1431552623634	Sync.Engine.Bookmarks	DEBUG	NH8Qx0tTUG64 mapped to undefined
+1431552623634	Sync.Store.Bookmarks	DEBUG	Applying record NH8Qx0tTUG64
+1431552623634	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623634	Sync.Store.Bookmarks	DEBUG	Record NH8Qx0tTUG64 is not an orphan.
+1431552623636	Sync.Store.Bookmarks	DEBUG	created bookmark 78 under 5 as Electronic circuits based on AVR microcontrollers http://www.serasidis.gr/index.php
+1431552623638	Sync.Engine.Bookmarks	DEBUG	ROhGjdUjE0l7 mapped to undefined
+1431552623638	Sync.Store.Bookmarks	DEBUG	Applying record ROhGjdUjE0l7
+1431552623638	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623638	Sync.Store.Bookmarks	DEBUG	Record ROhGjdUjE0l7 is not an orphan.
+1431552623639	Sync.Store.Bookmarks	DEBUG	created bookmark 79 under 5 as libimobiledevice - A cross-platform software library and tools to communicate with iOS devices natively http://www.libimobiledevice.org/
+1431552623641	Sync.Engine.Bookmarks	DEBUG	SyFLs-rO9iMv mapped to undefined
+1431552623641	Sync.Store.Bookmarks	DEBUG	Applying record SyFLs-rO9iMv
+1431552623641	Sync.Store.Bookmarks	DEBUG	Local parent is UtyH24q8klsy
+1431552623641	Sync.Store.Bookmarks	DEBUG	Record SyFLs-rO9iMv is not an orphan.
+1431552623642	Sync.Store.Bookmarks	DEBUG	created bookmark 80 under 20 as Machen Sie mit https://www.mozilla.org/de/contribute/
+1431552623643	Sync.Engine.Bookmarks	DEBUG	Vd4civ84DZL_ mapped to undefined
+1431552623643	Sync.Store.Bookmarks	DEBUG	Applying record Vd4civ84DZL_
+1431552623644	Sync.Store.Bookmarks	DEBUG	Local parent is menu
+1431552623644	Sync.Store.Bookmarks	DEBUG	Record Vd4civ84DZL_ is not an orphan.
+1431552623644	Sync.Store.Bookmarks	DEBUG	created bookmark 81 under 2 as Erfahrungsaustausch über Pollin & Sortimente - Fingers elektrische Welt (Backup) http://www.fingers-welt.de/phpBB/backup/79/29607_180.htm
+1431552623646	Sync.Engine.Bookmarks	DEBUG	WQodkVTHCPzx mapped to undefined
+1431552623646	Sync.Store.Bookmarks	DEBUG	Applying record WQodkVTHCPzx
+1431552623646	Sync.Store.Bookmarks	DEBUG	Local parent is menu
+1431552623646	Sync.Store.Bookmarks	DEBUG	Record WQodkVTHCPzx is not an orphan.
+1431552623647	Sync.Store.Bookmarks	DEBUG	created bookmark 82 under 2 as https://duckduckgo.com/?k7=222&kj=222&ko=s&ks=m&kw=w&k9=50f148&ku=1&k8=ccc&kaa=ad4ad2&kx=A1AC25&kae=t&kf=fw https://duckduckgo.com/?k7=222&kj=222&ko=s&ks=m&kw=w&k9=50f148&ku=1&k8=ccc&kaa=ad4ad2&kx=A1AC25&kae=t&kf=fw
+1431552623649	Sync.Engine.Bookmarks	DEBUG	WgtyFfKS-_8K mapped to undefined
+1431552623649	Sync.Store.Bookmarks	DEBUG	Applying record WgtyFfKS-_8K
+1431552623649	Sync.Store.Bookmarks	DEBUG	Local parent is menu
+1431552623649	Sync.Store.Bookmarks	DEBUG	Record WgtyFfKS-_8K is not an orphan.
+1431552623650	Sync.Store.Bookmarks	DEBUG	created bookmark 83 under 2 as Segfault http://segfault.linuxmint.com/
+1431552623652	Sync.Engine.Bookmarks	DEBUG	XWlzktc0a1cI mapped to undefined
+1431552623652	Sync.Store.Bookmarks	DEBUG	Applying record XWlzktc0a1cI
+1431552623652	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623652	Sync.Store.Bookmarks	DEBUG	Record XWlzktc0a1cI is not an orphan.
+1431552623653	Sync.Store.Bookmarks	DEBUG	created bookmark 84 under 5 as Intro to PIC Microcontrollers http://www.instructables.com/id/EVET56NFS0EP286TGM/
+1431552623656	Sync.Engine.Bookmarks	DEBUG	XsMQECP2SjpE mapped to undefined
+1431552623656	Sync.Store.Bookmarks	DEBUG	Applying record XsMQECP2SjpE
+1431552623656	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623656	Sync.Store.Bookmarks	DEBUG	Record XsMQECP2SjpE is not an orphan.
+1431552623656	Sync.Store.Bookmarks	DEBUG	created bookmark 85 under 5 as Homemade Soldering Stations for Cheapy Irons http://hackaday.com/2014/08/10/homemade-soldering-stations-for-cheapy-irons/
+1431552623658	Sync.Engine.Bookmarks	DEBUG	Yvvr1vRLJcTS mapped to undefined
+1431552623658	Sync.Store.Bookmarks	DEBUG	Applying record Yvvr1vRLJcTS
+1431552623658	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623658	Sync.Store.Bookmarks	DEBUG	Record Yvvr1vRLJcTS is not an orphan.
+1431552623659	Sync.Store.Bookmarks	DEBUG	created bookmark 86 under 5 as 82OS-620FGMB.pdf file:///home/david/Downloads/82OS-620FGMB.pdf
+1431552623661	Sync.Engine.Bookmarks	DEBUG	Z3tRAewYtacF mapped to undefined
+1431552623661	Sync.Store.Bookmarks	DEBUG	Applying record Z3tRAewYtacF
+1431552623661	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623661	Sync.Store.Bookmarks	DEBUG	Record Z3tRAewYtacF is not an orphan.
+1431552623662	Sync.Store.Bookmarks	DEBUG	created bookmark 87 under 5 as Die Lernbetty: Die SwissBetty von Pollin als ARM-Evalboard - Mikrocontroller.net http://www.mikrocontroller.net/topic/277603#new
+1431552623664	Sync.Engine.Bookmarks	DEBUG	ZbMeCRBLl-Wq mapped to undefined
+1431552623664	Sync.Store.Bookmarks	DEBUG	Applying record ZbMeCRBLl-Wq
+1431552623664	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623664	Sync.Store.Bookmarks	DEBUG	Record ZbMeCRBLl-Wq is not an orphan.
+1431552623665	Sync.Store.Bookmarks	DEBUG	created bookmark 88 under 5 as AVR-Basteleien http://www.roehres-home.de/avr/multimeter/index.html
+1431552623666	Sync.Engine.Bookmarks	DEBUG	_nk8yLHJIgke mapped to undefined
+1431552623666	Sync.Store.Bookmarks	DEBUG	Applying record _nk8yLHJIgke
+1431552623666	Sync.Store.Bookmarks	DEBUG	Local parent is ry3JblXNrBNz
+1431552623667	Sync.Store.Bookmarks	DEBUG	Parent is undefined; reparenting to unfiled.
+1431552623667	Sync.Store.Bookmarks	DEBUG	created bookmark 89 under 5 as Customize Firefox http://www.mozilla.com/en-US/firefox/customize/
+1431552623669	Sync.Engine.Bookmarks	DEBUG	_uRyng77sOZ7 mapped to undefined
+1431552623669	Sync.Store.Bookmarks	DEBUG	Applying record _uRyng77sOZ7
+1431552623669	Sync.Store.Bookmarks	DEBUG	Local parent is menu
+1431552623669	Sync.Store.Bookmarks	DEBUG	Record _uRyng77sOZ7 is not an orphan.
+1431552623670	Sync.Store.Bookmarks	DEBUG	created bookmark 90 under 2 as DistroWatch http://distrowatch.com/
+1431552623672	Sync.Engine.Bookmarks	DEBUG	bBymr8dfy3Ug mapped to undefined
+1431552623672	Sync.Store.Bookmarks	DEBUG	Applying record bBymr8dfy3Ug
+1431552623672	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623672	Sync.Store.Bookmarks	DEBUG	Record bBymr8dfy3Ug is not an orphan.
+1431552623673	Sync.Store.Bookmarks	DEBUG	created bookmark 91 under 5 as iPhone iOS4 Music on Ubuntu Linux http://davesource.com/Solutions/20101105.iPhone-iOS4-Music-on-Ubuntu-Linux/
+1431552623674	Sync.Engine.Bookmarks	DEBUG	cmqx6IfGpm9N mapped to undefined
+1431552623674	Sync.Store.Bookmarks	DEBUG	Applying record cmqx6IfGpm9N
+1431552623674	Sync.Store.Bookmarks	DEBUG	Local parent is UtyH24q8klsy
+1431552623674	Sync.Store.Bookmarks	DEBUG	Record cmqx6IfGpm9N is not an orphan.
+1431552623675	Sync.Store.Bookmarks	DEBUG	created bookmark 92 under 20 as Firefox anpassen https://www.mozilla.org/de/firefox/customize/
+1431552623677	Sync.Engine.Bookmarks	DEBUG	hkg0XoSUYjZS mapped to undefined
+1431552623677	Sync.Store.Bookmarks	DEBUG	Applying record hkg0XoSUYjZS
+1431552623677	Sync.Store.Bookmarks	DEBUG	Local parent is menu
+1431552623677	Sync.Store.Bookmarks	DEBUG	Record hkg0XoSUYjZS is not an orphan.
+1431552623677	Sync.Store.Bookmarks	DEBUG	created bookmark 93 under 2 as Electronic Starter Kit 485 Components, Raspberry Pi + Multimeter,Golden Edition | eBay http://www.ebay.co.uk/itm/like/251443607274?lpid=83&clk_rvr_id=613306137577
+1431552623680	Sync.Engine.Bookmarks	DEBUG	hyM6i-fmGNiK mapped to undefined
+1431552623680	Sync.Store.Bookmarks	DEBUG	Applying record hyM6i-fmGNiK
+1431552623680	Sync.Store.Bookmarks	DEBUG	Local parent is UtyH24q8klsy
+1431552623681	Sync.Store.Bookmarks	DEBUG	Record hyM6i-fmGNiK is not an orphan.
+1431552623682	Sync.Store.Bookmarks	DEBUG	created bookmark 94 under 20 as Über uns https://www.mozilla.org/de/about/
+1431552623684	Sync.Engine.Bookmarks	DEBUG	jLsPc6Dw38FC mapped to undefined
+1431552623684	Sync.Store.Bookmarks	DEBUG	Applying record jLsPc6Dw38FC
+1431552623684	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623684	Sync.Store.Bookmarks	DEBUG	Record jLsPc6Dw38FC is not an orphan.
+1431552623685	Sync.Store.Bookmarks	DEBUG	created bookmark 95 under 5 as Watterott electronic http://www.watterott.com/index.php?page=index
+1431552623687	Sync.Engine.Bookmarks	DEBUG	mgNXIOnMbfI9 mapped to undefined
+1431552623687	Sync.Store.Bookmarks	DEBUG	Applying record mgNXIOnMbfI9
+1431552623687	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623688	Sync.Store.Bookmarks	DEBUG	Record mgNXIOnMbfI9 is not an orphan.
+1431552623688	Sync.Store.Bookmarks	DEBUG	created bookmark 96 under 5 as Resources for getting started with AVRs | Evil Mad Scientist Laboratories http://www.evilmadscientist.com/2007/resources-for-getting-started-with-avrs/
+1431552623691	Sync.Engine.Bookmarks	DEBUG	tLCQwk47Z670 mapped to undefined
+1431552623691	Sync.Store.Bookmarks	DEBUG	Applying record tLCQwk47Z670
+1431552623691	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623691	Sync.Store.Bookmarks	DEBUG	Record tLCQwk47Z670 is not an orphan.
+1431552623692	Sync.Store.Bookmarks	DEBUG	created bookmark 97 under 5 as PCB exposure box :: Based on ATmega8 AVR microcontroller. http://www.serasidis.gr/circuits/PCB_Exposure_Box/pcbExposureBox.htm
+1431552623694	Sync.Engine.Bookmarks	DEBUG	v-STkQ6xJ4WH mapped to undefined
+1431552623694	Sync.Store.Bookmarks	DEBUG	Applying record v-STkQ6xJ4WH
+1431552623694	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623694	Sync.Store.Bookmarks	DEBUG	Record v-STkQ6xJ4WH is not an orphan.
+1431552623695	Sync.Store.Bookmarks	DEBUG	created bookmark 98 under 5 as Goal? Copyright! Britischer Fußball-Verband warnt Fans | heise online http://www.heise.de/newsticker/meldung/Goal-Copyright-Britischer-Fussball-Verband-warnt-Fans-2293605.html
+1431552623696	Sync.Engine.Bookmarks	DEBUG	yFmjJ8H3SZaR mapped to undefined
+1431552623697	Sync.Store.Bookmarks	DEBUG	Applying record yFmjJ8H3SZaR
+1431552623697	Sync.Store.Bookmarks	DEBUG	Local parent is UtyH24q8klsy
+1431552623697	Sync.Store.Bookmarks	DEBUG	Record yFmjJ8H3SZaR is not an orphan.
+1431552623698	Sync.Store.Bookmarks	DEBUG	created bookmark 99 under 20 as Hilfe und Anleitungen https://www.mozilla.org/de/firefox/help/
+1431552623699	Sync.Engine.Bookmarks	DEBUG	-y0ukxUtc25F mapped to undefined
+1431552623699	Sync.Store.Bookmarks	DEBUG	Applying record -y0ukxUtc25F
+1431552623699	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623699	Sync.Store.Bookmarks	DEBUG	Record -y0ukxUtc25F is not an orphan.
+1431552623700	Sync.Store.Bookmarks	DEBUG	created bookmark 100 under 24 as New Chip Alert: The ESP8266 WiFi Module (It’s $5) http://hackaday.com/2014/08/26/new-chip-alert-the-esp8266-wifi-module-its-5/
+1431552623701	Sync.Engine.Bookmarks	DEBUG	2Auix5Fu0GbQ mapped to undefined
+1431552623702	Sync.Store.Bookmarks	DEBUG	Applying record 2Auix5Fu0GbQ
+1431552623702	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623702	Sync.Store.Bookmarks	DEBUG	Record 2Auix5Fu0GbQ is not an orphan.
+1431552623702	Sync.Store.Bookmarks	DEBUG	created bookmark 101 under 24 as Gabotronics Forum::XMEGA Xprotolab::Trouble with Xprotolab http://www.gabotronics.com/component/option,com_ccboard/Itemid,12/forum,12/topic,29/view,postlist/
+1431552623705	Sync.Engine.Bookmarks	DEBUG	4aPZ9eNr9zYn mapped to undefined
+1431552623705	Sync.Store.Bookmarks	DEBUG	Applying record 4aPZ9eNr9zYn
+1431552623705	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623705	Sync.Store.Bookmarks	DEBUG	Record 4aPZ9eNr9zYn is not an orphan.
+1431552623706	Sync.Store.Bookmarks	DEBUG	created bookmark 102 under 24 as Open Programmer, an open source USB programmer for PIC, ATMEL AVR, I2C-SPI-MicroWire-OneWire-UNIO EEPROM http://openprog.altervista.org/OP_eng.html
+1431552623707	Sync.Engine.Bookmarks	DEBUG	70QOICkyMCSg mapped to undefined
+1431552623707	Sync.Store.Bookmarks	DEBUG	Applying record 70QOICkyMCSg
+1431552623707	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623707	Sync.Store.Bookmarks	DEBUG	Record 70QOICkyMCSg is not an orphan.
+1431552623708	Sync.Store.Bookmarks	DEBUG	created bookmark 103 under 24 as AVR-Projekte.de http://www.avr-projekte.de/
+1431552623710	Sync.Engine.Bookmarks	DEBUG	7iQdtnrifUK6 mapped to undefined
+1431552623710	Sync.Store.Bookmarks	DEBUG	Applying record 7iQdtnrifUK6
+1431552623710	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623710	Sync.Store.Bookmarks	DEBUG	Record 7iQdtnrifUK6 is not an orphan.
+1431552623711	Sync.Store.Bookmarks	DEBUG	created bookmark 104 under 24 as Firefox: Customize with add-ons https://addons.mozilla.org/android/
+1431552623713	Sync.Engine.Bookmarks	DEBUG	7kRCVO-bFLp3 mapped to undefined
+1431552623713	Sync.Store.Bookmarks	DEBUG	Applying record 7kRCVO-bFLp3
+1431552623713	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623714	Sync.Store.Bookmarks	DEBUG	Record 7kRCVO-bFLp3 is not an orphan.
+1431552623714	Sync.Store.Bookmarks	DEBUG	created bookmark 105 under 24 as Elektronik für den Modellbau http://www.klaus-leidinger.de/mp/index.html
+1431552623716	Sync.Engine.Bookmarks	DEBUG	7uWSEAfJMmiV mapped to undefined
+1431552623716	Sync.Store.Bookmarks	DEBUG	Applying record 7uWSEAfJMmiV
+1431552623716	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623716	Sync.Store.Bookmarks	DEBUG	Record 7uWSEAfJMmiV is not an orphan.
+1431552623717	Sync.Store.Bookmarks	DEBUG	created bookmark 106 under 24 as Firefox Marketplace https://marketplace.firefox.com/
+1431552623719	Sync.Engine.Bookmarks	DEBUG	8YMVWSlnPC25 mapped to ndjgq2936FeH
+1431552623719	Sync.Engine.Bookmarks	DEBUG	Switching local ID to incoming: ndjgq2936FeH -> 8YMVWSlnPC25
+1431552623719	Sync.Store.Bookmarks	DEBUG	Changing GUID ndjgq2936FeH to 8YMVWSlnPC25
+1431552623720	Sync.Engine.Bookmarks	DEBUG	Local item after duplication: age=1431552623.72; modified=true; exists=true
+1431552623721	Sync.Engine.Bookmarks	WARN	DATA LOSS: Both local and remote changes to record: 8YMVWSlnPC25
+1431552623721	Sync.Store.Bookmarks	DEBUG	Applying record 8YMVWSlnPC25
+1431552623721	Sync.Store.Bookmarks	DEBUG	Local parent is ry3JblXNrBNz
+1431552623725	Sync.Engine.Bookmarks	DEBUG	CehZ7HrYROIJ mapped to undefined
+1431552623725	Sync.Store.Bookmarks	DEBUG	Applying record CehZ7HrYROIJ
+1431552623726	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623726	Sync.Store.Bookmarks	DEBUG	Record CehZ7HrYROIJ is not an orphan.
+1431552623726	Sync.Store.Bookmarks	DEBUG	created bookmark 107 under 24 as Projects » johngineer http://www.johngineer.com/blog/?page_id=997
+1431552623729	Sync.Engine.Bookmarks	DEBUG	CgC0ZC6Xwk8f mapped to undefined
+1431552623729	Sync.Store.Bookmarks	DEBUG	Applying record CgC0ZC6Xwk8f
+1431552623729	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623729	Sync.Store.Bookmarks	DEBUG	Record CgC0ZC6Xwk8f is not an orphan.
+1431552623730	Sync.Store.Bookmarks	DEBUG	created bookmark 108 under 24 as Extrinsic Motivation: BASIC For Bluetooth http://hackaday.com/2014/09/03/extrinsic-motivation-basic-for-bluetooth/
+1431552623731	Sync.Engine.Bookmarks	DEBUG	DAeBolANViox mapped to undefined
+1431552623731	Sync.Store.Bookmarks	DEBUG	Applying record DAeBolANViox
+1431552623731	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623731	Sync.Store.Bookmarks	DEBUG	Record DAeBolANViox is not an orphan.
+1431552623732	Sync.Store.Bookmarks	DEBUG	created bookmark 109 under 24 as Welcome to mathar.com! http://www.mathar.com/index.html
+1431552623734	Sync.Engine.Bookmarks	DEBUG	GjP0df1w77A2 mapped to undefined
+1431552623734	Sync.Store.Bookmarks	DEBUG	Applying record GjP0df1w77A2
+1431552623734	Sync.Store.Bookmarks	DEBUG	Local parent is ry3JblXNrBNz
+1431552623735	Sync.Store.Bookmarks	DEBUG	Parent is undefined; reparenting to unfiled.
+1431552623736	Sync.Store.Bookmarks	DEBUG	created bookmark 110 under 5 as About Us http://www.mozilla.com/en-US/about/
+1431552623738	Sync.Engine.Bookmarks	DEBUG	I_xKF0yUECZu mapped to undefined
+1431552623738	Sync.Store.Bookmarks	DEBUG	Applying record I_xKF0yUECZu
+1431552623738	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623738	Sync.Store.Bookmarks	DEBUG	Record I_xKF0yUECZu is not an orphan.
+1431552623739	Sync.Store.Bookmarks	DEBUG	created bookmark 111 under 24 as Low Dropout Adjustable Breadboard Power Supply http://www.electroschematics.com/10362/low-dropout-adjustable-breadboard-power-supply/
+1431552623740	Sync.Engine.Bookmarks	DEBUG	IaZnLKhRBYsm mapped to undefined
+1431552623740	Sync.Store.Bookmarks	DEBUG	Applying record IaZnLKhRBYsm
+1431552623740	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623740	Sync.Store.Bookmarks	DEBUG	Record IaZnLKhRBYsm is not an orphan.
+1431552623741	Sync.Store.Bookmarks	DEBUG	created bookmark 112 under 24 as Firefox: Support https://support.mozilla.org/products/mobile
+1431552623742	Sync.Engine.Bookmarks	DEBUG	IuThVVQvjj4S mapped to undefined
+1431552623743	Sync.Store.Bookmarks	DEBUG	Applying record IuThVVQvjj4S
+1431552623743	Sync.Store.Bookmarks	DEBUG	Local parent is ry3JblXNrBNz
+1431552623743	Sync.Store.Bookmarks	DEBUG	Parent is undefined; reparenting to unfiled.
+1431552623743	Sync.Store.Bookmarks	DEBUG	created bookmark 113 under 5 as Get Involved http://www.mozilla.com/en-US/firefox/community/
+1431552623745	Sync.Engine.Bookmarks	DEBUG	NTTH0bVsUK7A mapped to undefined
+1431552623745	Sync.Store.Bookmarks	DEBUG	Applying record NTTH0bVsUK7A
+1431552623745	Sync.Store.Bookmarks	DEBUG	Local parent is ry3JblXNrBNz
+1431552623745	Sync.Store.Bookmarks	DEBUG	Parent is undefined; reparenting to unfiled.
+1431552623746	Sync.Store.Bookmarks	DEBUG	created bookmark 114 under 5 as Help and Tutorials http://www.mozilla.com/en-US/firefox/help/
+1431552623748	Sync.Engine.Bookmarks	DEBUG	NxaT2-C7JryE mapped to Es4t5U6FLc5E
+1431552623748	Sync.Engine.Bookmarks	DEBUG	Switching local ID to incoming: Es4t5U6FLc5E -> NxaT2-C7JryE
+1431552623748	Sync.Store.Bookmarks	DEBUG	Changing GUID Es4t5U6FLc5E to NxaT2-C7JryE
+1431552623749	Sync.Engine.Bookmarks	DEBUG	Local item after duplication: age=1431552623.749; modified=true; exists=true
+1431552623750	Sync.Engine.Bookmarks	WARN	DATA LOSS: Both local and remote changes to record: NxaT2-C7JryE
+1431552623750	Sync.Store.Bookmarks	DEBUG	Applying record NxaT2-C7JryE
+1431552623750	Sync.Store.Bookmarks	DEBUG	Local parent is ry3JblXNrBNz
+1431552623754	Sync.Engine.Bookmarks	DEBUG	RAI5-nxD4dnL mapped to undefined
+1431552623754	Sync.Store.Bookmarks	DEBUG	Applying record RAI5-nxD4dnL
+1431552623754	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623754	Sync.Store.Bookmarks	DEBUG	Record RAI5-nxD4dnL is not an orphan.
+1431552623755	Sync.Store.Bookmarks	DEBUG	created bookmark 115 under 24 as Kensington Power Supply Hacks http://digitaldiy.io/articles/electronics/general/447-kensington-power-supply-hacks#.U94JKY5CSpZ
+1431552623756	Sync.Engine.Bookmarks	DEBUG	RU4kccU-adds mapped to undefined
+1431552623756	Sync.Store.Bookmarks	DEBUG	Applying record RU4kccU-adds
+1431552623756	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623756	Sync.Store.Bookmarks	DEBUG	Record RU4kccU-adds is not an orphan.
+1431552623757	Sync.Store.Bookmarks	DEBUG	created bookmark 116 under 24 as Open Source Innovation Community - Open Innovation Projects http://www.open-innovation-projects.org/
+1431552623760	Sync.Engine.Bookmarks	DEBUG	TsCIxlNWZD29 mapped to undefined
+1431552623760	Sync.Store.Bookmarks	DEBUG	Applying record TsCIxlNWZD29
+1431552623760	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623760	Sync.Store.Bookmarks	DEBUG	Record TsCIxlNWZD29 is not an orphan.
+1431552623761	Sync.Store.Bookmarks	DEBUG	created bookmark 117 under 24 as LM317 Voltage Calculator - Electric Circuit http://www.reuk.co.uk/LM317-Voltage-Calculator.htm
+1431552623763	Sync.Engine.Bookmarks	DEBUG	Wmqpozf5CU25 mapped to undefined
+1431552623763	Sync.Store.Bookmarks	DEBUG	Applying record Wmqpozf5CU25
+1431552623763	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623763	Sync.Store.Bookmarks	DEBUG	Record Wmqpozf5CU25 is not an orphan.
+1431552623764	Sync.Store.Bookmarks	DEBUG	created bookmark 118 under 24 as uctools http://uctools.github.io/
+1431552623766	Sync.Engine.Bookmarks	DEBUG	aIPi21vU3HEd mapped to undefined
+1431552623766	Sync.Store.Bookmarks	DEBUG	Applying record aIPi21vU3HEd
+1431552623766	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623766	Sync.Store.Bookmarks	DEBUG	Record aIPi21vU3HEd is not an orphan.
+1431552623767	Sync.Store.Bookmarks	DEBUG	created bookmark 119 under 24 as Dangerous Prototypes http://dangerousprototypes.com/page/2/
+1431552623768	Sync.Engine.Bookmarks	DEBUG	k2GY5A3J7_5O mapped to undefined
+1431552623768	Sync.Store.Bookmarks	DEBUG	Applying record k2GY5A3J7_5O
+1431552623768	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623768	Sync.Store.Bookmarks	DEBUG	Record k2GY5A3J7_5O is not an orphan.
+1431552623769	Sync.Store.Bookmarks	DEBUG	created bookmark 120 under 24 as Welcome to mathar.com! http://www.mathar.com/msp430.html
+1431552623771	Sync.Engine.Bookmarks	DEBUG	mJAFR_7XaEmv mapped to 4TRxQQDhw1vy
+1431552623771	Sync.Engine.Bookmarks	DEBUG	Switching local ID to incoming: 4TRxQQDhw1vy -> mJAFR_7XaEmv
+1431552623771	Sync.Store.Bookmarks	DEBUG	Changing GUID 4TRxQQDhw1vy to mJAFR_7XaEmv
+1431552623772	Sync.Engine.Bookmarks	DEBUG	Local item after duplication: age=1431552623.772; modified=true; exists=true
+1431552623773	Sync.Engine.Bookmarks	WARN	DATA LOSS: Both local and remote changes to record: mJAFR_7XaEmv
+1431552623773	Sync.Store.Bookmarks	DEBUG	Applying record mJAFR_7XaEmv
+1431552623773	Sync.Store.Bookmarks	DEBUG	Local parent is ry3JblXNrBNz
+1431552623777	Sync.Engine.Bookmarks	DEBUG	mncqPvRLZlQx mapped to undefined
+1431552623777	Sync.Store.Bookmarks	DEBUG	Applying record mncqPvRLZlQx
+1431552623777	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623777	Sync.Store.Bookmarks	DEBUG	Record mncqPvRLZlQx is not an orphan.
+1431552623777	Sync.Store.Bookmarks	DEBUG	created bookmark 121 under 24 as Firefox: About your browser about:firefox
+1431552623779	Sync.Engine.Bookmarks	DEBUG	oFrlIvMeQr3h mapped to undefined
+1431552623779	Sync.Store.Bookmarks	DEBUG	Applying record oFrlIvMeQr3h
+1431552623779	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623779	Sync.Store.Bookmarks	DEBUG	Record oFrlIvMeQr3h is not an orphan.
+1431552623780	Sync.Store.Bookmarks	DEBUG	created bookmark 122 under 24 as Phil-Zone Philips Projektsammlung http://phil-zone.de/
+1431552623782	Sync.Engine.Bookmarks	DEBUG	oh_6bkcuf22M mapped to undefined
+1431552623782	Sync.Store.Bookmarks	DEBUG	Applying record oh_6bkcuf22M
+1431552623782	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623782	Sync.Store.Bookmarks	DEBUG	Record oh_6bkcuf22M is not an orphan.
+1431552623784	Sync.Store.Bookmarks	DEBUG	created bookmark 123 under 24 as AVR Projects http://www.avrprojects.net/index.php/avr-project
+1431552623788	Sync.Engine.Bookmarks	DEBUG	prg6lboZqtaB mapped to undefined
+1431552623788	Sync.Store.Bookmarks	DEBUG	Applying record prg6lboZqtaB
+1431552623788	Sync.Store.Bookmarks	DEBUG	Local parent is menu
+1431552623788	Sync.Store.Bookmarks	DEBUG	Record prg6lboZqtaB is not an orphan.
+1431552623789	Sync.Store.Bookmarks	DEBUG	created bookmark 124 under 2 as Topics http://www.allacronyms.com/aa-topics
+1431552623790	Sync.Engine.Bookmarks	DEBUG	pzaXWdYGFKL8 mapped to undefined
+1431552623790	Sync.Store.Bookmarks	DEBUG	Applying record pzaXWdYGFKL8
+1431552623790	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623791	Sync.Store.Bookmarks	DEBUG	Record pzaXWdYGFKL8 is not an orphan.
+1431552623791	Sync.Store.Bookmarks	DEBUG	created bookmark 125 under 24 as Low speed AVR oscilloscope http://www.serasidis.gr/circuits/AVR_oscilloscope/avr_oscilloscope.htm
+1431552623793	Sync.Engine.Bookmarks	DEBUG	sufapW4UL47d mapped to 19oEVH9cKRii
+1431552623793	Sync.Engine.Bookmarks	DEBUG	Switching local ID to incoming: 19oEVH9cKRii -> sufapW4UL47d
+1431552623793	Sync.Store.Bookmarks	DEBUG	Changing GUID 19oEVH9cKRii to sufapW4UL47d
+1431552623794	Sync.Engine.Bookmarks	DEBUG	Local item after duplication: age=1431552623.794; modified=true; exists=true
+1431552623796	Sync.Engine.Bookmarks	WARN	DATA LOSS: Both local and remote changes to record: sufapW4UL47d
+1431552623796	Sync.Store.Bookmarks	DEBUG	Applying record sufapW4UL47d
+1431552623796	Sync.Store.Bookmarks	DEBUG	Local parent is ry3JblXNrBNz
+1431552623802	Sync.Engine.Bookmarks	DEBUG	LzWdb9eDf8LJ mapped to undefined
+1431552623802	Sync.Store.Bookmarks	DEBUG	Applying record LzWdb9eDf8LJ
+1431552623802	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623802	Sync.Store.Bookmarks	DEBUG	Record LzWdb9eDf8LJ is not an orphan.
+1431552623803	Sync.Store.Bookmarks	DEBUG	created bookmark 126 under 5 as WiseWare Pic32/A guide to build GCC for MIPS / PIC32 http://wise-ware.org/wiki/index.php?n=Pic32.GccPic32
+1431552623805	Sync.Engine.Bookmarks	DEBUG	FfowunK7y35_ mapped to undefined
+1431552623805	Sync.Store.Bookmarks	DEBUG	Applying record FfowunK7y35_
+1431552623805	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623805	Sync.Store.Bookmarks	DEBUG	Record FfowunK7y35_ is not an orphan.
+1431552623806	Sync.Store.Bookmarks	DEBUG	created bookmark 127 under 24 as Logic Analyzer - Mikrocontroller.net http://www.mikrocontroller.net/articles/Logic_Analyzer
+1431552623807	Sync.Engine.Bookmarks	DEBUG	JOe8NqjBTqds mapped to undefined
+1431552623808	Sync.Store.Bookmarks	DEBUG	Applying record JOe8NqjBTqds
+1431552623808	Sync.Store.Bookmarks	DEBUG	Local parent is mobile
+1431552623808	Sync.Store.Bookmarks	DEBUG	Record JOe8NqjBTqds is not an orphan.
+1431552623808	Sync.Store.Bookmarks	DEBUG	created bookmark 128 under 24 as STM32, ghetto style - Page 9 http://www.eevblog.com/forum/microcontrollers/stm32-ghetto-style/120/
+1431552623811	Sync.Engine.Bookmarks	DEBUG	4PiaeyPYS8DB mapped to undefined
+1431552623811	Sync.Store.Bookmarks	DEBUG	Applying record 4PiaeyPYS8DB
+1431552623811	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623811	Sync.Store.Bookmarks	DEBUG	Record 4PiaeyPYS8DB is not an orphan.
+1431552623812	Sync.Store.Bookmarks	DEBUG	created bookmark 129 under 5 as http://xkcd.com/chesscoaster/ http://xkcd.com/chesscoaster/
+1431552623813	Sync.Engine.Bookmarks	DEBUG	HeW57CE5gMM0 mapped to undefined
+1431552623813	Sync.Store.Bookmarks	DEBUG	Applying record HeW57CE5gMM0
+1431552623813	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623813	Sync.Store.Bookmarks	DEBUG	Record HeW57CE5gMM0 is not an orphan.
+1431552623814	Sync.Store.Bookmarks	DEBUG	created bookmark 130 under 5 as Programming STM32-Discovery using GNU tools. Linker script - Embedded projects from around the web http://www.embedds.com/programming-stm32-discovery-using-gnu-tools-linker-script/
+1431552623816	Sync.Engine.Bookmarks	DEBUG	S7QjZILJoa4c mapped to undefined
+1431552623816	Sync.Store.Bookmarks	DEBUG	Applying record S7QjZILJoa4c
+1431552623816	Sync.Store.Bookmarks	DEBUG	Local parent is unfiled
+1431552623816	Sync.Store.Bookmarks	DEBUG	Record S7QjZILJoa4c is not an orphan.
+1431552623816	Sync.Store.Bookmarks	DEBUG	created bookmark 131 under 5 as GCC linker script and STM32 (a tutorial) http://www.stf12.org/developers/freerots_ec-linker_script.html
+1431552623818	Sync.Engine.Bookmarks	DEBUG	0AOgNmlKaqg2 mapped to undefined
+1431552623818	Sync.Store.Bookmarks	DEBUG	Applying record 0AOgNmlKaqg2
+1431552623818	Sync.Store.Bookmarks	DEBUG	Local parent is menu
+1431552623818	Sync.Store.Bookmarks	DEBUG	Record 0AOgNmlKaqg2 is not an orphan.
+1431552623819	Sync.Store.Bookmarks	DEBUG	created separator 132 under 2
+1431552623820	Sync.Engine.Bookmarks	DEBUG	5O7uxiiaBRy8 mapped to LtWOGm4FM3bM
+1431552623820	Sync.Engine.Bookmarks	DEBUG	Switching local ID to incoming: LtWOGm4FM3bM -> 5O7uxiiaBRy8
+1431552623820	Sync.Store.Bookmarks	DEBUG	Changing GUID LtWOGm4FM3bM to 5O7uxiiaBRy8
+1431552623820	Sync.Engine.Bookmarks	DEBUG	Local item after duplication: age=1431552623.82; modified=true; exists=true
+1431552623822	Sync.Store.Bookmarks	DEBUG	Applying record 8_wM6enxNm3R
+1431552623822	Sync.Store.Bookmarks	DEBUG	Local parent is menu
+1431552623822	Sync.Store.Bookmarks	DEBUG	Record 8_wM6enxNm3R is not an orphan.
+1431552623822	Sync.Store.Bookmarks	DEBUG	created bookmark 133 under 2 as Kürzlich verwendete Schlagwörter place:type=6&sort=14&maxResults=10
+1431552623824	Sync.Engine.Bookmarks	DEBUG	9JV_-s6uD96s mapped to undefined
+1431552623824	Sync.Store.Bookmarks	DEBUG	Applying record 9JV_-s6uD96s
+1431552623824	Sync.Store.Bookmarks	DEBUG	Local parent is AIsHYFfE-sMK
+1431552623824	Sync.Store.Bookmarks	DEBUG	Record 9JV_-s6uD96s is not an orphan.
+1431552623825	Sync.Store.Bookmarks	DEBUG	created bookmark 134 under 17 as Tags place:type=6&sort=1
+1431552623826	Sync.Store.Bookmarks	DEBUG	Applying record DI3feWXQcdf5
+1431552623826	Sync.Store.Bookmarks	DEBUG	Local parent is menu
+1431552623826	Sync.Store.Bookmarks	DEBUG	Record DI3feWXQcdf5 is not an orphan.
+1431552623827	Sync.Store.Bookmarks	DEBUG	created bookmark 135 under 2 as Recent Tags place:type=6&sort=14&maxResults=10
+1431552623829	Sync.Engine.Bookmarks	DEBUG	DrZwVtzipCHh mapped to undefined
+1431552623829	Sync.Store.Bookmarks	DEBUG	Applying record DrZwVtzipCHh
+1431552623829	Sync.Store.Bookmarks	DEBUG	Local parent is menu
+1431552623829	Sync.Store.Bookmarks	DEBUG	Record DrZwVtzipCHh is not an orphan.
+1431552623829	Sync.Store.Bookmarks	DEBUG	created separator 136 under 2
+1431552623831	Sync.Store.Bookmarks	DEBUG	Applying record EXp-ItxQDF9d
+1431552623831	Sync.Store.Bookmarks	DEBUG	Local parent is menu
+1431552623831	Sync.Store.Bookmarks	DEBUG	Record EXp-ItxQDF9d is not an orphan.
+1431552623832	Sync.Store.Bookmarks	DEBUG	created bookmark 137 under 2 as Recent Tags place:type=6&sort=14&maxResults=10
+1431552623834	Sync.Engine.Bookmarks	DEBUG	Fl6MeYMTSLdu mapped to undefined
+1431552623834	Sync.Store.Bookmarks	DEBUG	Applying record Fl6MeYMTSLdu
+1431552623834	Sync.Store.Bookmarks	DEBUG	Local parent is MUBlWDs0c9R8
+1431552623834	Sync.Store.Bookmarks	DEBUG	Record Fl6MeYMTSLdu is not an orphan.
+1431552623835	Sync.Store.Bookmarks	DEBUG	created bookmark 138 under 19 as null place:folder=BOOKMARKS_MENU
+1431552623837	Sync.Store.Bookmarks	DEBUG	Applying record GcXjrYaEKLIU
+1431552623837	Sync.Store.Bookmarks	DEBUG	Local parent is menu
+1431552623837	Sync.Store.Bookmarks	DEBUG	Record GcXjrYaEKLIU is not an orphan.
+1431552623837	Sync.Store.Bookmarks	DEBUG	created bookmark 139 under 2

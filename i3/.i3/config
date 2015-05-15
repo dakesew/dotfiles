@@ -1,0 +1,125 @@
+set $mod Mod4
+
+
+# Display Options uses Base 16 colors
+font pango:Source Code Pro 8
+client.focused          #383838 #383838 #D8D8D8 #464b50
+client.unfocused        #282828 #282828 #D8D8D8 #464b50
+client.focused_inactive #282828 #282828 #D8D8D8 #4464b50
+client.urgent           #AB4642 #AB4642 #F8F8F8 #464b50
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Run apps
+bindsym $mod+Return exec gnome-terminal
+bindsym $mod+space  exec rofi -show run -o 50 -font "Source Code Pro 10" -fg "#D8D8D8" -bg "#282828" -bc "#282828" -bw 0 -hlbg "#383838"
+
+# Lock
+bindsym $mod+Control+l exec lock
+
+# Shutdown
+bindsym $mod+Control+r exec ask-to-shutdown
+
+bindsym $mod+Shift+q kill
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# split in horizontal orientation
+bindsym $mod+g split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+  bindsym h resize shrink width 10 px or 10 ppt
+  bindsym j resize grow height 10 px or 10 ppt
+  bindsym k resize shrink height 10 px or 10 ppt
+  bindsym l resize grow width 10 px or 10 ppt
+
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+bar {
+  font pango:Source Code Pro 8
+  strip_workspace_numbers true
+  status_command i3status
+  position top
+
+  colors {
+    background  #282828
+
+    #name              #border #bg     #text
+    focused_workspace  #383838 #383838 #D8D8D8
+    active_workspace   #282828 #282828 #D8D8D8
+    inactive_workspace #282828 #282828 #D8D8D8
+    urgent_workspace   #1e1e1e #1e1e1e #c3c3c3
+  }
+}
+
+gaps inner 6
+gaps outer 2
+for_window [class="^.*"] border pixel 1
+
+workspace 1 output DVI-0
+
+exec --no-startup-id setxkbmap -layout de
+
+exec --no-startup-id feh --bg-scale /home/david/.i3/backgrounds/SteinsGateWorldline.jpg

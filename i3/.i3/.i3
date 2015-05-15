@@ -1,0 +1,1 @@
+/home/david/dotfiles/i3/.i3

@@ -1,0 +1,24 @@
+1431633994403	Sync.Tracker.Bookmarks	DEBUG	Saving changed IDs to bookmarks
+1431633994416	Sync.Tracker.Addons	DEBUG	Saving changed IDs to addons
+1431633994418	Sync.Tracker.Forms	DEBUG	Saving changed IDs to forms
+1431633994695	Sync.Tracker.History	DEBUG	Saving changed IDs to history
+1431633999598	Sync.Tracker.History	DEBUG	Saving changed IDs to history
+1431634011791	Sync.Tracker.History	DEBUG	Saving changed IDs to history
+1431634130308	Sync.Tracker.History	DEBUG	Saving changed IDs to history
+1431634136997	Sync.Tracker.History	DEBUG	Saving changed IDs to history
+1431634145452	Sync.Tracker.History	DEBUG	Saving changed IDs to history
+1431634147196	Sync.Tracker.History	DEBUG	Saving changed IDs to history
+1431634182367	Sync.Tracker.History	DEBUG	Saving changed IDs to history
+1431634187407	Sync.Tracker.History	DEBUG	Saving changed IDs to history
+1431634223973	Sync.Tracker.History	DEBUG	Saving changed IDs to history
+1431634303715	Sync.Tracker.History	DEBUG	Saving changed IDs to history
+1431634480803	Sync.Tracker.History	DEBUG	Saving changed IDs to history
+1431634594124	Sync.Service	DEBUG	User-Agent: Firefox/38.0 FxSync/1.40.0.20150512170515.
+1431634594125	Sync.Service	INFO	Starting sync at 2015-05-14 22:16:34
+1431634594128	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1431634594129	Sync.Status	INFO	Resetting Status.
+1431634594129	Sync.Status	DEBUG	Status.service: success.status_ok => success.status_ok
+1431634594130	Sync.BrowserIDManager	DEBUG	_ensureValidToken already has one
+1431634594135	Sync.Status	DEBUG	Status.sync: success.sync => error.login.reason.network
+1431634594135	Sync.Status	DEBUG	Status.service: success.status_ok => error.sync.failed
+1431634594135	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms.
