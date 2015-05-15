@@ -1,0 +1,20 @@
+#include ".colorsXresources"
+
+!!! FONTS !!!
+Xft.antialias:			true
+Xft.autohint:			false
+Xft.hinting:			true
+Xft.hintstyle:			hintfull
+Xft.rgba:			rgb
+urxvt.boldFont:			xft:Source Code Pro:semibold:size=8
+urxvt.boldItalicFont:		xft:Source Code Pro:semibold:italic:size=8
+urxvt.font:			xft:Source Code Pro:regular:size=8
+urxvt.imFont:			xft:Source Code Pro:regular:size=8
+urxvt.italicFont:		xft:Source Code Pro:italic:size=8
+urxvt.letterSpace:		0
+XTerm*faceName:			Source Code Pro
+XTerm*faceSize:			8
+
+!!! OPTIONS !!!
+urxvt.cursorBlink:		false
+urxvt.scrollBar:		false
