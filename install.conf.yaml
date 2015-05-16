@@ -4,11 +4,10 @@
     ~/.dotfiles: ''
     ~/.spacemacs: spacemacs
     ~/.emacs.d: emacs.d/
-    ~/.mozilla: mozilla/
-    ~/.vimperator: vimperator/
     ~/.i3: i3/
     ~/.oh-my-zsh: oh-my-zsh/
     ~/.vimperatorrc: vimperatorrc
     ~/.zshrc: zshrc
     ~/.Xressources: Xressources
     ~/.colorsXresources: colorsXresources
+    ~/.themes: themes/
