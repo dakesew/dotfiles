@@ -18,3 +18,5 @@ XTerm*faceSize:			8
 !!! OPTIONS !!!
 urxvt.cursorBlink:		false
 urxvt.scrollBar:		false
+!!! Workaround for emacsclient !!!
+Emacs.font: Source Code Pro-10
