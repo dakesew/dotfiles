@@ -122,4 +122,4 @@ workspace 1 output DVI-0
 
 exec --no-startup-id setxkbmap -layout de
 
-exec --no-startup-id ./wallpaper.sh 60
+exec --no-startup-id ~/.i3/wallpaper.sh 60
