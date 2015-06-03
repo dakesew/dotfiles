@@ -122,4 +122,4 @@ workspace 1 output DVI-0
 
 exec --no-startup-id setxkbmap -layout de
 
-exec --no-startup-id feh --bg-scale /home/david/.i3/backgrounds/SteinsGateWorldline.jpg
+exec --no-startup-id ./wallpaper.sh 60
