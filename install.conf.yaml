@@ -11,3 +11,5 @@
     ~/.Xressources: Xressources
     ~/.colorsXresources: colorsXresources
     ~/.themes: themes/
+    ~/.gitconfig: gitconfig
+
