@@ -12,7 +12,7 @@ client.urgent           #AB4642 #AB4642 #F8F8F8 #464b50
 floating_modifier $mod
 
 # Run apps
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec xterm
 bindsym $mod+space  exec rofi -show run -o 50 -font "Source Code Pro 10" -fg "#D8D8D8" -bg "#282828" -bc "#282828" -bw 0 -hlbg "#383838"
 
 # Lock
