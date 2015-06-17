@@ -5,10 +5,11 @@
     ~/.spacemacs: spacemacs
     ~/.emacs.d: emacs.d/
     ~/.i3: i3/
-    ~/.oh-my-zsh: oh-my-zsh/
+    ~/.config/xfce4/terminal/terminalrc: terminalrc
     ~/.vimperatorrc: vimperatorrc
     ~/.zshrc: zshrc
     ~/.Xresources: Xresources
     ~/.themes: themes/
     ~/.gitconfig: gitconfig
-
+    ~/.mlterm/aafont: mlterm/aafont
+    ~/.mlterm/main: mlterm/main

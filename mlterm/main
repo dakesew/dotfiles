@@ -1,0 +1,16 @@
+fg_color = #d8d8d8d8d8d8
+use_transbg = true
+wall_picture = 
+bg_color = #383838383838
+alpha = 191
+fontsize = 9
+use_anti_alias = true
+use_variable_column_width = false
+type_engine = cairo
+box_drawing_font = unicode
+screen_width_ratio = 100
+scrollbar_mode = none
+brightness = 80
+contrast = 40
+fade_ratio = 100
+receive_string_via_ucs = true
