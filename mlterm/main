@@ -14,3 +14,5 @@ brightness = 80
 contrast = 40
 fade_ratio = 100
 receive_string_via_ucs = true
+logsize = 1024
+name = "xterm-256color"
