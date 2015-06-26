@@ -1,7 +1,7 @@
-fg_color = #d8d8d8d8d8d8
-use_transbg = true
+fg_color = #d8d8d8
+use_transbg = false
 wall_picture = 
-bg_color = #383838383838
+bg_color = #181818
 alpha = 191
 fontsize = 9
 use_anti_alias = true
@@ -16,3 +16,4 @@ fade_ratio = 100
 receive_string_via_ucs = true
 logsize = 1024
 name = "xterm-256color"
+cursor_fg_color = #d8d8d8
