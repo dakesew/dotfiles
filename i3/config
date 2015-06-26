@@ -1,11 +1,32 @@
-set $mod Mod4
+set $mod    Mod4
 
+# colors
+set $base00 "#181818"
+set $base01 "#282828"
+set $base02 "#383838"
+set $base03 "#585858"
+set $base04 "#b8b8b8"
+set $base05 "#d8d8d8"
+set $base06 "#e8e8e8"
+set $base07 "#f8f8f8"
+set $base08 "#ab4642"
+set $base09 "#dc9656"
+set $base0A "#f7ca88"
+set $base0B "#a1b56c"
+set $base0C "#86c1b9"
+set $base0D "#7cafc2"
+set $base0E "#ba8baf"
+set $base0F "#a16946"
 
+set $border #383838
+set $bg     #181818
+set $fg     #d8d8d8
+set $bg_act #383838
 # Display Options uses Base 16 colors
 font pango:Source Code Pro 8
-client.focused          #383838 #383838 #D8D8D8 #464b50
-client.unfocused        #282828 #282828 #D8D8D8 #464b50
-client.focused_inactive #282828 #282828 #D8D8D8 #4464b50
+client.focused          $border $bg_act $fg     #464b50
+client.unfocused        $bg     $bg     $fg     #464b50
+client.focused_inactive $bg     $bg     $fg     #464b50
 client.urgent           #AB4642 #AB4642 #F8F8F8 #464b50
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -13,7 +34,7 @@ floating_modifier $mod
 
 # Run apps
 bindsym $mod+Return exec mlterm
-bindsym $mod+space  exec rofi -show run -o 50 -font "Source Code Pro 10" -fg "#D8D8D8" -bg "#282828" -bc "#282828" -bw 0 -hlbg "#383838"
+bindsym $mod+space  exec rofi -show run -o 50 -font "Source Code Pro 10" -fg "$fg" -bg "$bg" -bc "$bg" -bw 0 -hlbg "$bg_act"
 
 # Lock
 bindsym $mod+Control+l exec lock
@@ -104,12 +125,12 @@ bar {
   position top
 
   colors {
-    background  #282828
+    background  $bg
 
     #name              #border #bg     #text
-    focused_workspace  #383838 #383838 #D8D8D8
-    active_workspace   #282828 #282828 #D8D8D8
-    inactive_workspace #282828 #282828 #D8D8D8
+    focused_workspace  $bg_act $bg_act $fg
+    active_workspace   $border $bg     $fg
+    inactive_workspace $border $bg     $fg
     urgent_workspace   #1e1e1e #1e1e1e #c3c3c3
   }
 }
