@@ -37,7 +37,7 @@ bindsym $mod+Return exec mlterm
 bindsym $mod+space  exec rofi -show run -o 50 -font "Source Code Pro 10" -fg "$fg" -bg "$bg" -bc "$bg" -bw 0 -hlbg "$bg_act"
 
 # Lock
-bindsym $mod+Control+l exec lock
+bindsym $mod+q exec python2 ~/.i3/py3lock.py
 
 # Shutdown
 bindsym $mod+Control+r exec ask-to-shutdown
