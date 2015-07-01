@@ -1,2 +1,9 @@
 echo "Uses yaourt"
-yaourt -S --needed xbindkeys i3-gaps-git i3lock python2 python2-imaging xpyb xorg xorg-xinit adobe-source-code-pro-fonts rofi emacs avrdude avr-gcc arm-none-eabi-gcc openocd gcc zsh zsh-completions zsh-syntax-highlighting grml-zsh-config firefox feh engrampa mlterm avr-gdb gdb arm-none-eabi-gdb git lxdm make thunar transmission-gtk thunar-volman thunar-shares-plugin i3status  mlocate
+yaourt -S --needed xorg xorg-xinit xbindkeys lxdm \
+i3-gaps-git i3status i3lock python2 python2-imaging xpyb source-code-pro-fonts rofi feh \
+firefox engrampa mlterm thunar transmission-gtk thunar-volman thunar-shares-plugin \
+zsh zsh-completions zsh-syntax-highlighting grml-zsh-config \
+gcc git make mlocate gdb emacs \
+avr-gcc avr-gdb avrdude \
+arm-none-eabi-gcc openocd arm-none-eabi-gdb 
+
