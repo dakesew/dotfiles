@@ -2,10 +2,8 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/.spacemacs: spacemacs
     ~/.emacs.d: emacs.d/
     ~/.i3: i3/
-    ~/.config/xfce4/terminal/terminalrc: terminalrc
     ~/.vimperatorrc: vimperatorrc
     ~/.zshrc: zshrc
     ~/.Xresources: Xresources
