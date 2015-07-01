@@ -316,7 +316,10 @@ stty erase "^?"
 #vimhelp ()    { vim -c "help $1" -c on -c "au! VimEnter *" }
 
 ## USER STUFF #######################################################################
-
-bindkey -v
+if [ -n "$INSIDE_EMACS" ]; 
+    then chpwd() { print -P "\033AnSiTc %d" }
+    print -P "\033AnSiTu %n" 
+    print -P "\033AnSiTc %d" 
+fi
 
 ## END OF FILE ######################################################################
