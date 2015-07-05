@@ -6,4 +6,4 @@ zsh zsh-completions zsh-syntax-highlighting grml-zsh-config \
 gcc git make mlocate gdb emacs \
 avr-gcc avr-gdb avrdude \
 arm-none-eabi-gcc openocd arm-none-eabi-gdb 
-
+sudo ln -s ~/.i3/emc /bin/emc
