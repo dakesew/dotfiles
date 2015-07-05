@@ -33,9 +33,10 @@ client.urgent           #AB4642 #AB4642 #F8F8F8 #464b50
 floating_modifier $mod
 
 # Run apps
-bindsym $mod+Return exec mlterm
+bindsym $mod+Return exec emc -e "(multi-term)"
 bindsym $mod+space  exec rofi -show run -o 50 -font "Source Code Pro 10" -fg "$fg" -bg "$bg" -bc "$bg" -bw 0 -hlbg "$bg_act"
 bindsym $mod+Shift+e exec emc
+bindsym $mod+Shift+f exec firefox
 # Lock
 bindsym $mod+q exec python2 ~/.i3/py3lock.py
 
