@@ -21,6 +21,7 @@
 (require 'dakesew-evil-leader)
 (require 'dakesew-evil)
 (require 'dakesew-helm)
+(require 'dakesew-projectile)
 (require 'dakesew-company)
 
 (use-package 2048-game
