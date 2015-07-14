@@ -17,6 +17,7 @@
 ;;Seperate files
 (require 'dakesew-theme)
 (require 'dakesew-astethics)
+(require 'dakesew-mixed)
 ;;;Evil-Leader needs to be run before evil
 (require 'dakesew-evil-leader)
 (require 'dakesew-evil)
@@ -30,12 +31,13 @@
 (use-package multi-term
   :ensure multi-term
   )
+(setq multi-term-program "/bin/zsh")
 (use-package tex-site
   :ensure auctex
   )
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
-(setq multi-term-program "/bin/zsh")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

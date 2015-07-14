@@ -28,3 +28,5 @@
 (require 'uniquify) 
 (setq uniquify-buffer-name-style 'post-forward
       uniquify-separator ":")
+(setq make-backup-files nil)
+(provide 'dakesew-mixed)
