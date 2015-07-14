@@ -9,5 +9,3 @@
     ~/.Xresources: Xresources
     ~/.themes: themes/
     ~/.gitconfig: gitconfig
-    ~/.mlterm/aafont: mlterm/aafont
-    ~/.mlterm/main: mlterm/main
