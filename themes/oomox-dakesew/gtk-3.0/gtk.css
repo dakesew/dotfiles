@@ -6,10 +6,10 @@
 /* default color scheme */
 @define-color bg_color #181818;
 @define-color fg_color #d8d8d8;
-@define-color base_color #383838;
+@define-color base_color #282828;
 @define-color text_color #d8d8d8;
-@define-color selected_bg_color #383838;
-@define-color selected_fg_color #e6e6e6;
+@define-color selected_bg_color #585858;
+@define-color selected_fg_color #d8d8d8;
 @define-color tooltip_bg_color #181818;
 @define-color tooltip_fg_color #d8d8d8;
 
@@ -48,9 +48,9 @@
 
 /* widget colors */
 @define-color titlebar_bg_color #282828;
-@define-color titlebar_fg_color #D8D8D8;
+@define-color titlebar_fg_color #d8d8d8;
 @define-color menubar_bg_color #282828;
-@define-color menubar_fg_color #D8D8D8;
+@define-color menubar_fg_color #d8d8d8;
 @define-color toolbar_bg_color @theme_bg_color;
 @define-color toolbar_fg_color @theme_fg_color;
 @define-color menu_bg_color @menubar_bg_color;

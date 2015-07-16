@@ -10,17 +10,17 @@ menu.border.width: 1
 menu.title.bg: Solid Flat
 menu.title.bg.color: #282828
 menu.title.bg.shadow: 0
-menu.title.text.color: #D8D8D8
+menu.title.text.color: #d8d8d8
 menu.title.text.justify: Center
 
 menu.items.bg: Solid Flat
 menu.items.bg.color: #282828
-menu.items.text.color: #D8D8D8
+menu.items.text.color: #d8d8d8
 menu.items.disabled.text.color: #666666
 
 menu.items.active.bg: Solid Flat
-menu.items.active.bg.color: #383838
-menu.items.active.text.color: #D8D8D8
+menu.items.active.bg.color: #585858
+menu.items.active.text.color: #d8d8d8
 
 
 # Window focused
@@ -31,7 +31,7 @@ window.active.title.bg.color: #282828
 window.active.title.bg.shadow: 0
 
 window.active.label.bg: Parentrelative
-window.active.label.text.color: #D8D8D8
+window.active.label.text.color: #d8d8d8
 
 window.active.handle.bg: Raised Gradient Vertical
 window.active.handle.bg.color: #FF0000
@@ -42,7 +42,7 @@ window.active.grip.bg.color: #FF0000
 window.active.grip.bg.colorTo: #00FF00
 
 window.active.button.unpressed.bg: Parentrelative
-window.active.button.unpressed.image.color: #D8D8D8
+window.active.button.unpressed.image.color: #d8d8d8
 
 window.active.button.pressed.bg: Solid Flat
 window.active.button.pressed.bg.color: #ec7584
@@ -55,7 +55,7 @@ window.active.button.hover.bg: Parentrelative
 window.active.button.hover.image.color: #ec7584
 
 window.active.button.toggled.bg: Parentrelative
-window.active.button.toggled.image.color: #D8D8D8
+window.active.button.toggled.image.color: #d8d8d8
 
 
 # Window unfocused
@@ -97,12 +97,12 @@ osd.bg.shadow: 0
 osd.border.width: 2
 
 osd.hilight.bg: Solid Flat
-osd.hilight.bg.color: #383838
+osd.hilight.bg.color: #585858
 
 
 window.handle.width: 0
 window.client.padding.width: 0
 window.label.text.justify: Center
-window.active.border.color:                     #383838
+window.active.border.color:                     #585858
 window.inactive.border.color:                   #282828
 menu.overlap: 0
