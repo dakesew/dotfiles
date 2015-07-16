@@ -14,6 +14,7 @@
 (evil-leader/set-key "bp" 'previous-buffer)
 (evil-leader/set-key "bl" 'next-buffer)
 (evil-leader/set-key "bh" 'previous-buffer)
+(evil-leader/set-key "bk" 'kill-buffer)
 ;;;;Windows
 (evil-leader/set-key "wo" 'other-window)
 (evil-leader/set-key "w0" 'delete-window)
