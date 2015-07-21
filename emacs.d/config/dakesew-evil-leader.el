@@ -18,7 +18,7 @@
 ;;;;Windows
 (evil-leader/set-key "wo" 'other-window)
 (evil-leader/set-key "w0" 'delete-window)
-(evil-leader/set-key "w1" 'delete-other-window)
+(evil-leader/set-key "w1" 'delete-other-windows)
 (evil-leader/set-key "w2" 'split-window-below)
 (evil-leader/set-key "w3" 'split-window-right)
 (evil-leader/set-key "w-" 'split-window-below)
