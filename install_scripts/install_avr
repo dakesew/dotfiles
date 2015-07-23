@@ -1,0 +1,3 @@
+#!/bin/sh
+echo Installing stuff needed for AVR
+yaourt --needed --noconfirm avr-gcc avr-libc avrdude

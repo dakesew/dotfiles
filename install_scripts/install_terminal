@@ -1,0 +1,3 @@
+#!/bin/sh
+echo Installing Terminal
+yaourt --needed --noconfirm -S zsh zsh-completions zsh-syntax-highlighting grml-zsh-config

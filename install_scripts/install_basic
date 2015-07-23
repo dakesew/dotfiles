@@ -1,0 +1,2 @@
+echo Installing Basics
+yaourt --needed --noconfirm -S base base-devel git mlocate gdb

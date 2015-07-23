@@ -3,8 +3,10 @@
 echo Updating repos...
 sudo pacman -Syy
 echo Installing dependencies fakeroot and base-devel...
-sudo pacman --noconfirm base-devel fakeroot
+sudo pacman --needed --noconfirm base-devel fakeroot
 
+mkdir /tmp/install_yaourt
+cd /tmp/install_yaourt
 echo Downloading package-query...
 wget https://aur.archlinux.org/packages/pa/package-query-git/package-query-git.tar.gz
 tar -xvf package-query-git.tar.gz
@@ -21,5 +23,5 @@ cd yaourt-git
 makepkg -s -f
 sudo pacman -U --noconfirm yaourt-git-*-*.pkg.tar.xz
 cd ..
-echo yaourt instaled...
+echo yaourt installed...
 echo Done.

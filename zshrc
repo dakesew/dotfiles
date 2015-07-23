@@ -160,8 +160,8 @@ zstyle ':completion:*' expand prefix suffix
 #alias -g '....'='../../..'
 #alias -g BG='& exit'
 #alias -g C='|wc -l'
-#alias -g G='|grep'
-#alias -g H='|head'
+alias -g G='|grep'
+alias -g H='|head'
 #alias -g Hl=' --help |& less -r'
 #alias -g K='|keep'
 alias -g L='|less'
@@ -171,7 +171,7 @@ alias -g L='|less'
 #alias -g R='| tr A-z N-za-m'
 #alias -g SL='| sort | less'
 #alias -g S='| sort'
-#alias -g T='|tail'
+alias -g T='|tail'
 #alias -g V='| vim -'
 
 ## instead of global aliase it might be better to use grmls $abk assoc array, whose contents are expanded after pressing ,.
@@ -322,4 +322,5 @@ if [ -n "$INSIDE_EMACS" ];
     print -P "\033AnSiTc %d" 
 fi
 
+alias -g _='sudo'
 ## END OF FILE ######################################################################

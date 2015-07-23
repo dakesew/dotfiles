@@ -38,6 +38,13 @@
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 
+(use-package emms-setup
+  :ensure emms
+  )
+(require 'emms-browser)
+(emms-standard)
+(emms-default-players)
+(setq emms-source-file-default-directory "~/music/")
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

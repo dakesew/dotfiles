@@ -1,0 +1,3 @@
+#!/bin/sh
+echo Installing arm
+yaourt --needed --noconfirm -S arm-none-eabi-gcc openocd arm-none-eabi-gdb 
