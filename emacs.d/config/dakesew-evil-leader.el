@@ -37,6 +37,12 @@
 (evil-leader/set-key "lee" 'eval-expression)
 ;;;compile
 (evil-leader/set-key "cc" 'compile)
+(evil-leader/set-key "cf" 'make-flash)
+(evil-leader/set-key "cm" 'make-pure)
+(evil-leader/set-key "cC" 'make-clean)
+(defun make-flash () (interactive) (compile "make flash"))
+(defun make-pure  () (interactive) (compile "make"))
+(defun make-clean () (interactive) (compile "make clean"))
 ;;;;Terminal
 (evil-leader/set-key "tt" 'multi-term)
 (evil-leader/set-key "tn" 'multi-term-next)
@@ -47,7 +53,6 @@
 (evil-leader/set-key "gt" 'tetris)
 (evil-leader/set-key "g2" '2048-game)
 ;;;;Various Toggles
-(evil-leader/set-key "Tm" 'minimap-mode)
 (evil-leader/set-key "Tl" 'linum-relative-toggle)
 ;;;Single Key Actions
 (evil-leader/set-key "d" 'kill-buffer-and-window)
