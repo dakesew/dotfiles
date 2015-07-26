@@ -21,9 +21,8 @@
 ;;;Evil-Leader needs to be run before evil
 (require 'dakesew-evil-leader)
 (require 'dakesew-evil)
-(require 'dakesew-helm)
-(require 'dakesew-projectile)
-(require 'dakesew-company)
+(require 'dakesew-ido)
+(require 'dakesew-auto-complete)
 
 (use-package 2048-game
   :ensure 2048-game
@@ -38,13 +37,6 @@
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 
-(use-package emms-setup
-  :ensure emms
-  )
-(require 'emms-browser)
-(emms-standard)
-(emms-default-players)
-(setq emms-source-file-default-directory "~/music/")
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -52,7 +44,10 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("9f3a4edb56d094366afed2a9ba3311bbced0f32ca44a47a765d8ef4ce5b8e4ea" default))))
+    ("9f3a4edb56d094366afed2a9ba3311bbced0f32ca44a47a765d8ef4ce5b8e4ea" default)))
+ '(ede-project-directories
+   (quote
+    ("/home/david/Documents/private/electronics/meet_the_STM32F030/OneOffs/stm32f030f4-Projects/Blink_Led"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

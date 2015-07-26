@@ -29,4 +29,22 @@
 (setq uniquify-buffer-name-style 'post-forward
       uniquify-separator ":")
 (setq make-backup-files nil)
+
+(use-package hungry-delete
+  :ensure hungry-delete
+  )
+(global-hungry-delete-mode)
+
+(use-package powerline
+  :ensure powerline
+  )
+(powerline-default-theme)
+
+(use-package linum-relative
+  :ensure linum-relative
+  )
+(global-linum-mode)
+
+(setq c-default-style "linux"
+      c-basic-offset 4)
 (provide 'dakesew-mixed)

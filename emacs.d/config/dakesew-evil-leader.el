@@ -9,7 +9,7 @@
 (evil-leader/set-key "fe" 'find-file)
 ;;;;Buffer
 (evil-leader/set-key "bq" 'kill-buffer)
-(evil-leader/set-key "bb" 'helm-buffers-list)
+(evil-leader/set-key "bb" 'ido-switch-buffer)
 (evil-leader/set-key "bn" 'next-buffer)
 (evil-leader/set-key "bp" 'previous-buffer)
 (evil-leader/set-key "bl" 'next-buffer)
@@ -28,6 +28,10 @@
 (evil-leader/set-key "w3" 'split-window-right)
 (evil-leader/set-key "w-" 'split-window-below)
 (evil-leader/set-key "w/" 'split-window-right)
+(evil-leader/set-key "wH" 'shrink-window-horizontally)
+(evil-leader/set-key "wL" 'enlarge-window-horizontally)
+(evil-leader/set-key "wJ" 'enlarge-window)
+(evil-leader/set-key "wK" 'shrink-window)
 ;;;;;Lisp
 (evil-leader/set-key "leb" 'eval-buffer)
 (evil-leader/set-key "lee" 'eval-expression)
@@ -42,15 +46,12 @@
 ;;;;Games
 (evil-leader/set-key "gt" 'tetris)
 (evil-leader/set-key "g2" '2048-game)
-;;;;emms
-(evil-leader/set-key "el" 'emms-next)
-(evil-leader/set-key "en" 'emms-next)
-(evil-leader/set-key "eh" 'emms-previous)
-(evil-leader/set-key "ep" 'emms-previous)
-(evil-leader/set-key "es" 'emms-show)
+;;;;Various Toggles
+(evil-leader/set-key "Tm" 'minimap-mode)
+(evil-leader/set-key "Tl" 'linum-relative-toggle)
 ;;;Single Key Actions
 (evil-leader/set-key "d" 'kill-buffer-and-window)
-(evil-leader/set-key ":" 'execute-extended-command)
+(evil-leader/set-key ":" 'smex)
 (evil-leader/set-key "!" 'shell-command)
 
 (provide 'dakesew-evil-leader)
