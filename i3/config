@@ -141,7 +141,7 @@ gaps outer 2
 for_window [class="^.*"] border pixel 3
 
 workspace 1 output DVI-0
-
+exec --no-startup-id compton --config ~/.i3/compton -b
 exec --no-startup-id setxkbmap -layout de
 exec --no-startup-id xbindkeys
 exec --no-startup-id ~/.i3/wallpaper.sh 60
