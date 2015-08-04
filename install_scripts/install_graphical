@@ -1,5 +1,5 @@
 #!/bin/sh
 echo Installing Graphical
-yaourt --needed --noconfirm -S xorg xorg-xinit lxdm \
+yaourt --needed --noconfirm -S xorg xorg-xinit slim \
 i3-gaps-git i3status i3lock compton python2 python2-imaging xpyb adobe-source-code-pro-fonts rofi feh \
 firefox engrampa thunar thunar-volman thunar-shares-plugin

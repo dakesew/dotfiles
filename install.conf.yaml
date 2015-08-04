@@ -9,3 +9,5 @@
     ~/.Xresources: Xresources
     ~/.themes: themes/
     ~/.gitconfig: gitconfig
+    ~/.xinitrc: xinitrc
+    /etc/slim.conf: slim.conf
