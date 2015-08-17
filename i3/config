@@ -1,29 +1,29 @@
 set $mod    Mod4
 
 # colors
-set $base00 "#181818"
-set $base01 "#282828"
-set $base02 "#383838"
-set $base03 "#585858"
-set $base04 "#b8b8b8"
-set $base05 "#d8d8d8"
-set $base06 "#e8e8e8"
-set $base07 "#f8f8f8"
-set $base08 "#ab4642"
-set $base09 "#dc9656"
-set $base0A "#f7ca88"
-set $base0B "#a1b56c"
-set $base0C "#86c1b9"
-set $base0D "#7cafc2"
-set $base0E "#ba8baf"
-set $base0F "#a16946"
+set $base00 #181818
+set $base01 #282828
+set $base02 #383838
+set $base03 #585858
+set $base04 #b8b8b8
+set $base05 #d8d8d8
+set $base06 #e8e8e8
+set $base07 #f8f8f8
+set $base08 #ab4642
+set $base09 #dc9656
+set $base0A #f7ca88
+set $base0B #a1b56c
+set $base0C #86c1b9
+set $base0D #7cafc2
+set $base0E #ba8baf
+set $base0F #a16946
 
 set $border #383838
 set $bg     #181818
 set $fg     #d8d8d8
 set $bg_act #383838
 # Display Options uses Base 16 colors
-font pango:Source Code Pro 8
+font pango:Source Code Pro 7
 client.focused          $border $bg_act $fg     #464b50
 client.unfocused        $bg     $bg     $fg     #464b50
 client.focused_inactive $bg     $bg     $fg     #464b50
@@ -120,11 +120,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
-  font pango:Source Code Pro 8
   strip_workspace_numbers true
   status_command i3status
   position top
-
+  separator_symbol "><"
   colors {
     background  $bg
 
