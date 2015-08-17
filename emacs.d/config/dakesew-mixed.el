@@ -40,11 +40,6 @@
   )
 (powerline-default-theme)
 
-(use-package linum-relative
-  :ensure linum-relative
-  )
-(global-linum-mode)
-
 (setq c-default-style "linux"
       c-basic-offset 4)
 (provide 'dakesew-mixed)
