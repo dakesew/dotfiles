@@ -3,7 +3,7 @@
 echo Updating repos...
 sudo pacman -Syy
 echo Installing dependencies fakeroot and base-devel...
-sudo pacman --needed --noconfirm base-devel fakeroot
+sudo pacman --needed --noconfirm base-devel fakeroot wget
 
 mkdir /tmp/install_yaourt
 cd /tmp/install_yaourt
