@@ -11,3 +11,5 @@
     ~/.gitconfig: gitconfig
     ~/.xinitrc: xinitrc
     /etc/slim.conf: slim.conf
+    /usr/share/slim/themes/anime: anime
+    
