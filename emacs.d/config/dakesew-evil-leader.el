@@ -49,6 +49,7 @@
 (evil-leader/set-key "tp" 'multi-term-prev)
 (evil-leader/set-key "tl" 'multi-term-next)
 (evil-leader/set-key "th" 'multi-term-prev)
+(evil-leader/set-key "t <SPC>" 'multi-term-dedicated-toggle)
 ;;;;Games
 (evil-leader/set-key "gt" 'tetris)
 (evil-leader/set-key "g2" '2048-game)
