@@ -15,11 +15,9 @@ command -v yaourt >/dev/null 2>&1 || {
     echo package-query installed...
     
     echo Downloading yaourt...
-    mkdir yaourt
+    git clone https://aur.archlinux.org/yaourt.git
     cd yaourt
-    curl https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=yaourt >PKGBUILD
-    makepkg -s -f
-    sudo pacman -U --noconfirm yaourt-*-*.pkg.tar.xz
+    makepkg -sri
     cd ..
     echo yaourt installed...
     echo Done.
