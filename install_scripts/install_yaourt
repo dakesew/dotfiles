@@ -10,7 +10,7 @@ command -v yaourt >/dev/null 2>&1 || {
     echo Downloading package-query...
     mkdir package-query
     cd package-query
-    wget https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=package-query
+    curl https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=package-query >PKGBUILD
     makepkg -s -f
     sudo pacman -U --noconfirm package-query-*-*.pkg.tar.xz
     cd ..
@@ -19,8 +19,7 @@ command -v yaourt >/dev/null 2>&1 || {
     echo Downloading yaourt...
     mkdir yaourt
     cd yaourt
-    wget https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=yaourt
-    cd yaourt
+    curl https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=yaourt >PKGBUILD
     makepkg -s -f
     sudo pacman -U --noconfirm yaourt-*-*.pkg.tar.xz
     cd ..
