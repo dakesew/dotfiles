@@ -323,4 +323,5 @@ if [ -n "$INSIDE_EMACS" ];
 fi
 
 alias -g _='sudo'
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ## END OF FILE ######################################################################
