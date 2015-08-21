@@ -1,27 +1,29 @@
 #!/bin/bash
-
-echo Updating repos...
-sudo pacman -Syy
-echo Installing dependencies fakeroot and base-devel...
-sudo pacman --needed --noconfirm base-devel fakeroot wget
-
-mkdir /tmp/install_yaourt
-cd /tmp/install_yaourt
-echo Downloading package-query...
-wget https://aur.archlinux.org/packages/pa/package-query-git/package-query-git.tar.gz
-tar -xvf package-query-git.tar.gz
-cd package-query-git
-makepkg -s -f
-sudo pacman -U --noconfirm package-query-git-*-*.pkg.tar.xz
-cd ..
-echo package-query installed...
-
-echo Downloading yaourt...
-wget https://aur.archlinux.org/packages/ya/yaourt-git/yaourt-git.tar.gz
-tar -xvf yaourt-git.tar.gz
-cd yaourt-git
-makepkg -s -f
-sudo pacman -U --noconfirm yaourt-git-*-*.pkg.tar.xz
-cd ..
-echo yaourt installed...
-echo Done.
+command -v yaourt >/dev/null 2>&1 || { 
+    echo Updating repos...
+    sudo pacman -Syy
+    echo Installing dependencies fakeroot and base-devel...
+    sudo pacman --needed --noconfirm base-devel fakeroot wget
+    
+    mkdir /tmp/install_yaourt
+    cd /tmp/install_yaourt
+    echo Downloading package-query...
+    mkdir package-query
+    cd package-query
+    wget https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=package-query
+    makepkg -s -f
+    sudo pacman -U --noconfirm package-query-*-*.pkg.tar.xz
+    cd ..
+    echo package-query installed...
+    
+    echo Downloading yaourt...
+    mkdir yaourt
+    cd yaourt
+    wget https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=yaourt
+    cd yaourt
+    makepkg -s -f
+    sudo pacman -U --noconfirm yaourt-*-*.pkg.tar.xz
+    cd ..
+    echo yaourt installed...
+    echo Done.
+}
