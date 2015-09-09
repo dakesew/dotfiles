@@ -135,6 +135,14 @@ bar {
   }
 }
 
+#Volumr
+bindcode 123 exec --no-startup-id "pactl set-sink-volume 0 +10%"
+bindcode 122 exec --no-startup-id "pactl set-sink-volume 0 -10%"
+
+#backlight
+bindcode 233 exec --no-startup-id "xbacklight +5"
+bindcode 232 exec --no-startup-id"xbacklight -5"
+
 gaps inner 6
 gaps outer 2
 for_window [class="^.*"] border pixel 3
