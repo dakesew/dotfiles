@@ -41,7 +41,7 @@ bindsym $mod+Shift+f exec firefox
 bindsym $mod+q exec python2 ~/.i3/py3lock.py
 
 # Shutdown
-bindsym $mod+Control+r exec ask-to-shutdown
+bindsym $mod+Control+r exec "systemctl reboot"
 
 bindsym $mod+d kill
 
@@ -141,7 +141,7 @@ bindcode 122 exec --no-startup-id "pactl set-sink-volume 0 -10%"
 
 #backlight
 bindcode 233 exec --no-startup-id "xbacklight +5"
-bindcode 232 exec --no-startup-id"xbacklight -5"
+bindcode 232 exec --no-startup-id "xbacklight -5"
 
 gaps inner 6
 gaps outer 2
@@ -151,4 +151,4 @@ workspace 1 output DVI-0
 exec --no-startup-id compton --config ~/.i3/compton -b
 exec --no-startup-id setxkbmap -layout de
 exec --no-startup-id xbindkeys
-exec --no-startup-id ~/.i3/wallpaper.sh 60
+exec --no-startup-id "~/.i3/wallpaper.sh 60"
