@@ -36,6 +36,8 @@
   )
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
+;; sudo tramp editing on remote computers
+(set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
