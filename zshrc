@@ -47,8 +47,8 @@
 is4 && zrcautoload predict-on && \
 zle -N predict-on         && \
 #zle -N predict-off        && \
-bindkey "^X^Z" predict-on && \
-bindkey "^Z" predict-off
+#bindkey "^X^Z" predict-on && \
+#bindkey "^Z" predict-off
 
 ## press ctrl-q to quote line:
 #mquote () {
@@ -67,20 +67,20 @@ bindkey "^Z" predict-off
 #WORDCHARS='${WORDCHARS:s@/@}'
 
 # just type '...' to get '../..'
-#rationalise-dot() {
-#local MATCH
-#if [[ $LBUFFER =~ '(^|/| |	|'$'\n''|\||;|&)\.\.$' ]]; then
-#  LBUFFER+=/
-#  zle self-insert
-#  zle self-insert
-#else
-#  zle self-insert
-#fi
-#}
-#zle -N rationalise-dot
-#bindkey . rationalise-dot
+rationalise-dot() {
+local MATCH
+if [[ $LBUFFER =~ '(^|/| |	|'$'\n''|\||;|&)\.\.$' ]]; then
+  LBUFFER+=/
+  zle self-insert
+  zle self-insert
+else
+  zle self-insert
+fi
+}
+zle -N rationalise-dot
+bindkey . rationalise-dot
 ## without this, typing a . aborts incremental history search
-#bindkey -M isearch . self-insert
+bindkey -M isearch . self-insert
 
 #bindkey '\eq' push-line-or-edit
 
@@ -198,12 +198,12 @@ alias -g T='|tail'
 #manzsh()  { /usr/bin/man zshall |  most +/"$1" ; }
 
 ## Switching shell safely and efficiently? http://www.zsh.org/mla/workers/2001/msg02410.html
-#bash() {
-#    NO_SWITCH="yes" command bash "$@"
-#}
-#restart () {
-#    exec $SHELL $SHELL_ARGS "$@"
-#}
+bash() {
+    NO_SWITCH="yes" command bash "$@"
+}
+restart () {
+    exec $SHELL $SHELL_ARGS "$@"
+}
 
 ## Handy functions for use with the (e::) globbing qualifier (like nt)
 #contains() { grep -q "$*" $REPLY }
@@ -261,12 +261,12 @@ alias -g T='|tail'
 #    fi
 #}
 
-## Memory overview
-#memusage() {
-#    ps aux | awk '{if (NR > 1) print $5;
-#                   if (NR > 2) print "+"}
-#                   END { print "p" }' | dc
-#}
+# Memory overview
+memusage() {
+    ps aux | awk '{if (NR > 1) print $5;
+                   if (NR > 2) print "+"}
+                   END { print "p" }' | dc
+}
 
 ## print hex value of a number
 #hex() {
@@ -292,7 +292,7 @@ alias -g T='|tail'
 #alias -s pl='perl -S'
 
 ## ctrl-s will no longer freeze the terminal.
-stty erase "^?"
+#stty erase "^?"
 
 ## you want to automatically use a bigger font on big terminals?
 #if [[ "$TERM" == "xterm" ]] && [[ "$LINES" -ge 50 ]] && [[ "$COLUMNS" -ge 100 ]] && [[ -z "$SSH_CONNECTION" ]] ; then
@@ -321,7 +321,7 @@ if [ -n "$INSIDE_EMACS" ];
     print -P "\033AnSiTu %n" 
     print -P "\033AnSiTc %d" 
 fi
-
+[ $TERM = "dumb" ] && unsetopt zle && PS1='$ '
 alias -g _='sudo'
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ## END OF FILE ######################################################################
