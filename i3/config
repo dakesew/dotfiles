@@ -1,5 +1,5 @@
 set $mod    Mod4
-
+set $SUPER_KEY Mod4+p
 # colors
 set $base00 #181818
 set $base01 #282828
@@ -117,6 +117,28 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 
+mode "SUPER resize" {
+  bindsym h resize shrink width 10 px or 10 ppt
+  bindsym j resize grow height 10 px or 10 ppt
+  bindsym k resize shrink height 10 px or 10 ppt
+  bindsym l resize grow width 10 px or 10 ppt
+
+  # back to normal: Enter or Escape
+  bindsym Return mode "SUPER"
+  bindsym Escape mode "SUPER"
+  bindsym r mode "SUPER"
+  bindsym $SUPER_KEY mode "default"
+}
+
+mode "SUPER" {
+  bindsym space  exec rofi -show run -o 50 -font "Source Code Pro 10" -fg "$fg" -bg "$bg" -bc "$bg" -bw 0 -hlbg "$bg_act"
+  bindsym r mode "SUPER resize"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $SUPER_KEY mode "default"
+}
+
+bindsym $SUPER_KEY mode "SUPER"
 bindsym $mod+r mode "resize"
 
 bar {
@@ -145,7 +167,7 @@ bindcode 232 exec --no-startup-id "xbacklight -5"
 
 gaps inner 6
 gaps outer 2
-for_window [class="^.*"] border pixel 3
+for_window [class="^.*"] border pixel 0
 
 workspace 1 output DVI-0
 exec --no-startup-id compton --config ~/.i3/compton -b
