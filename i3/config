@@ -1,33 +1,8 @@
 set $mod    Mod4
 set $SUPER_KEY Mod4+p
-# colors
-set $base00 #181818
-set $base01 #282828
-set $base02 #383838
-set $base03 #585858
-set $base04 #b8b8b8
-set $base05 #d8d8d8
-set $base06 #e8e8e8
-set $base07 #f8f8f8
-set $base08 #ab4642
-set $base09 #dc9656
-set $base0A #f7ca88
-set $base0B #a1b56c
-set $base0C #86c1b9
-set $base0D #7cafc2
-set $base0E #ba8baf
-set $base0F #a16946
 
-set $border #383838
-set $bg     #181818
-set $fg     #d8d8d8
-set $bg_act #383838
 # Display Options uses Base 16 colors
 font pango:Source Code Pro 7
-client.focused          $border $bg_act $fg     #464b50
-client.unfocused        $bg     $bg     $fg     #464b50
-client.focused_inactive $bg     $bg     $fg     #464b50
-client.urgent           #AB4642 #AB4642 #F8F8F8 #464b50
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -147,15 +122,21 @@ bar {
   position top
   separator_symbol "><"
   colors {
-    background  $bg
-
-    #name              #border #bg     #text
-    focused_workspace  $bg_act $bg_act $fg
-    active_workspace   $border $bg     $fg
-    inactive_workspace $border $bg     $fg
-    urgent_workspace   #1e1e1e #1e1e1e #c3c3c3
+    background #282828
+    statusline #ebdbb2
+    separator #323232
+    focused_workspace #676d3d #676d3d #ebdbb2
+    active_workspace #323232 #5f676a #ebdbb2
+    inactive_workspace #323232 #323232 #888888
+    urgent_workspace #333333 #900000 #ffffff
   }
 }
+
+#colors
+client.focused #676d3d #676d3d #ebdbb2 #676d3d
+client.focused_inactive #323232 #333333 #ebdbb2 #323232
+client.unfocused #323232 #323232 #ebdbb2 #323232
+client.urgent #383a3b #383a3b #ee0000 #383a3b
 
 #Volumr
 bindcode 123 exec --no-startup-id "pactl set-sink-volume 0 +10%"
@@ -174,3 +155,5 @@ exec --no-startup-id compton --config ~/.i3/compton -b
 exec --no-startup-id setxkbmap -layout de
 exec --no-startup-id xbindkeys
 exec --no-startup-id "~/.i3/wallpaper.sh 60"
+#Just want to temprarily display just one image
+#exec --no-startup-id ~/.fehbg

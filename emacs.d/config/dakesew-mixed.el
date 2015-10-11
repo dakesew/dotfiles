@@ -35,11 +35,6 @@
   )
 (global-hungry-delete-mode)
 
-(use-package powerline
-  :ensure powerline
-  )
-(powerline-default-theme)
-
 (setq c-default-style "linux"
       c-basic-offset 4)
 (provide 'dakesew-mixed)
