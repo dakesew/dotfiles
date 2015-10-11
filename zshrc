@@ -51,3 +51,13 @@ for temp in cd pushd popd; do
 # set hostname, user, and cwd now
  eterm-reset
 fi
+
+if [[ "$TERM" == "dumb" ]]
+then
+  unsetopt zle
+  unsetopt prompt_cr
+  unsetopt prompt_subst
+  unfunction precmd
+  unfunction preexec
+  PS1='$ '
+fi
