@@ -6,10 +6,8 @@
     ~/.i3: i3/
     ~/.vimperatorrc: vimperatorrc
     ~/.zshrc: zshrc
+    ~/.zsh: zsh/
     ~/.Xresources: Xresources
     ~/.themes: themes/
     ~/.gitconfig: gitconfig
     ~/.xinitrc: xinitrc
-    /etc/slim.conf: slim.conf
-    /usr/share/slim/themes/anime: anime
-    
