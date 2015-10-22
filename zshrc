@@ -22,6 +22,61 @@ autoload -U promptinit && promptinit
 
 prompt pure
 
+alias ls='ls --color=auto'
+#Stuff I like from the grml zsh config
+# just type '...' to get '../..'
+rationalise-dot() {
+    local MATCH
+    if [[ $LBUFFER =~ '(^|/| |	|'$'\n''|\||;|&)\.\.$' ]]; then
+	LBUFFER+=/
+	zle self-insert
+	zle self-insert
+    else
+	zle self-insert
+    fi
+}
+zle -N rationalise-dot
+bindkey . rationalise-dot
+## without this, typing a . aborts incremental history search
+bindkey -M isearch . self-insert
+
+#print exit value if job fails
+setopt printexitvalue
+
+#Allow Comments even in interactive shell
+setopt interactivecomments
+
+alias -g L='| less'
+alias -g H='| head'
+alias -g T='| tail'
+alias -g S='| sort'
+
+# print hex value of a number
+hex() {
+    emulate -L zsh
+    if [[ -n "$1" ]]; then
+        printf "%x\n" $1
+    else
+        print 'Usage: hex <number-to-convert>'
+        return 1
+    fi
+}
+
+setopt append_history
+setopt extended_history
+setopt share_history
+setopt notify
+setopt completeinword
+
+
+# support colors in less
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
 ## Emacs: ansi-term + tramp integration
 ## in ansi-term, ssh to this remote computer, can do C-x C-f and find file in REMOTE working directory
 ## http://www.enigmacurry.com/2008/12/26/emacs-ansi-term-tricks/
