@@ -40,8 +40,6 @@ bindkey . rationalise-dot
 ## without this, typing a . aborts incremental history search
 bindkey -M isearch . self-insert
 
-#print exit value if job fails
-setopt printexitvalue
 
 #Allow Comments even in interactive shell
 setopt interactivecomments
