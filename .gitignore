@@ -1,6 +1,13 @@
 \#*\#
+.\#*
 auto-save-list
 tramp
 *~
 emacs.d/elpa/*
-emacs.d/elpa
+/emacs.d/elpa
+ac-comphist.dat
+tetris-scores
+ede-projects.el
+ido.last
+semanticdb/
+smex-items
