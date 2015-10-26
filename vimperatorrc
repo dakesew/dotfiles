@@ -4,34 +4,34 @@ set hintchars=hjklasdfgzuiopqwertnmyxcvb
 " highlight Bell border: none; background: #27282B;
 " highlight Boolean color: #AAABAD;
 " highlight CmdLine color: #D8D8D8; background: #181818
-" highlight CmdLine>* font-family: "Source Code Pro"; font-size: 8pt; height: 10pt;
+" highlight CmdLine>* font-family: "Source Code Pro"; font-size: 8px; height: 9px;
 " highlight CompDesc width: auto; color: #AAABAD;
 " highlight CompItem background: #181818;
 " highlight CompItem>* height: auto; padding: 0 8px;
 " highlight CompItem[selected] color: #D8D8D8; background: #383838;
-" highlight CompTitle background: #181818; font-family: "Source Code Pro"; font-size: 8pt; 
+" highlight CompTitle background: #181818; font-family: "Source Code Pro"; font-size: 8px; 
 " highlight CompTitle>* color: #CECFD1; padding: 2px 8px;
 " highlight Disabled color: #B8B8B8;
 " highlight Enabled color: #B8B8B8;
-" highlight ErrorMsg color: #F56C66; font-family: "Source Code Pro"; font-size: 8pt;
+" highlight ErrorMsg color: #F56C66; font-family: "Source Code Pro"; font-size: 8px;
 " highlight Filter color: #E8E8E8; background: #181818;
 " highlight FrameIndicator background: #B8B8B8; opacity: 0.5; z-index: 999; position: fixed; top: 0; bottom: 0; left: 0; right: 0;
 " highlight HelpNote color: #8859B3;
 " highlight HelpWarning color: #B359A4;
-" highlight Hint font-family: "Source Code Pro"; font-size: 8pt; color: #B8B8B8; background: #181818; padding: 1px;
+" highlight Hint font-family: "Source Code Pro"; font-size: 8px; color: #B8B8B8; background: #181818; padding: 1px;
 " highlight HintActive color: #D8D8D8; background: #383838;
 " highlight HintElem background: transparent;
 " highlight HintImage opacity: 0.5;
 " highlight InfoMsg color: #B8B8B8;
 " highlight Keyword color: #B8B8B8;
 " highlight LineNr color: #B8B8B8;
-" highlight ModeMsg color: #B8B8B8; background: transparent; padding: 0 8px; font-family: "Source Code Pro"; font-size: 8pt;
-" highlight MoreMsg color: #B8B8B8; font-family: "Source Code Pro"; font-size: 8pt;
+" highlight ModeMsg color: #B8B8B8; background: transparent; padding: 0 8px; font-family: "Source Code Pro"; font-size: 8px;
+" highlight MoreMsg color: #B8B8B8; font-family: "Source Code Pro"; font-size: 8px;
 " highlight NonText color: #B8B8B8;
-" highlight Normal color: #B8B8B8; background: #181818; font-family: "Source Code Pro"; font-size: 8pt; 
+" highlight Normal color: #B8B8B8; background: #181818; font-family: "Source Code Pro"; font-size: 8px; 
 " highlight PromptText color: #B8B8B8; padding-top: 4px;
 " highlight Question color: #B8B8B8;
-" highlight StatusLine color: #B8B8B8; background: #181818; font-family: "Source Code Pro"; font-size: 8pt;
+" highlight StatusLine color: #B8B8B8; background: #181818; font-family: "Source Code Pro"; font-size: 8px;
 " highlight Title color: #D8D8D8;
 " highlight WarningMsg color: #B8B8B8;
 source! /home/david/.vimperatorrc.local
@@ -43,17 +43,17 @@ hi -append Hint         background-color: rgba(253, 246, 227, 0.7); border: 1px 
 hi -append HintElem     text-decoration: none; -moz-border-radius: 4px; -moz-box-shadow: 0 0 2px #002b36;
 hi -append HintActive   text-decoration: none; -moz-border-radius: 4px; -moz-box-shadow: 0 0 2px #002b36;
 
-hi StatusLine     color: #93a1a1; background: #002b36; font-weight: normal; font-size: 8pt;
+hi StatusLine     color: #93a1a1; background: #002b36; font-weight: normal; font-size: 8px;
 
-hi Normal     color:  #93a1a1;  background: #002b36; font-size: 8pt; opacity: 0.9;
-hi CmdLine    color:  #93a1a1;  background: #002b36; font-size: 8pt;
-hi InfoMsg    color:  #93a1a1;  background: #002b36; font-size: 8pt;
-hi ModeMsg    color:  #93a1a1;  background: #002b36; font-size: 8pt;
+hi Normal     color:  #93a1a1;  background: #002b36; font-size: 8px; opacity: 0.9;
+hi CmdLine    color:  #93a1a1;  background: #002b36; font-size: 8px;
+hi InfoMsg    color:  #93a1a1;  background: #002b36; font-size: 8px;
+hi ModeMsg    color:  #93a1a1;  background: #002b36; font-size: 8px;
 hi MoreMsg    color:  #859900; background: #002b36;
-hi LineNr   color:  #dc322f; background: #002b36; font-size: 8pt;
-hi Question   color: #b58900;  background: #002b36;  font-size: 8pt;
-hi WarningMsg   color: #dc322f;  background: #002b36;  font-size: 8pt;
-hi ErrorMsg   color: #002b36;  background: red;  font-size: 8pt;
+hi LineNr   color:  #dc322f; background: #002b36; font-size: 8px;
+hi Question   color: #b58900;  background: #002b36;  font-size: 8px;
+hi WarningMsg   color: #dc322f;  background: #002b36;  font-size: 8px;
+hi ErrorMsg   color: #002b36;  background: red;  font-size: 8px;
 hi NonText    background: #000;
 hi Null     color: CornflowerBlue;
 hi Tag      color: CornflowerBlue;
@@ -72,7 +72,7 @@ hi Object   color: #2aa198;
 hi Function   color:  #268bd2;
 hi URL    color:  #859900;
 
-hi TabNumber  color: #002b36; font-weight: bold; font-size:10pt;
+hi TabNumber  color: #002b36; font-weight: bold; font-size:8px;
 
 style -name tab chrome://* <<EOM
   .tabbrowser-strip {
