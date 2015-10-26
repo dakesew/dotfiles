@@ -38,10 +38,11 @@
 (use-package solarized-theme
   :ensure solarized-theme
   )
+
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 ;; sudo tramp editing on remote computers
-(set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
+;;(set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -49,6 +50,13 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#eee8d5" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#839496"])
+ '(c-default-style
+   (quote
+    ((c-mode . "linux-tabs-only")
+     (java-mode . "java")
+     (awk-mode . "awk")
+     (other . "gnu"))))
+ '(c-syntactic-indentation t)
  '(compilation-message-face (quote default))
  '(cua-global-mark-cursor-color "#2aa198")
  '(cua-normal-cursor-color "#657b83")
