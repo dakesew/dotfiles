@@ -122,7 +122,7 @@ bar {
   position top
   separator_symbol "><"
   colors {
-    background #282828
+    background #002b36
     statusline #ebdbb2
     separator #323232
     focused_workspace #676d3d #676d3d #ebdbb2
