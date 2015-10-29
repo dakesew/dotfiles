@@ -32,6 +32,8 @@
 (evil-leader/set-key "wrl" 'enlarge-window-horizontally)
 (evil-leader/set-key "wrj" 'enlarge-window)
 (evil-leader/set-key "wrk" 'shrink-window)
+;;;;;Magit/Git
+(evil-leader/set-key "gm" 'magit-status)
 ;;;;;Lisp
 (evil-leader/set-key "leb" 'eval-buffer)
 (evil-leader/set-key "lee" 'eval-expression)

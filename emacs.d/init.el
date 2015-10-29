@@ -23,6 +23,8 @@
 (require 'dakesew-evil)
 (require 'dakesew-ido)
 (require 'dakesew-auto-complete)
+(with-eval-after-load 'magit
+  (load "~/.emacs.d/config/evil-magit.el"))
 
 (use-package 2048-game
   :ensure 2048-game
