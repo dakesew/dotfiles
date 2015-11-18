@@ -25,7 +25,8 @@ values."
      ;; ----------------------------------------------------------------
      auto-completion
      ;; better-defaults
-     (c-c++ :variables c-c++-enable-clang-support t)
+     (c-c++ :variables c-c++-enable-clang-support t
+            c-c++-default-mode-for-headers 'c++-mode)
      emacs-lisp
      git
      (shell :variables
@@ -200,11 +201,21 @@ user code."
 layers configuration. You are free to put any user code."
   (setq powerline-default-seperator 'bar)
   (spacemacs/toggle-hungry-delete-on)
+  (spacemacs/toggle-hungry-delete-on)
   (evil-leader/set-key
+    ":" 'helm-M-x
     "pO" 'helm-projectile-find-file-dwim
     "cf" 'make-flash)
   (defun make-flash () (interactive) (compile "make flash"))
+  (setq tramp-default-method "ssh")
   (setq tab-width 8)
+  (fringe-mode 4)
+  ;; I'm not scared of saving everything.
+  (setq compilation-ask-about-save nil)
+  ;; Stop on the first error.
+  (setq compilation-scroll-output 'next-error)
+  ;; Don't stop on info or warnings.
+  (setq compilation-skip-threshold 2)
   )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
