@@ -89,11 +89,11 @@ if [ $TERM = eterm-color ]; then
 
 
 # set hostname, user, and cwd
-# function eterm-reset {
+ function eterm-reset {
 # echo -e "\033AnSiTu" $(whoami)
-# echo -e "\033AnSiTc" $(pwd)
+ echo -e "\033AnSiTc" $(pwd)
 # echo -e "\033AnSiTh" $(hostname)
-# }
+ }
 
 
 for temp in cd pushd popd; do
