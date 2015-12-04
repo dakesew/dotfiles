@@ -88,21 +88,9 @@ if [ $TERM = eterm-color ]; then
 
 
 
-# set hostname, user, and cwd
- function eterm-reset {
-# echo -e "\033AnSiTu" $(whoami)
- echo -e "\033AnSiTc" $(pwd)
-# echo -e "\033AnSiTh" $(hostname)
- }
-
-
 for temp in cd pushd popd; do
  alias $temp="eterm-set-cwd $temp"
  done
-
-
-# set hostname, user, and cwd now
- eterm-reset
 fi
 
 if [[ "$TERM" == "dumb" ]]
