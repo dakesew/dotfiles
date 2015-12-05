@@ -226,7 +226,8 @@ layers configuration. You are free to put any user code."
   ;; Stop on the first error.
   (setq compilation-scroll-output 'next-error)
   ;; Don't stop on info or warnings.
-  (setq compilation-skip-threshold 2)
+(setq compilation-skip-threshold 2)
+(setq dired-listing-switches "-alh")
   )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
