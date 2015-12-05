@@ -76,23 +76,11 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 ## Emacs: ansi-term + tramp integration
-## in ansi-term, ssh to this remote computer, can do C-x C-f and find file in REMOTE working directory
-## http://www.enigmacurry.com/2008/12/26/emacs-ansi-term-tricks/
-#Emacs ansi-term directory tracking
-# track directory, username, and cwd for remote logons
-if [ $TERM = eterm-color ]; then
- function eterm-set-cwd {
- $@
- echo -e "\033AnSiTc" $(pwd)
- }
-
-
-
-for temp in cd pushd popd; do
- alias $temp="eterm-set-cwd $temp"
- done
+if [ -n "$INSIDE_EMACS" ]; then
+    chpwd() { print -P "\033AnSiTc %d" }
+    print -P "\033AnSiTu %n"
+    print -P "\033AnSiTc %d"
 fi
-
 if [[ "$TERM" == "dumb" ]]
 then
   unsetopt zle
