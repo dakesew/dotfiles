@@ -49,7 +49,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(htmlize)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -213,7 +213,7 @@ layers configuration. You are free to put any user code."
   (evil-leader/set-key "otl" 'multi-term-next)
   (evil-leader/set-key "oth" 'multi-term-prev)
   (evil-leader/set-key "ot <SPC>" 'multi-term-dedicated-toggle)
-(spacemacs/toggle-hungry-delete-on)
+  (spacemacs/toggle-hungry-delete-on)
   (evil-leader/set-key
     "pO" 'helm-projectile-find-file-dwim
     "cf" 'make-flash)
@@ -226,8 +226,8 @@ layers configuration. You are free to put any user code."
   ;; Stop on the first error.
   (setq compilation-scroll-output 'next-error)
   ;; Don't stop on info or warnings.
-(setq compilation-skip-threshold 2)
-(setq dired-listing-switches "-alh")
+  (setq compilation-skip-threshold 2)
+  (setq dired-listing-switches "-alh")
   )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
