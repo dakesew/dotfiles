@@ -43,6 +43,7 @@ values."
      ;;        shell-default-position 'bottom)
      spell-checking
      syntax-checking
+     python
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
