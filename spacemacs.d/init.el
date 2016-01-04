@@ -29,6 +29,7 @@ values."
             c-c++-default-mode-for-headers 'c++-mode)
      emacs-lisp
      git
+     latex
      ;; eyebrowse
      ranger
      (shell :variables
@@ -44,6 +45,7 @@ values."
      spell-checking
      syntax-checking
      python
+     spacemacs-layouts
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
@@ -98,7 +100,7 @@ values."
                                :size 9
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -229,7 +231,10 @@ layers configuration. You are free to put any user code."
   ;; Don't stop on info or warnings.
   (setq compilation-skip-threshold 2)
   (setq dired-listing-switches "-alh")
+  (setq org-agenda-files (list "~/Documents/org/private/programming.org"
+                               ))
   )
+
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
