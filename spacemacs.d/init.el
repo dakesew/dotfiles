@@ -255,6 +255,7 @@ layers configuration. You are free to put any user code."
      (other . "gnu"))))
  '(clang-format-style "linux")
  '(helm-descbinds-window-style (quote split))
+ '(paradox-github-token t)
  '(require-final-newline (quote visit-save))
  '(tab-width 8))
 (custom-set-faces
