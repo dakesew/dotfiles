@@ -7,7 +7,7 @@ font pango:Source Code Pro 7
 floating_modifier $mod
 
 # Run apps
-bindsym $mod+Return exec emc -e "(multi-term)"
+bindsym $mod+Return exec urxvt
 bindsym $mod+space  exec rofi -show run #-o 50 -font "Source Code Pro 10"# -fg "$fg" -bg "$bg" -bc "$bg" -bw 0 -hlbg "$bg_act"
 bindsym $mod+Shift+e exec emc
 bindsym $mod+Shift+f exec firefox
