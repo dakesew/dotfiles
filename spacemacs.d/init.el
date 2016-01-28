@@ -237,8 +237,11 @@ layers configuration. You are free to put any user code."
   (setq dired-listing-switches "-alh")
   (setq org-agenda-files (list "~/Documents/org/private/programming.org"
                                ))
-  )
 
+  (spacemacs|do-after-display-system-init
+   (setq powerline-default-separator 'bar))
+  (spacemacs/toggle-centered-point-globally-on)
+  )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
