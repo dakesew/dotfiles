@@ -196,6 +196,7 @@ values."
    ;; The default package repository used if no explicit repository has been
    ;; specified with an installed package.
    ;; Not used for now. (default nil)
+   dotspacemacs-smartparens-strict-mode nil
    dotspacemacs-default-package-repository nil
    ))
 
