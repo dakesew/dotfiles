@@ -204,15 +204,12 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
-  (setq dotspacemacs-additional-packages 'smart-tabs-mode)
   )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  ;;(smart-tabs-insinuate 'c 'cpp 'c++)
-  (setq powerline-default-seperator 'bar)
   (spacemacs/toggle-hungry-delete-on)
   ;;;;Terminal
   (evil-leader/set-key "ott" 'multi-term)
@@ -221,7 +218,8 @@ layers configuration. You are free to put any user code."
   (evil-leader/set-key "otl" 'multi-term-next)
   (evil-leader/set-key "oth" 'multi-term-prev)
   (evil-leader/set-key "ot <SPC>" 'multi-term-dedicated-toggle)
-  (spacemacs/toggle-hungry-delete-on)
+
+  (evil-leader/set-key "<SPC>" 'avy-goto-char-2)
   (evil-leader/set-key
     "pO" 'helm-projectile-find-file-dwim
     "cf" 'make-flash)
