@@ -238,7 +238,7 @@ layers configuration. You are free to put any user code."
                                ))
 
   (spacemacs|do-after-display-system-init
-   (setq powerline-default-separator 'bar))
+   (setq powerline-default-separator 'nil))
   (spacemacs/toggle-centered-point-globally-on)
   )
 ;; Do not write anything past this comment. This is where Emacs will
