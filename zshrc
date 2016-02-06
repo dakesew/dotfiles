@@ -90,3 +90,7 @@ then
   unfunction preexec
   PS1='$ '
 fi
+
+alias em="emacsclient -nw -a '' "
+alias e="emacsclient -nw -a 'vi' "
+
