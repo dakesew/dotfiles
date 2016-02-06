@@ -21,20 +21,13 @@ values."
      rcirc
      shell-scripts
      games
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
      auto-completion
-     ;; better-defaults
      (c-c++ :variables c-c++-enable-clang-support t
             c-c++-default-mode-for-headers 'c++-mode)
      emacs-lisp
      git
      latex
      ruby
-     ;; eyebrowse
      ranger
      (shell :variables
             shell-default-position 'full
@@ -43,14 +36,11 @@ values."
      markdown
      org
      eyebrowse
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
      spell-checking
      syntax-checking
      python
      spacemacs-layouts
-     ;; version-control
+     evil-snipe
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
