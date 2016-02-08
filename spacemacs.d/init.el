@@ -207,9 +207,11 @@ layers configuration. You are free to put any user code."
   (evil-leader/set-key "otp" 'multi-term-prev)
   (evil-leader/set-key "otl" 'multi-term-next)
   (evil-leader/set-key "oth" 'multi-term-prev)
+  (evil-leader/set-key "o <SPC>" 'helm-multi-files)
   (evil-leader/set-key "ot <SPC>" 'multi-term-dedicated-toggle)
-
   (evil-leader/set-key "<SPC>" 'avy-goto-char-2)
+
+  (evil-leader/set-key "oo" 'spacemacs/workspaces-micro-state)
   (evil-leader/set-key
     "pO" 'helm-projectile-find-file-dwim
     "cf" 'make-flash)
