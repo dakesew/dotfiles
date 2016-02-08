@@ -194,6 +194,7 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
+  (setq-default ranger-override-dired t)
   )
 
 (defun dotspacemacs/user-config ()
