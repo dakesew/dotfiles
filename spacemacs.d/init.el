@@ -226,9 +226,8 @@ layers configuration. You are free to put any user code."
   ;; Don't stop on info or warnings.
   (setq compilation-skip-threshold 2)
   (setq dired-listing-switches "-alh")
-  (setq org-agenda-files (list "~/Documents/org/private/programming.org"
-                               ))
-
+  (setq org-agenda-files (list "~/Documents/org/private/programming.org"))
+  (setq neo-theme 'ascii)
   (spacemacs|do-after-display-system-init
    (setq powerline-default-separator 'nil))
   (spacemacs/toggle-centered-point-globally-on)
