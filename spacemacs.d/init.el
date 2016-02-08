@@ -231,6 +231,13 @@ layers configuration. You are free to put any user code."
    (setq powerline-default-separator 'nil))
   (spacemacs/toggle-centered-point-globally-on)
   )
+  (spacemacs/toggle-mode-line-battery-on)
+  (defun on-frame-open (&optional frame)
+    "If the FRAME created in terminal don't load background color."
+    (unless (display-graphic-p frame)
+      (set-face-background 'default "unspecified-bg" frame)))
+
+  (add-hook 'after-make-frame-functions 'on-frame-open)
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
