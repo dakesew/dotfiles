@@ -245,6 +245,10 @@ layers configuration. You are free to put any user code."
       (set-face-background 'default "unspecified-bg" frame)))
 
   (add-hook 'after-make-frame-functions 'on-frame-open)
+  (setq diff-hl-side 'left)
+  (global-diff-hl-mode nil)
+  (global-diff-hl-mode)
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
   )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
