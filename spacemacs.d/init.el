@@ -33,6 +33,8 @@ values."
      latex
      ruby
      ranger
+     html
+     javascript
      (shell :variables
             shell-default-position 'full
             shell-default-term-shell "/bin/zsh"
@@ -46,7 +48,6 @@ values."
      spacemacs-layouts
      evil-snipe
      vim-empty-lines
-     gtags
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
