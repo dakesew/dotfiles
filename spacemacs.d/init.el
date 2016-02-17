@@ -193,6 +193,7 @@ values."
    ;; specified with an installed package.
    ;; Not used for now. (default nil)
    dotspacemacs-smartparens-strict-mode nil
+   dotspacemacs-line-numbers 'relative
    dotspacemacs-default-package-repository nil
    ))
 
