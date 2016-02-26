@@ -162,7 +162,7 @@ workspace 1 output DVI-0
 exec --no-startup-id compton --config ~/.i3/compton -b
 exec --no-startup-id setxkbmap -layout de
 exec --no-startup-id xbindkeys
-exec --no-startup-id "~/.i3/wallpaper.sh 60"
+exec --no-startup-id "~/.i3/wallpaper.sh 600"
 exec --no-startup-id xrdb -merge ~/.Xressources
 #Just want to temprarily display just one image
 #exec --no-startup-id ~/.fehbg
