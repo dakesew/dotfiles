@@ -13,7 +13,7 @@ bindsym $mod+Shift+e exec emc
 bindsym $mod+Shift+f exec firefox
 # Lock
 bindsym $mod+q exec python2 ~/.i3/py3lock.py
-bindsym $mod+Shift+q exec "i3lock -c 000000
+bindsym $mod+Shift+q exec "i3lock -c 002b36"
 
 
 # Shutdown
