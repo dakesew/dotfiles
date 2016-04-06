@@ -9,7 +9,8 @@ floating_modifier $mod
 # Run apps
 bindsym $mod+Return exec urxvt
 bindsym $mod+space  exec rofi -show run #-o 50 -font "Source Code Pro 10"# -fg "$fg" -bg "$bg" -bc "$bg" -bw 0 -hlbg "$bg_act"
-bindsym $mod+Shift+e exec emc
+#bindsym $mod+space exec dmenu_run
+bindsym $mod+Shift+e exec "emacsclient -ca ''"
 bindsym $mod+Shift+f exec firefox
 # Lock
 bindsym $mod+q exec python2 ~/.i3/py3lock.py
@@ -161,8 +162,9 @@ for_window [class="^.*"] border pixel 0
 workspace 1 output DVI-0
 exec --no-startup-id compton --config ~/.i3/compton -b
 exec --no-startup-id setxkbmap -layout de
-exec --no-startup-id xbindkeys
+#exec --no-startup-id xbindkeys
 exec --no-startup-id "~/.i3/wallpaper.sh 600"
-exec --no-startup-id xrdb -merge ~/.Xressources
+exec --no-startup-id xrdb -merge ~/.Xresources
+exec  /usr/libexec/gnome-setting-daemon
 #Just want to temprarily display just one image
 #exec --no-startup-id ~/.fehbg
