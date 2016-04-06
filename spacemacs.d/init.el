@@ -252,6 +252,14 @@ layers configuration. You are free to put any user code."
   (setq diff-hl-side 'left)
   (global-diff-hl-mode nil)
   (global-diff-hl-mode)
+ ; (require 'centered-cursor-mode)
+  (define-global-minor-mode my-global-centered-cursor-mode centered-cursor-mode
+    (lambda ()
+      (when (not (memq major-mode
+                       (list 'slime-repl-mode 'shell-mode 'term-mode)))
+        (centered-cursor-mode))))
+
+  (my-global-centered-cursor-mode 1)
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
   )
 ;; Do not write anything past this comment. This is where Emacs will
