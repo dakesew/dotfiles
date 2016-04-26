@@ -2,4 +2,4 @@
 echo Installing Graphical
 yaourt --needed --noconfirm -S xorg xorg-xinit \
 i3-gaps-git i3status i3lock compton python2 python2-imaging adobe-source-code-pro-fonts rofi feh \
-firefox engrampa thunar thunar-volman 
+firefox xss-lock mpv
