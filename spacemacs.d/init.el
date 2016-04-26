@@ -261,6 +261,9 @@ layers configuration. You are free to put any user code."
 
   (my-global-centered-cursor-mode 1)
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
+  (setq-default tab-width 8)
+  (setq-default indent-tabs-mode t)
+  (setq c-default-style "linux")
   )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -272,15 +275,13 @@ layers configuration. You are free to put any user code."
  '(c-basic-offset 8)
  '(c-default-style
    (quote
-    ((c-mode . "linux")
-     (java-mode . "java")
+    ((java-mode . "java")
      (awk-mode . "awk")
      (other . "gnu"))))
  '(clang-format-style "linux")
  '(helm-descbinds-window-style (quote split))
  '(paradox-github-token t)
- '(require-final-newline (quote visit-save))
- '(tab-width 8))
+ '(require-final-newline (quote visit-save)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
