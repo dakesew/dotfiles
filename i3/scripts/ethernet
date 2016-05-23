@@ -1,0 +1,18 @@
+#!/bin/sh
+interfaces=$(echo /sys/class/net/e*)
+l=${#interfaces}
+if [ $l -lt 1 ]; then
+	exit
+fi
+interfaces=${interfaces#*net/}
+INTERFACE=${interfaces%% *}
+INTERFACE2=${interfaces##*net/}
+
+if [ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]; then
+	echo "(down)"
+	echo "(down)"
+else
+	ip=$(ip addr show $INTERFACE | perl -n -e "/inet ([^\/]+).* scope global/ && print \$1 and exit")
+	echo "$ip"
+	echo "$ip"	
+fi

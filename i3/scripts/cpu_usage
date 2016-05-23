@@ -1,0 +1,21 @@
+#!/bin/sh
+cpu_cores=$(nproc)
+
+# default values
+t_warn=0.50
+t_crit=0.80
+color="#CFD2DE"
+color_warn="#FFF600"
+color_crit="#EC819E"
+
+load=$(cut -d ' ' -f1 /proc/loadavg) 
+if [ $t_crit -lt $($load / $cpu_cores) ];
+then
+	color=$color_crit
+elif [ $t_warn -lt $($load / $cpu_cores) ];
+then
+	color=$color_warn
+else
+	color="#CFD2DE"
+fi
+echo "<span foreground=\"$color\">${load}</span>"

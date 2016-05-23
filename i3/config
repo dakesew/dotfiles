@@ -127,7 +127,7 @@ bindsym $mod+r mode "resize"
 
 bar {
   strip_workspace_numbers true
-  status_command i3status
+  status_command "i3blocks -c ~/.i3/i3blocks.conf"
   position top
   separator_symbol "><"
   colors {
