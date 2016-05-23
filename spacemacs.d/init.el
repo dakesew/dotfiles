@@ -1,4 +1,4 @@
-;; -*- mode: emacs-lisp -*-
+					;~/.emacs.d/elpa/helm-gitignore*; -*- mode: emacs-lisp -*-
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
@@ -10,24 +10,27 @@ values."
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
    ;; or `spacemacs'. (default 'spacemacs)
-   dotspacemacs-distribution 'spacemacs
+   dotspacemacs-distribution 'spacemacs-base
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '()
+   dotspacemacs-configuration-layer-path '("~/.spacemacs.d/layers/")
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
      (version-control :variables
-                      version-control-diff-tool 'diff-hl
-                      version-control-global-margin t)
+		      version-control-diff-tool 'diff-hl
+		      version-control-global-margin t)
+     spacemacs-layer-extracts
      themes-megapack
      rcirc
      shell-scripts
      games
-     auto-completion
+     (auto-completion
+      :disabled-for org)
+
      (c-c++ :variables c-c++-enable-clang-support t
-            c-c++-default-mode-for-headers 'c++-mode)
+	    c-c++-default-mode-for-headers 'c++-mode)
      emacs-lisp
      git
      latex
@@ -36,9 +39,9 @@ values."
      html
      javascript
      (shell :variables
-            shell-default-position 'full
-            shell-default-term-shell "/bin/zsh"
-            shell-default-shell 'multi-term)
+	    shell-default-position 'full
+	    shell-default-term-shell "/bin/zsh"
+	    shell-default-shell 'multi-term)
      markdown
      org
      eyebrowse
@@ -48,14 +51,14 @@ values."
      spacemacs-layouts
      evil-snipe
      vim-empty-lines
-     ruby
      dockerfile
+     emms
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages '(htmlize yaml-mode)
+   dotspacemacs-additional-packages '(editorconfig yaml-mode pdf-tools)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -94,16 +97,16 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(solarized-dark
-                         solarized-light)
+			 solarized-light)
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 9
-                               :weight normal
-                               :width normal
-                               :powerline-scale 1.1)
+			       :size 9
+			       :weight normal
+			       :width normal
+			       :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -187,7 +190,7 @@ values."
    dotspacemacs-highlight-delimiters 'all
    ;; If non nil advises quit functions to keep server open when quitting.
    ;; (default nil)
-   dotspacemacs-persistent-server nil
+   dotspacemacs-persistent-server t
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `ag', `pt', `ack' and `grep'.
    ;; (default '("ag" "pt" "ack" "grep"))
@@ -211,7 +214,6 @@ user code."
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  (spacemacs/toggle-hungry-delete-on)
   ;;;;Terminal
   (evil-leader/set-key "ott" 'multi-term)
   (evil-leader/set-key "otn" 'multi-term-next)
@@ -220,7 +222,6 @@ layers configuration. You are free to put any user code."
   (evil-leader/set-key "oth" 'multi-term-prev)
   (evil-leader/set-key "o <SPC>" 'helm-multi-files)
   (evil-leader/set-key "ot <SPC>" 'multi-term-dedicated-toggle)
-  (evil-leader/set-key "<SPC>" 'avy-goto-char-2)
 
   (evil-leader/set-key "oo" 'spacemacs/workspaces-micro-state)
   (evil-leader/set-key
@@ -242,7 +243,6 @@ layers configuration. You are free to put any user code."
   (spacemacs|do-after-display-system-init
    (setq powerline-default-separator 'nil))
   (spacemacs/toggle-centered-point-globally-on)
-  (spacemacs/toggle-mode-line-battery-on)
   (defun on-frame-open (&optional frame)
     "If the FRAME created in terminal don't load background color."
     (unless (display-graphic-p frame)
@@ -252,40 +252,23 @@ layers configuration. You are free to put any user code."
   (setq diff-hl-side 'left)
   (global-diff-hl-mode nil)
   (global-diff-hl-mode)
- ; (require 'centered-cursor-mode)
   (define-global-minor-mode my-global-centered-cursor-mode centered-cursor-mode
     (lambda ()
       (when (not (memq major-mode
-                       (list 'slime-repl-mode 'shell-mode 'term-mode)))
-        (centered-cursor-mode))))
+		       (list 'slime-repl-mode 'shell-mode 'term-mode 'eshell-mode)))
+	(centered-cursor-mode))))
 
   (my-global-centered-cursor-mode 1)
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
   (setq-default tab-width 8)
   (setq-default indent-tabs-mode t)
   (setq c-default-style "linux")
+  (spacemacs/toggle-auto-fill-mode-on)
+  (use-package editorconfig
+    :config (editorconfig-mode 1))
+  (pdf-tools-install)
   )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(c-basic-offset 8)
- '(c-default-style
-   (quote
-    ((java-mode . "java")
-     (awk-mode . "awk")
-     (other . "gnu"))))
- '(clang-format-style "linux")
- '(helm-descbinds-window-style (quote split))
- '(paradox-github-token t)
- '(require-final-newline (quote visit-save)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+ )
