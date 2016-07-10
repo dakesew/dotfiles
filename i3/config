@@ -127,7 +127,8 @@ bindsym $mod+r mode "resize"
 
 bar {
   strip_workspace_numbers true
-  status_command "i3blocks -c ~/.i3/i3blocks.conf"
+  status_command "i3status"
+#  status_command "i3blocks -c ~/.i3/i3blocks.conf"
   position top
   separator_symbol "><"
   colors {
@@ -153,10 +154,10 @@ bindcode 122 exec --no-startup-id "pactl set-sink-volume $(pacmd dump | perl -a 
 bindsym $mod+F9 exec --no-startup-id "pactl set-sink-volume $(pacmd dump | perl -a -n -e 'print $F[1] if /set-default-sink/') +1%"
 bindsym $mod+F8 exec --no-startup-id "pactl set-sink-volume $(pacmd dump | perl -a -n -e 'print $F[1] if /set-default-sink/') -1%"
 #backlight
-bindcode 233 exec --no-startup-id "xbacklight +5"
-bindcode 232 exec --no-startup-id "xbacklight -5"
-bindsym $mod+F7 exec --no-startup-id "xbacklight +5"
-bindsym $mod+F6 exec --no-startup-id "xbacklight -5"
+bindcode 233 exec --no-startup-id "light -A 2"
+bindcode 232 exec --no-startup-id "light -U 2"
+bindsym $mod+F7 exec --no-startup-id "light -A 2"
+bindsym $mod+F6 exec --no-startup-id "light -U 2"
 #audiocontrol
 bindsym $mod+F3 exec --no-startup-id mpc toggle
 bindsym $mod+F4 exec --no-startup-id mpc prev
@@ -167,7 +168,7 @@ gaps outer 2
 for_window [class="^.*"] border pixel 0
 
 workspace 1 output DVI-0
-exec --no-startup-id sh -c "while true; do compton --config ~/.i3/compton -b; sleep 1s; done"
+exec --no-startup-id sh -c "while true; do compton --config ~/.i3/compton; sleep 1s; done"
 exec --no-startup-id setxkbmap -layout de
 #exec --no-startup-id xbindkeys
 exec --no-startup-id "~/.i3/wallpaper.sh 600"

@@ -26,6 +26,7 @@ values."
      rcirc
      shell-scripts
      games
+     python
      (auto-completion
       :disabled-for org)
 
@@ -45,9 +46,8 @@ values."
      markdown
      org
      eyebrowse
-     spell-checking
      syntax-checking
-     python
+     (spell-checking :variables spell-checking-enable-by-default nil)
      spacemacs-layouts
      evil-snipe
      vim-empty-lines
@@ -267,6 +267,7 @@ layers configuration. You are free to put any user code."
   (use-package editorconfig
     :config (editorconfig-mode 1))
   (pdf-tools-install)
+  (spacemacs/toggle-auto-fill-mode-on)
   )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
