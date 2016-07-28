@@ -268,6 +268,26 @@ layers configuration. You are free to put any user code."
     :config (editorconfig-mode 1))
   (pdf-tools-install)
   (spacemacs/toggle-auto-fill-mode-on)
+  ;; Org mode html stylesheet
+  ;; Source: https://stackoverflow.com/questions/19614104/how-to-tell-org-mode-to-embed-my-css-file-on-html-export
+  (defun my-org-inline-css-hook (exporter)
+    "Insert custom inline css"
+    (when (eq exporter 'html)
+      (let* ((dir (ignore-errors (file-name-directory (buffer-file-name))))
+	     (path (concat dir "style.css"))
+	     (homestyle (or (null dir) (null (file-exists-p path))))
+	     (final (if homestyle "~/.spacemacs.d/org-style.css" path))) ;; <- set your own style file path
+	(setq org-html-head-include-default-style nil)
+	(setq org-html-head (concat
+			     "<style type=\"text/css\">\n"
+			     "<!--/*--><![CDATA[/*><!--*/\n"
+			     (with-temp-buffer
+			       (insert-file-contents final)
+			       (buffer-string))
+			     "/*]]>*/-->\n"
+			     "</style>\n")))))
+
+  (add-hook 'org-export-before-processing-hook 'my-org-inline-css-hook)
   )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
