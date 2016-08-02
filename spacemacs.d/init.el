@@ -260,7 +260,8 @@ layers configuration. You are free to put any user code."
   (define-global-minor-mode my-global-centered-cursor-mode centered-cursor-mode
     (lambda ()
       (when (not (memq major-mode
-		       (list 'slime-repl-mode 'shell-mode 'term-mode 'eshell-mode)))
+		       (list 'slime-repl-mode 'shell-mode 'term-mode
+			     'eshell-mode 'rcirc-mode 'erc-mode)))
 	(centered-cursor-mode))))
 
   (my-global-centered-cursor-mode 1)
