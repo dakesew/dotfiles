@@ -248,12 +248,6 @@ layers configuration. You are free to put any user code."
   (spacemacs|do-after-display-system-init
    (setq powerline-default-separator 'nil))
   (spacemacs/toggle-centered-point-globally-on)
-  (defun on-frame-open (&optional frame)
-    "If the FRAME created in terminal don't load background color."
-    (unless (display-graphic-p frame)
-      (set-face-background 'default "unspecified-bg" frame)))
-
-  (add-hook 'after-make-frame-functions 'on-frame-open)
   (setq diff-hl-side 'left)
   (define-global-minor-mode my-global-centered-cursor-mode centered-cursor-mode
     (lambda ()
