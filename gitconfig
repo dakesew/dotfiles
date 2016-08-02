@@ -2,7 +2,6 @@
 	email = david@sawatzk.de
 	name = David Sawatzke
 [core]
-[clolor]
 	ui = true
 [push]
 	default = simple
