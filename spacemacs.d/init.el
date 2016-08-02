@@ -255,8 +255,6 @@ layers configuration. You are free to put any user code."
 
   (add-hook 'after-make-frame-functions 'on-frame-open)
   (setq diff-hl-side 'left)
-  (global-diff-hl-mode nil)
-  (global-diff-hl-mode)
   (define-global-minor-mode my-global-centered-cursor-mode centered-cursor-mode
     (lambda ()
       (when (not (memq major-mode
