@@ -219,6 +219,7 @@ user code."
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   ;;;;Terminal
+  (evil-leader/set-key "ote" 'eshell)
   (evil-leader/set-key "ott" 'multi-term)
   (evil-leader/set-key "otn" 'multi-term-next)
   (evil-leader/set-key "otp" 'multi-term-prev)
