@@ -62,7 +62,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages '(editorconfig yaml-mode pdf-tools)
+   dotspacemacs-additional-packages '(editorconfig yaml-mode pdf-tools esup centered-window-mode)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -294,6 +294,7 @@ layers configuration. You are free to put any user code."
   (add-hook 'org-export-before-processing-hook 'my-org-inline-css-hook)
   )
 ;; Do not write anything past this comment. This is where Emacs will
+  (centered-window-mode t)
 ;; auto-generate custom variable definitions.
 (custom-set-variables
  )
