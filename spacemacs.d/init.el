@@ -290,11 +290,11 @@ layers configuration. You are free to put any user code."
 			       (buffer-string))
 			     "/*]]>*/-->\n"
 			     "</style>\n")))))
-
   (add-hook 'org-export-before-processing-hook 'my-org-inline-css-hook)
-  )
-;; Do not write anything past this comment. This is where Emacs will
   (centered-window-mode t)
+  )
+
+;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (custom-set-variables
  )
