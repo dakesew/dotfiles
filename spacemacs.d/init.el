@@ -36,6 +36,7 @@ values."
      git
      latex
      ruby
+     go
      ranger
      html
      javascript
@@ -52,7 +53,10 @@ values."
      evil-snipe
      vim-empty-lines
      dockerfile
+     ansible
      emms
+     emoji
+     erc
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
