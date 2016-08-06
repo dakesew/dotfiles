@@ -8,7 +8,6 @@ set backspace=indent,eol,start
 set ruler
 set background=dark
 set autoread
-
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set nowb
@@ -63,7 +62,8 @@ func! DeleteTrailingWS()
   exe "normal `z"
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
-
+" escape keychord
+imap fd <esc>
 " Spellchecking
 map <leader>ss :setlocal spell!<cr>
 " Spacemacs like functionality
