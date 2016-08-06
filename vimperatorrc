@@ -80,7 +80,7 @@ style -name tab chrome://* <<EOM
   }
 EOM
 
-set gui=none
+set gui=navigation
 set hlsearch
 set focuscontent
 set! browser.newtab.url=file:///home/soryio/.dotfiles/firefox/start.html
