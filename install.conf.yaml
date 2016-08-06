@@ -12,3 +12,4 @@
     ~/.gitconfig: gitconfig
     ~/.xinitrc: xinitrc
     ~/.spacemacs.d: spacemacs.d
+    ~/.vimrc: vimrc
