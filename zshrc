@@ -1,29 +1,72 @@
-#!/usr/bin/env zsh
-fpath=( "/home/david/.zsh" $fpath )
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt appendhistory autocd extendedglob nomatch notify
-bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/david/.zshrc'
+# Save the location of the current completion dump file.
+if [ -z "$ZSH_COMPDUMP" ]; then
+	ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
+fi
 
-autoload -Uz compinit
-compinit
+# Load and run compinit
+autoload -U compinit
+compinit -i -d "${ZSH_COMPDUMP}"
 
+# Use history
+SAVEHIST=15000
+HISTFILE=~/.zsh_history
+setopt sharehistory
+setopt extendedhistory
 
-# End of lines added by compinstall
-###############################################################################
-#User code
+# Superglobs!
+setopt extendedglob
+unsetopt caseglob
 
-autoload -U promptinit && promptinit
+# Load sourcefiles
+[ -f ~/.profile ] && source $HOME/.profile
 
-prompt pure
+# Detect what platform this is for other scripts
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+	platform='linux'
+elif [[ "$unamestr" == 'Bitrig' ]]; then
+	platform='bitrig'
+elif [[ "$unamestr" == 'Darwin' ]]; then
+	platform='osx'
+fi
 
-alias ls='ls --color=auto'
-#Stuff I like from the grml zsh config
+# report long running command CPU usage
+REPORTTIME=60
+
+# Detect what kind of proc we have
+proc=`uname -p`
+
+# Vim is love, vim is life
+export EDITOR=vim
+
+NAME="%n@"
+
+if [ -n "$DOCKER" ]
+then
+	NAME="%{$fg[blue]%}$NAME""docker:%{$reset_color%}%m "
+else
+	NAME="$NAME""%m "
+fi
+
+if [[ platform != "linux" ]]
+then
+	NAME="$NAME""($platform) "
+fi
+
+function __ret_status {
+	echo "%(?:%{$fg[green]%}➜ :%{$fg[red]%}➜ %s)"
+}
+
+PROMPT='$NAME%{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}
+%{$fg_bold[gray]%}$(__ret_status) %{$reset_color%}'
+
+# Load extended ZSH aliases and completions
+for file in ~/.zsh/*.zsh
+do
+	source $file
+done
+
 # just type '...' to get '../..'
 rationalise-dot() {
     local MATCH
@@ -39,8 +82,6 @@ zle -N rationalise-dot
 bindkey . rationalise-dot
 ## without this, typing a . aborts incremental history search
 bindkey -M isearch . self-insert
-
-
 #Allow Comments even in interactive shell
 setopt interactivecomments
 
@@ -48,49 +89,6 @@ alias -g L='| less'
 alias -g H='| head'
 alias -g T='| tail'
 alias -g S='| sort'
-
-# print hex value of a number
-hex() {
-    emulate -L zsh
-    if [[ -n "$1" ]]; then
-        printf "%x\n" $1
-    else
-        print 'Usage: hex <number-to-convert>'
-        return 1
-    fi
-}
-
-setopt append_history
-setopt extended_history
-setopt share_history
-setopt notify
-setopt completeinword
-
-
-# support colors in less
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m'
-## Emacs: ansi-term integration
-if [ -n "$INSIDE_EMACS" ]; then
-    chpwd() { print -P "\033AnSiTc %d" }
-    print -P "\033AnSiTu %n"
-    print -P "\033AnSiTc %d"
-fi
-if [[ "$TERM" == "dumb" ]]
-then
-  unsetopt zle
-  unsetopt prompt_cr
-  unsetopt prompt_subst
-  unfunction precmd
-  unfunction preexec
-  PS1='$ '
-fi
-
 alias em="emacsclient -nw -a '' "
 alias e="emacsclient -nw -a 'vi' "
-
+[ $TERM = "dumb" ] && unsetopt zle && PS1='$ '
