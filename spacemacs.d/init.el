@@ -245,8 +245,7 @@ layers configuration. You are free to put any user code."
   (setq dired-listing-switches "-alh")
   (setq org-agenda-files (list "~/Documents/org/private/programming.org"))
   (setq neo-theme 'ascii)
-  (spacemacs|do-after-display-system-init
-   (setq powerline-default-separator 'nil))
+  (setq powerline-default-separator 'nil)
   (spacemacs/toggle-centered-point-globally-on)
   (setq diff-hl-side 'left)
   (define-global-minor-mode my-global-centered-cursor-mode centered-cursor-mode
