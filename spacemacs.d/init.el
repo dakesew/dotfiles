@@ -248,16 +248,18 @@ layers configuration. You are free to put any user code."
   (setq powerline-default-separator 'nil)
   (spacemacs/toggle-centered-point-globally-on)
   (setq diff-hl-side 'left)
+  ;;Disable centered cursor mode for shell-like modes
   (define-global-minor-mode my-global-centered-cursor-mode centered-cursor-mode
     (lambda ()
       (when (not (memq major-mode
 		       (list 'slime-repl-mode 'shell-mode 'term-mode
 			     'eshell-mode 'rcirc-mode 'erc-mode)))
 	(centered-cursor-mode))))
+  (my-global-centered-cursor-mode 1)
 
   ;;Disable evil for teminal modes
   (evil-set-initial-state 'term-mode 'emacs)
-  (my-global-centered-cursor-mode 1)
+  (evil-set-initial-state 'term-mode 'emacs)
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
   (setq-default tab-width 8)
   (setq-default indent-tabs-mode t)
