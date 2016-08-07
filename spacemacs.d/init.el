@@ -256,6 +256,8 @@ layers configuration. You are free to put any user code."
 			     'eshell-mode 'rcirc-mode 'erc-mode)))
 	(centered-cursor-mode))))
 
+  ;;Disable evil for teminal modes
+  (evil-set-initial-state 'term-mode 'emacs)
   (my-global-centered-cursor-mode 1)
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
   (setq-default tab-width 8)
