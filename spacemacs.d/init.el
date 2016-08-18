@@ -268,7 +268,6 @@ layers configuration. You are free to put any user code."
   (use-package editorconfig
     :config (editorconfig-mode 1))
   (pdf-tools-install)
-  (spacemacs/toggle-auto-fill-mode-on)
   ;; Org mode html stylesheet
   ;; Source: https://stackoverflow.com/questions/19614104/how-to-tell-org-mode-to-embed-my-css-file-on-html-export
   (defun my-org-inline-css-hook (exporter)
