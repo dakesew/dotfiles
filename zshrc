@@ -34,8 +34,8 @@ REPORTTIME=60
 # Detect what kind of proc we have
 proc=`uname -p`
 
-# Vim is love, vim is life
-export EDITOR=vim
+# Nvim is love, nvim is life
+export EDITOR=nvim
 
 NAME="%n@"
 
@@ -87,7 +87,7 @@ alias -g H='| head'
 alias -g T='| tail'
 alias -g S='| sort'
 alias em="emacsclient -nw -a '' "
-alias e="emacsclient -nw -a 'vi' "
+alias e="emacsclient -nw -a 'nvim || vim || vi' || nvim || vim || vi"
 repl() {
     command="${*}"
     echo 'Started repl for "'$command'"'
