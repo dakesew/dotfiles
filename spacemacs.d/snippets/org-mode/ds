@@ -1,0 +1,5 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# key: ds
+# name: shortdate
+# --
+`(format-time-string "%Y-%m")`$0
