@@ -2,7 +2,7 @@
 
 while :
 do
-    wallpaper=$(shuf -n1 -e ~/Portable/Wallpapers/X*/*)
+    wallpaper=$(shuf -n1 -e ~/usr/img/wallpapers/X*/*)
     feh --no-fehbg --bg-fill "$wallpaper"
     echo "$wallpaper" > /tmp/wallpaper
     sleep $1
