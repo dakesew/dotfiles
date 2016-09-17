@@ -288,8 +288,14 @@ layers configuration. You are free to put any user code."
 			     "/*]]>*/-->\n"
 			     "</style>\n")))))
   (add-hook 'org-export-before-processing-hook 'my-org-inline-css-hook)
-  (centered-window-mode t)
-  )
+  ;; Incease gcons threshhold to reduce freezinc
+  (setq gc-cons-threshold '20000000)
+  (defun nothing())
+  ;; Disable the mouse
+  (define-key evil-normal-state-map (kbd "<down-mouse-1>") 'nothing)
+  (dolist (mouse '("<down-mouse-1>" "<mouse-1>"))
+    (global-unset-key (kbd mouse))) (centered-window-mode t)
+    )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
