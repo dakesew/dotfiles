@@ -265,7 +265,7 @@ layers configuration. You are free to put any user code."
   (setq-default indent-tabs-mode t)
   (setq c-default-style "linux")
   (spacemacs/toggle-auto-fill-mode-on)
-  (spacemacs/toggle-truncate-lines-on)
+  (spacemacs/toggle-truncate-lines-off)
   (use-package editorconfig
     :config (editorconfig-mode 1))
   (pdf-tools-install)
