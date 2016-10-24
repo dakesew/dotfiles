@@ -315,6 +315,13 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  ;; Disable emphasis markers (it's obvious that markers there and hiding
+  ;; them cleans up the buffer visually)
+  (setq org-hide-emphasis-markers t)
+  ;; Show "real" bullet point markers (only works for bullet points with dash (-))
+  (font-lock-add-keywords 'org-mode
+			  '(("^ *\\([-]\\) "
+			     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
   )
 
 (defun dotspacemacs/user-config ()
