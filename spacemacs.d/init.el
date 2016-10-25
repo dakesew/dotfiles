@@ -386,6 +386,22 @@ layers configuration. You are free to put any user code."
 			     "/*]]>*/-->\n"
 			     "</style>\n")))))
   (add-hook 'org-export-before-processing-hook 'my-org-inline-css-hook)
+  ;; Add the org-mode latex class that I use
+  (unless (boundp 'org-latex-classes)
+    (setq org-export-classes nil))
+  (add-to-list 'org-latex-classes
+	       '("default"
+		 "\\documentclass[11pt]{article}\n
+\\usepackage[a4paper, margin=2.5cm]{geometry}"
+		 ("\\section{%s}" . "\\section*{%s}")
+		 ("\\subsection{%s}" . "\\subsection*{%s}")
+		 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+		 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+		 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((ditaa . t))) ; this line activates ditaa
   ;; Incease gcons threshhold to reduce freezinc
   (setq gc-cons-threshold '20000000)
   (defun nothing())
@@ -393,34 +409,10 @@ layers configuration. You are free to put any user code."
   (define-key evil-normal-state-map (kbd "<down-mouse-1>") 'nothing)
   (dolist (mouse '("<down-mouse-1>" "<mouse-1>"))
     (global-unset-key (kbd mouse)))
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '((ditaa . t))) ; this line activates ditaa
   ;; Disable colorscheme in terminal
   (add-to-list 'default-frame-alist '(tty-color-mode . -1))
-  ;; Add a latex class that I use
-  (add-to-list 'org-latex-classes
-	       '("default"
-		  "\\documentclass[11pt]{article}
-\\usepackage[a4paper, margin=2.5cm]{geometry}"
-		 ("\\section{%s}" . "\\section*{%s}")
-		 ("\\subsection{%s}" . "\\subsection*{%s}")
-		 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-		 ("\\paragraph{%s}" . "\\paragraph*{%s}")
-		 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
-  ;(add-to-list 'org-export-smart-quotes-alist
-	       ;'("de"
-		 ;(primary-opening   :utf-8 "“" :html "&ldquo;" :latex "\\enquote{"  :texinfo "``")
-		 ;(primary-closing   :utf-8 "”" :html "&rdquo;" :latex "}"           :texinfo "''")
-		 ;(secondary-opening :utf-8 "‘" :html "&lsquo;" :latex "\\enquote*{" :texinfo "`")
-		 ;(secondary-closing :utf-8 "’" :html "&rsquo;" :latex "}"           :texinfo "'")
-		 ;(apostrophe        :utf-8 "’" :html "&rsquo;"))
-		;'("en"
-		  ;(primary-opening   :utf-8 "“" :html "&ldquo;" :latex "\\enquote{"  :texinfo "``")
-		  ;(primary-closing   :utf-8 "”" :html "&rdquo;" :latex "}"           :texinfo "''")
-		  ;(secondary-opening :utf-8 "‘" :html "&lsquo;" :latex "\\enquote*{" :texinfo "`")
-		  ;(secondary-closing :utf-8 "’" :html "&rsquo;" :latex "}"           :texinfo "'")
-		  ;(apostrophe        :utf-8 "’" :html "&rsquo;")))
+  (setq emms-play-mpd-server-port "6600")
+  (emms-player-mpd-connect)
   )
 
 
