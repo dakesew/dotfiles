@@ -386,22 +386,34 @@ layers configuration. You are free to put any user code."
 			     "/*]]>*/-->\n"
 			     "</style>\n")))))
   (add-hook 'org-export-before-processing-hook 'my-org-inline-css-hook)
-  ;; Add the org-mode latex class that I use
-  (unless (boundp 'org-latex-classes)
-    (setq org-export-classes nil))
-  (add-to-list 'org-latex-classes
-	       '("default"
-		 "\\documentclass[11pt]{article}\n
+  ;; Load everything after org
+  (with-eval-after-load 'org
+    ;; Set inlinte image size
+    (setq org-image-actual-width (/ (display-pixel-width) 4))
+    ;; Add the org-mode latex class that I use
+    (unless (boundp 'org-latex-classes)
+      (setq org-latex-classes nil))
+    (add-to-list 'org-latex-classes
+		 '("default"
+		   "\\documentclass[11pt]{article}\n
 \\usepackage[a4paper, margin=2.5cm]{geometry}"
-		 ("\\section{%s}" . "\\section*{%s}")
-		 ("\\subsection{%s}" . "\\subsection*{%s}")
-		 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-		 ("\\paragraph{%s}" . "\\paragraph*{%s}")
-		 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
-
+		   ("\\section{%s}" . "\\section*{%s}")
+		   ("\\subsection{%s}" . "\\subsection*{%s}")
+		   ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+		   ("\\paragraph{%s}" . "\\paragraph*{%s}")
+		   ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+  ;; Define a custom link type to reference dead paper
+  (org-add-link-type "paper" 'org-paper-open)
+  (defun org-paper-open (path)
+    (message path)))
+  ;; When editing a code snippet, use the current window rather than popping open a new one (which shows the same information)
+  (setq org-src-window-setup 'current-window)
+  ;; enable babel languages
   (org-babel-do-load-languages
    'org-babel-load-languages
+   '((gnuplot . t))
    '((ditaa . t))) ; this line activates ditaa
+
   ;; Incease gcons threshhold to reduce freezinc
   (setq gc-cons-threshold '20000000)
   (defun nothing())
