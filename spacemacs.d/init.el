@@ -334,6 +334,17 @@ layers configuration. You are free to put any user code."
   (evil-leader/set-key "otl" 'multi-term-next)
   (evil-leader/set-key "oth" 'multi-term-prev)
   (evil-leader/set-key "ot <SPC>" 'multi-term-dedicated-toggle)
+  ;; Make a key binding for avy-goto-char-timer
+  (evil-leader/set-key "j <SPC>" 'avy-goto-char-timer)
+  ;; Easily edit files as root
+  (defun user/edit-as-root ()
+  "Open the current file as root"
+  (interactive)
+  (let ((file (buffer-file-name)))
+    (unless (file-writable-p file)
+      (setq file (concat "/sudo:root@localhost:" file)))
+    (find-file file)))
+  (evil-leader/set-key "os" 'user/edit-as-root)
 
   (evil-leader/set-key
     "cf" 'make-flash)
