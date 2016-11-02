@@ -405,7 +405,7 @@ layers configuration. You are free to put any user code."
   (add-hook 'org-export-before-processing-hook 'my-org-inline-css-hook)
   ;; Load everything after org
   (with-eval-after-load 'org
-    ;; Set inlinte image size
+    ;; Set inline image size
     (setq org-image-actual-width (/ (display-pixel-width) 4))
     ;; Add the org-mode latex class that I use
     (unless (boundp 'org-latex-classes)
