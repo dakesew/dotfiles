@@ -31,49 +31,49 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     (version-control :variables
-		      version-control-diff-tool 'diff-hl
-		      version-control-global-margin t)
-     ;;spacemacs-layer-extracts
-     themes-megapack
-     rcirc
-     shell-scripts
-     games
-     python
-     (auto-completion
-      :disabled-for org)
-
-     (c-c++ :variables c-c++-enable-clang-support t
+     (auto-completion :disabled-for
+		      org)
+     (c-c++ :variables
+	    c-c++-enable-clang-support t
 	    c-c++-default-mode-for-headers 'c++-mode)
-     emacs-lisp
-     git
-     latex
-     ruby
-     go
-     ranger
-     html
-     javascript
-     (shell :variables
-	    shell-default-position 'full
-	    shell-default-term-shell "/bin/zsh"
-	    shell-default-shell 'multi-term)
-     markdown
-     yaml
      (org :variables
 	  org-enable-github-support t
 	  org-startup-indented t)
-     ;;eyebrowse
-     syntax-checking
-     (spell-checking :variables spell-checking-enable-by-default nil)
-     spacemacs-layouts
-     evil-snipe
-     vim-empty-lines
-     docker
+     (shell :variables
+	    shell-default-term-shell "/bin/zsh"
+	    shell-default-position 'full
+	    shell-default-shell 'multi-term)
+     (spell-checking :variables
+		     spell-checking-enable-by-default nil)
+     (version-control :variables
+		      version-control-diff-tool 'diff-hl
+		      version-control-global-margin t)
      ansible
+     docker
+     emacs-lisp
      emms
      emoji
      erc
+     evil-snipe
+     games
+     git
+     go
+     html
+     javascript
+     latex
      lua
+     markdown
+     python
+     ranger
+     ranger
+     rcirc
+     ruby
+     shell-scripts
+     spacemacs-layouts
+     syntax-checking
+     themes-megapack
+     vim-empty-lines
+     yaml
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
