@@ -450,9 +450,6 @@ layers configuration. You are free to put any user code."
   (emms-player-mpd-connect)
   ;; Use ssh as the default connect method in tramp
   (setq tramp-default-method "ssh")
-  ;; Add a keybinding for wdired
-  (spacemacs/set-leader-keys-for-major-mode 'dired-mode
-    "w"  'wdired-change-to-wdired-mode)
   )
 
 
