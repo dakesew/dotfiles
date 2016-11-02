@@ -362,7 +362,7 @@ layers configuration. You are free to put any user code."
   (setq compilation-scroll-output 'next-error)
   ;; Don't stop on info or warnings.
   (setq compilation-skip-threshold 2)
-  (setq dired-listing-switches "-alh")
+  (setq dired-listing-switches "-lFaGh1v --group-directories-first")
   (setq powerline-default-separator 'nil)
   (setq diff-hl-side 'left)
   ;;Disable centered cursor mode for shell-like modes
