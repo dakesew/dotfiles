@@ -149,7 +149,7 @@ values."
    dotspacemacs-startup-lists '(agenda
 				todos
 				(recents . 5)
-                                (projects . 7))
+				(projects . 7))
    ;; True if the home buffer should respond to resize events.
    dotspacemacs-startup-buffer-responsive t
    ;; Default major mode of the scratch buffer (default `text-mode')
@@ -344,12 +344,12 @@ layers configuration. You are free to put any user code."
   (evil-leader/set-key "j <SPC>" 'avy-goto-char-timer)
   ;; Easily edit files as root
   (defun user/edit-as-root ()
-  "Open the current file as root"
-  (interactive)
-  (let ((file (buffer-file-name)))
-    (unless (file-writable-p file)
-      (setq file (concat "/sudo:root@localhost:" file)))
-    (find-file file)))
+    "Open the current file as root"
+    (interactive)
+    (let ((file (buffer-file-name)))
+      (unless (file-writable-p file)
+	(setq file (concat "/sudo:root@localhost:" file)))
+      (find-file file)))
   (evil-leader/set-key "os" 'user/edit-as-root)
 
   (evil-leader/set-key
@@ -419,10 +419,10 @@ layers configuration. You are free to put any user code."
 		   ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
 		   ("\\paragraph{%s}" . "\\paragraph*{%s}")
 		   ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
-  ;; Define a custom link type to reference dead paper
-  (org-add-link-type "paper" 'org-paper-open)
-  (defun org-paper-open (path)
-    (message path)))
+    ;; Define a custom link type to reference dead paper
+    (org-add-link-type "paper" 'org-paper-open)
+    (defun org-paper-open (path)
+      (message path)))
   ;; When editing a code snippet, use the current window rather than popping open a new one (which shows the same information)
   (setq org-src-window-setup 'current-window)
   ;; Exit snippet editing with ~, ,~
