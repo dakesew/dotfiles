@@ -335,13 +335,13 @@ before packages are loaded. If you are unsure, you should try in setting them in
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   ;;;;Terminal
-  (evil-leader/set-key "ote" 'eshell)
-  (evil-leader/set-key "ott" 'multi-term)
-  (evil-leader/set-key "otl" 'multi-term-next)
-  (evil-leader/set-key "oth" 'multi-term-prev)
-  (evil-leader/set-key "ot <SPC>" 'multi-term-dedicated-toggle)
+  (spacemacs/set-leader-keys "ote" 'eshell)
+  (spacemacs/set-leader-keys "ott" 'multi-term)
+  (spacemacs/set-leader-keys "otl" 'multi-term-next)
+  (spacemacs/set-leader-keys "oth" 'multi-term-prev)
+  (spacemacs/set-leader-keys "ot <SPC>" 'multi-term-dedicated-toggle)
   ;; Make a key binding for avy-goto-char-timer
-  (evil-leader/set-key "j <SPC>" 'avy-goto-char-timer)
+  (spacemacs/set-leader-keys "j <SPC>" 'avy-goto-char-timer)
   ;; Easily edit files as root
   (defun user/edit-as-root ()
     "Open the current file as root"
@@ -350,9 +350,9 @@ layers configuration. You are free to put any user code."
       (unless (file-writable-p file)
 	(setq file (concat "/sudo:root@localhost:" file)))
       (find-file file)))
-  (evil-leader/set-key "os" 'user/edit-as-root)
+  (spacemacs/set-leader-keys "os" 'user/edit-as-root)
 
-  (evil-leader/set-key
+  (spacemacs/set-leader-keys
     "cf" 'make-flash)
   (defun make-flash () (interactive) (compile "make flash"))
   (fringe-mode 4)
