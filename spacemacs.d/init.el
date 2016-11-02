@@ -437,8 +437,8 @@ layers configuration. You are free to put any user code."
    '((ditaa . t))) ; this line activates ditaa
   ;; Use Mobile Org
   (setq org-mobile-directory "~/Portable/org/")
-  ;; Incease gcons threshhold to reduce freezinc
-  (setq gc-cons-threshold '20000000)
+  ;; Incease gcons threshhold to reduce freezing
+  ;(setq gc-cons-threshold '20000000)
   (defun nothing())
   ;; Disable the mouse
   (define-key evil-normal-state-map (kbd "<down-mouse-1>") 'nothing)
