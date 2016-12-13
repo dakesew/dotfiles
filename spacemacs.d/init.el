@@ -448,6 +448,10 @@ layers configuration. You are free to put any user code."
   (emms-player-mpd-connect)
   ;; Use ssh as the default connect method in tramp
   (setq tramp-default-method "ssh")
+  ;; Set calc-config file in .spacemacs.d
+  (setq calc-settings-file "~/.spacemacs.d/calc.el")
+  (setq calc-multiplication-has-precedence nil)
+  (load calc-settings-file t)
   )
 
 
