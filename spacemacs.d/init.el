@@ -331,6 +331,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (font-lock-add-keywords 'org-mode
 			  '(("^ *\\([-]\\) "
 			     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+  (font-lock-add-keywords 'org-mode
+			  '(("^ *-.*\\( ::\\) "
+			     (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) ""))))))
   )
 
 (defun dotspacemacs/user-config ()
