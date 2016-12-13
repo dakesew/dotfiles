@@ -432,13 +432,11 @@ layers configuration. You are free to put any user code."
   ;; enable babel languages
   (org-babel-do-load-languages
    'org-babel-load-languages
-   '((python . t))
-   '((gnuplot . t))
-   '((ditaa . t))) ; this line activates ditaa
-  ;; Use Mobile Org
-  (setq org-mobile-directory "~/Portable/org/")
+   '((python . t)
+     (gnuplot . t)
+     (ditaa . t))) ; this line activates ditaa
   ;; Incease gcons threshhold to reduce freezing
-  ;(setq gc-cons-threshold '20000000)
+					;(setq gc-cons-threshold '20000000)
   (defun nothing())
   ;; Disable the mouse
   (define-key evil-normal-state-map (kbd "<down-mouse-1>") 'nothing)
