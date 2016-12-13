@@ -69,7 +69,6 @@ values."
      markdown
      python
      ranger
-     ranger
      rcirc
      ruby
      shell-scripts
