@@ -31,6 +31,10 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     nginx
+     php
+     haskell
+     vimscript
      (auto-completion :disabled-for
 		      org)
      (c-c++ :variables
