@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: guard
+# key: guard
+# --
+#ifndef __`(upcase(replace-regexp-in-string  "^.*/\\(.*\\)\\.h" "\\1" (buffer-file-name)))`_H
+#define __`(upcase(replace-regexp-in-string  "^.*/\\(.*\\)\\.h" "\\1" (buffer-file-name)))`_H
+#endif // __`(upcase(replace-regexp-in-string  "^.*/\\(.*\\)\\.h" "\\1" (buffer-file-name)))`_H
