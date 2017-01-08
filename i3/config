@@ -174,6 +174,8 @@ exec --no-startup-id "~/.i3/wallpaper.sh 600"
 exec --no-startup-id xrdb -merge ~/.Xresources
 exec  /usr/libexec/gnome-setting-daemon
 exec --no-startup-id xss-lock -- /bin/i3lock -c 002b36
+exec pidgin
+
 
 #Just want to temprarily display just one image
 #exec --no-startup-id ~/.fehbg
