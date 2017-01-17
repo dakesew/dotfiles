@@ -341,6 +341,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+  ;; Why isn't this here already?
+  (spacemacs/set-leader-keys "gc" 'magit-clone)
   ;;;;Terminal
   (spacemacs/set-leader-keys "ote" 'eshell)
   (spacemacs/set-leader-keys "ott" 'multi-term)
