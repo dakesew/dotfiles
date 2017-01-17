@@ -125,22 +125,22 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bar {
-  strip_workspace_numbers true
-  status_command "i3status"
-#  status_command "i3blocks -c ~/.i3/i3blocks.conf"
-  position top
-  separator_symbol "><"
-  colors {
-    background #002b36
-    statusline #ebdbb2
-    separator #323232
-    focused_workspace #676d3d #676d3d #ebdbb2
-    active_workspace #323232 #5f676a #ebdbb2
-    inactive_workspace #323232 #323232 #888888
-    urgent_workspace #333333 #900000 #ffffff
-  }
-}
+#bar {
+  #strip_workspace_numbers true
+  #status_command "i3status"
+##  status_command "i3blocks -c ~/.i3/i3blocks.conf"
+  #position top
+  #separator_symbol "><"
+  #colors {
+    #background #002b36
+    #statusline #ebdbb2
+    #separator #323232
+    #focused_workspace #676d3d #676d3d #ebdbb2
+    #active_workspace #323232 #5f676a #ebdbb2
+    #inactive_workspace #323232 #323232 #888888
+    #urgent_workspace #333333 #900000 #ffffff
+  #}
+#}
 
 #colors
 client.focused #676d3d #676d3d #ebdbb2 #676d3d
@@ -173,10 +173,10 @@ exec --no-startup-id setxkbmap -layout de
 #exec --no-startup-id xbindkeys
 exec --no-startup-id "~/.i3/wallpaper.sh 600"
 exec --no-startup-id xrdb -merge ~/.Xresources
-exec  /usr/libexec/gnome-setting-daemon
+exec --no-startup-id polybar -c "~/.i3/polybar" example
 exec --no-startup-id xss-lock -- /bin/i3lock -c 002b36
 exec pidgin
 
 
 #Just want to temprarily display just one image
-#exec --no-startup-id ~/.fehbg
+#EXEC --no-startup-id ~/.fehbg
