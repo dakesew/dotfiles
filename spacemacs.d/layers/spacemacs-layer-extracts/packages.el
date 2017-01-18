@@ -76,7 +76,6 @@ Each entry is either:
       (setq avy-all-windows 'all-frames)
       (setq avy-background t)
       (spacemacs/set-leader-keys
-        "SPC" 'avy-goto-char-2
         "y" 'avy-goto-line
         "xo" 'spacemacs/avy-open-url))
     :config
