@@ -46,7 +46,7 @@ padding-right = 2
 module-margin-left = 2
 module-margin-right = 2
 
-font-0 = SourceCodePro-Regular:pixelsize=10;0
+font-0 = SourceCodePro-Regular:pixelsize=8;0
 
 modules-left = i3 xwindow
 modules-center =
@@ -111,7 +111,7 @@ label-visible-padding = 1
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = "c "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage%
@@ -168,7 +168,7 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
