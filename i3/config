@@ -157,11 +157,9 @@ bindsym $mod+F8 exec --no-startup-id "pactl set-sink-volume $(pacmd dump | perl 
 bindcode 233 exec --no-startup-id "light -A 2"
 bindcode 232 exec --no-startup-id "light -U 2"
 bindsym $mod+F7 exec --no-startup-id "~/.i3/backlight.sh"
+#various helperscripts
 bindsym $mod+F6 exec --no-startup-id "~/.i3/select_output.sh"
-#audiocontrol
-bindsym $mod+F3 exec --no-startup-id mpc toggle
-bindsym $mod+F4 exec --no-startup-id mpc prev
-bindsym $mod+F5 exec --no-startup-id mpc next
+bindsym $mod+F6 exec --no-startup-id "~/.i3/select_keyboardlayout.sh"
 #mpv
 bindsym $mod+Shift+p exec --no-startup-id mpv "$(xclip -o)"
 
