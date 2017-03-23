@@ -61,9 +61,7 @@ values."
      shell-scripts
      syntax-checking
      vim-empty-lines
-     spacemacs-completion
-     emacs-lisp
-     )
+     spacemacs-completion)
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -319,7 +317,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
                              (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
   (font-lock-add-keywords 'org-mode
                           '(("^ *-.*\\( ::\\) "
-                             (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) ""))))))
+                             (0 (prog1 () (compose-region (match-beginning 1)
+							  (match-end 1) ""))))))
+  (add-to-list 'load-path "~/.spacemacs.d/")
   )
 
 (defun dotspacemacs/user-config ()
@@ -385,6 +385,13 @@ layers configuration. You are free to put any user code."
   (with-eval-after-load 'org
     ;; Set inline image size
     (setq org-image-actual-width (/ (display-pixel-width) 4))
+    ;; Define a custom link type to reference dead paper
+    (org-add-link-type "paper" 'org-paper-open)
+    (defun org-paper-open (path)
+      (message path)))
+  (with-eval-after-load 'ox-latex
+    (setq org-export-latex-listings 'minted)
+    (add-to-list 'org-export-latex-packages-alist '("" "minted"))
     ;; Add the org-mode latex class that I use
     (unless (boundp 'org-latex-classes)
       (setq org-latex-classes nil))
@@ -396,15 +403,12 @@ layers configuration. You are free to put any user code."
                    ("\\subsection{%s}" . "\\subsection*{%s}")
                    ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                    ("\\paragraph{%s}" . "\\paragraph*{%s}")
-                   ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
-    ;; Define a custom link type to reference dead paper
-    (org-add-link-type "paper" 'org-paper-open)
-    (defun org-paper-open (path)
-      (message path)))
-  ;; When editing a code snippet, use the current window rather than popping open a new one (which shows the same information)
-  (setq org-src-window-setup 'current-window)
+                   ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
   ;; Exit snippet editing with ~, ,~
   (with-eval-after-load 'org-src
+    ;; When editing a code snippet, use the current window rather than popping
+    ;; open a new one (which shows the same information)
+    (setq org-src-window-setup 'current-window)
     (spacemacs/set-leader-keys-for-minor-mode 'org-src-mode
       "," 'org-edit-src-exit))
   ;; Incease gcons threshhold to reduce freezing
@@ -415,8 +419,6 @@ layers configuration. You are free to put any user code."
   (define-key evil-normal-state-map (kbd "<mouse-1>") 'nothing)
   ;; Disable colorscheme in terminal
   (add-to-list 'default-frame-alist '(tty-color-mode . -1))
-  (setq emms-play-mpd-server-port "6600")
-  (emms-player-mpd-connect)
   ;; Use ssh as the default connect method in tramp
   (setq tramp-default-method "ssh")
   ;; Set calc-config file in .spacemacs.d
@@ -431,15 +433,12 @@ layers configuration. You are free to put any user code."
      (ditaa . t)
      (sh . t)
      (shell . t)))
-  (setq org-export-latex-listings 'minted)
-  (add-to-list 'org-export-latex-packages-alist '("" "minted"))
   ;; gas mode
   (require 'gas-mode)
   (add-to-list 'auto-mode-alist '("\\.S\\'" . gas-mode))
   (spacemacs/toggle-auto-fill-mode-on)
   ;; So tramp remebers passwords https://stackoverflow.com/questions/840279/passwords-in-emacs-tramp-mode-editing
-  (setq password-cache-expiry nil)
-  )
+  (setq password-cache-expiry nil))
 
 
 ;; Do not write anything past this comment. This is where Emacs will
