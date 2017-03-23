@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     spacemacs-evil
      ivy
      (auto-completion :disabled-for
                       org
