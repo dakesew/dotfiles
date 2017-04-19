@@ -750,17 +750,17 @@ Argument BEG BEG, END, and LEN, athough saved in `gas-changed' for debugging pur
 
 (defun gas-start-symbol-timer (&optional stop)
   "Schedule a timer for symbol highlighting (if not already scheduled).
-Optional STOP, if non-nil,  means remove from schedule."
-  (if (and stop gas-symbol-timer)
-      (progn
-        (cancel-timer gas-symbol-timer)
-        (setq gas-symbol-timer nil))
-    (unless (and gas-symbol-timer
-                 (memq gas-symbol-timer timer-idle-list))
-      (setq gas-symbol-timer
-            (run-with-idle-timer gas-symbol-highlight-delay
-                                 t
-                                 'gas-symbol-highlight-maybe)))))
+Optional STOP, if non-nil,  means remove from schedule.")
+  ;(if (and stop gas-symbol-timer)
+      ;(progn
+        ;(cancel-timer gas-symbol-timer)
+        ;(setq gas-symbol-timer nil))
+    ;(unless (and gas-symbol-timer
+                 ;(memq gas-symbol-timer timer-idle-list))
+      ;(setq gas-symbol-timer
+            ;(run-with-idle-timer gas-symbol-highlight-delay
+                                 ;t
+                                 ;'gas-symbol-highlight-maybe)))))
 
 (defun gas-return-passthrough-hi (pos what)
   "Return next passthrough match (if any).
