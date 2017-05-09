@@ -343,6 +343,9 @@ layers configuration. You are free to put any user code."
 	    (lambda ()
 	      (define-key eshell-mode-map (kbd "C-r")
 		(lambda () (interactive) (counsel-esh-history)))))
+  ;; Define permanent eshell aliases
+  (eshell/alias "cover" "wget -O cover.jpg {xclip -o}")
+  (eshell/alias "gain" "mp3gain -r $* && mp3gain -s d $*")
   ;; Easily edit files as root
   (defun user/edit-as-root ()
     "Open the current file as root"
