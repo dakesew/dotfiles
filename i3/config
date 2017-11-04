@@ -7,14 +7,14 @@ font pango:Source Code Pro 7
 floating_modifier $mod
 
 # Run apps
-bindsym $mod+Return exec xfce4-terminal
-bindsym $mod+space  exec rofi -show run #-o 50 -font "Source Code Pro 10"# -fg "$fg" -bg "$bg" -bc "$bg" -bw 0 -hlbg "$bg_act"
+bindsym $mod+Return exec konsole
+bindsym $mod+space  exec lxqt-runner
 #bindsym $mod+space exec dmenu_run
 bindsym $mod+Shift+e exec "emacsclient -ca ''"
 bindsym $mod+Shift+f exec firefox
 # Lock
-bindsym $mod+q exec python2 ~/.i3/py3lock.py
-bindsym $mod+Shift+q exec "i3lock -c 002b36"
+# bindsym $mod+q exec python2 ~/.i3/py3lock.py
+# bindsym $mod+Shift+q exec "i3lock -c 002b36"
 
 
 # Shutdown
@@ -63,10 +63,6 @@ bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
-#Easy access
-bindsym $mod+u workspace 4
-bindsym $mod+i workspace 5
-bindsym $mod+o workspace 6
 bindsym $mod+p workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
@@ -125,23 +121,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-#bar {
-  #strip_workspace_numbers true
-  #status_command "i3status"
-##  status_command "i3blocks -c ~/.i3/i3blocks.conf"
-  #position top
-  #separator_symbol "><"
-  #colors {
-    #background #002b36
-    #statusline #ebdbb2
-    #separator #323232
-    #focused_workspace #676d3d #676d3d #ebdbb2
-    #active_workspace #323232 #5f676a #ebdbb2
-    #inactive_workspace #323232 #323232 #888888
-    #urgent_workspace #333333 #900000 #ffffff
-  #}
-#}
-
 #colors
 client.focused #676d3d #676d3d #ebdbb2 #676d3d
 client.focused_inactive #323232 #333333 #ebdbb2 #323232
@@ -154,29 +133,28 @@ bindcode 122 exec --no-startup-id "pactl set-sink-volume $(pacmd dump | perl -a 
 bindsym $mod+F9 exec --no-startup-id "pactl set-sink-volume $(pacmd dump | perl -a -n -e 'print $F[1] if /set-default-sink/') +1%"
 bindsym $mod+F8 exec --no-startup-id "pactl set-sink-volume $(pacmd dump | perl -a -n -e 'print $F[1] if /set-default-sink/') -1%"
 #backlight
-bindcode 233 exec --no-startup-id "light -A 2"
-bindcode 232 exec --no-startup-id "light -U 2"
+#bindcode 233 exec --no-startup-id "light -A 2"
+#bindcode 232 exec --no-startup-id "light -U 2"
 bindsym $mod+F7 exec --no-startup-id "~/.i3/backlight.sh"
 #various helperscripts
 bindsym $mod+F6 exec --no-startup-id "~/.i3/select_output.sh"
 bindsym $mod+F5 exec --no-startup-id "~/.i3/select_keyboardlayout.sh"
 #mpv
-bindsym $mod+Shift+p exec --no-startup-id mpv "$(xclip -o)"
+# bindsym $mod+Shift+p exec --no-startup-id mpv "$(xclip -o)"
+for_window [title="lxqt-notificationd"] floating enable
 
 gaps inner 6
 gaps outer 2
 for_window [class="^.*"] border pixel 0
 
 workspace 1 output DVI-0
-exec --no-startup-id sh -c "while true; do compton --config ~/.i3/compton; sleep 1s; done"
-exec --no-startup-id setxkbmap -layout de
+# exec --no-startup-id sh -c "while true; do compton --config ~/.i3/compton; sleep 1s; done"
+exec --no-startup-id setxkbmap -layout de neo
 #exec --no-startup-id xbindkeys
 exec --no-startup-id "~/.i3/wallpaper.sh 600"
 exec --no-startup-id xrdb -merge ~/.Xresources
-exec --no-startup-id polybar -c "$HOME/.i3/polybar" example
-exec --no-startup-id xss-lock -- /bin/i3lock -c 002b36
+# exec --no-startup-id polybar -c "$HOME/.i3/polybar" example
+# exec --no-startup-id xss-lock -- /bin/i3lock -c 002b36
+# exec --no-startup-id blueberry-tray
 exec pidgin
-
-
-#Just want to temprarily display just one image
-#EXEC --no-startup-id ~/.fehbg
+#for_window [window_type="notification"] floating enable
