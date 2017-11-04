@@ -211,7 +211,8 @@ layers configuration. You are free to put any user code."
   (setq compilation-scroll-output 'next-error)
   ;; Don't stop on info or warnings.
   (setq compilation-skip-threshold 2)
-  (setq dired-listing-switches "-lAFaGh1v --si --time-style long-iso --group-directories-first")
+  (setq dired-listing-switches "-aFGh")
+  (setq find-ls-option '("-exec ls -adFGhlN {} +" . "-adFGhlN"))
   (setq powerline-default-separator 'nil)
   (setq diff-hl-side 'left)
   ;;Disable evil for teminal modes
@@ -337,6 +338,14 @@ layers configuration. You are free to put any user code."
       (interactive)
       (eshell t)))
 
+  ;; Use integrated lisp ls for maximal compatability
+  (setq ls-lisp-use-insert-directory-program nil)
+  (require 'ls-lisp)
+  (setq ls-lisp-format-time-list
+	'("%Y-%m-%d %H:%M"
+	  "%Y-%m-%d %H:%M"))
+  (setq ls-lisp-dirs-first t)
+  (setq ls-lisp-use-string-collate nil)
   (dired-async-mode t)
   ;; So image dired doesn't clutter the .emacs.d directory
   (setq image-dired-dir "~./emacs.d/.cache/image-dired/")
