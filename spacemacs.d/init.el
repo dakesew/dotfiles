@@ -170,6 +170,9 @@ layers configuration. You are free to put any user code."
   (spacemacs/set-leader-keys "jl" 'avy-goto-line)
   ;; use eshell instead of shell command
   (spacemacs/set-leader-keys "!" 'eshell-command)
+  (require 'em-tramp)
+  (require 'em-cmpl)
+  (require 'em-xtra)
   ;; Add reverse enter
   (defun reverse-newline ()
     (interactive)
@@ -187,10 +190,34 @@ layers configuration. You are free to put any user code."
           (lambda () (interactive) (counsel-esh-history)))))
   (with-eval-after-load 'em-alias 
     ;; Define permanent eshell aliases
+    (eshell/alias "ff" "find-file")
+    (eshell/alias "ee" "find-file-other-window")
     (eshell/alias "cover" "wget -O cover.jpg {xclip -o}")
     (eshell/alias "gain" "mp3gain -r $* && mp3gain -s d $*"))
   (defun eshell/d ()
     (dired "."))
+  (add-hook 'eshell-mode-hook
+	    (lambda ()
+	      (local-set-key (kbd "M-P") 'eshell-previous-prompt)
+	      (local-set-key (kbd "M-N") 'eshell-next-prompt)
+	      (local-set-key (kbd "M-R") 'eshell-list-history)
+	      (local-set-key (kbd "M-r")
+			     (lambda ()
+			       (interactive)
+			       (insert
+				(ido-completing-read "Eshell history: "
+						     (delete-dups
+						      (ring-elements eshell-history-ring))))))))
+  (defun eshell-open ()
+    (interactive)
+    (let ((cwd default-directory))
+      (eshell)
+       (if (eshell-process-interact 'process-live-p)
+	   (message "Won't change CWD because of running process.")
+	 (setq default-directory cwd)
+	 (eshell-reset))))
+  (spacemacs/set-leader-keys "'" 'eshell-open)
+
 
   ;; Easily edit files as root
   (defun user/edit-as-root ()
