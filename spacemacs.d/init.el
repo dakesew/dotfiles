@@ -251,27 +251,10 @@ layers configuration. You are free to put any user code."
   (spacemacs/toggle-truncate-lines-off)
   (use-package editorconfig
     :config (editorconfig-mode 1))
-  ;; Org mode html stylesheet
-  ;; Source: https://stackoverflow.com/questions/19614104/how-to-tell-org-mode-to-embed-my-css-file-on-html-export
-  (defun my-org-inline-css-hook (exporter)
-    "Insert custom inline css"
-    (when (eq exporter 'html)
-      (let* ((dir (ignore-errors (file-name-directory (or buffer-file-name "DEFAULT-NAME"))))
-             (path (concat dir "style.css"))
-             (homestyle (or (null dir) (null (file-exists-p path))))
-             (final (if homestyle "~/.spacemacs.d/org-style.css" path))) ;; <- set your own style file path
-        (setq org-html-head-include-default-style nil)
-        (setq org-html-head (concat
-                             "<style type=\"text/css\">\n"
-			     "<!--/*--><![CDATA[/*><!--*/\n"
-                             (with-temp-buffer
-                               (insert-file-contents final)
-                               (buffer-string))
-                             "/*]]>*/-->\n"
-                             "</style>\n")))))
-  (add-hook 'org-export-before-processing-hook 'my-org-inline-css-hook)
   ;; Load everything after org
   (with-eval-after-load 'org
+    ;; Async export per default
+    (setq org-export-in-background t)
   ;;; enable babel languages
     (org-babel-do-load-languages
      'org-babel-load-languages
