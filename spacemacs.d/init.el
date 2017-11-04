@@ -13,6 +13,8 @@ values."
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
    '(
+     csv
+     yaml
      asciidoc
      ruby
      python
@@ -20,6 +22,7 @@ values."
      markdown
      spacemacs-evil
      ivy
+     lua
      (auto-completion :disabled-for
                       org
                       eshell)
@@ -53,7 +56,7 @@ values."
      graphviz
      plantuml
      clojure)
-   dotspacemacs-additional-packages '(editorconfig mingus rainbow-mode babel color-theme-sanityinc-solarized material-theme)
+   dotspacemacs-additional-packages '(editorconfig mingus rainbow-mode babel color-theme-sanityinc-solarized material-theme ox-reveal zpresent org-page avandu)
    dotspacemacs-frozen-packages '()
    dotspacemacs-excluded-packages '()
    dotspacemacs-install-packages 'used-only))
@@ -80,7 +83,7 @@ values."
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-themes '(solarized-dark
-                         solarized-light)
+                         material-light)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Source Code Pro"
                                :size 9
@@ -158,6 +161,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+  (setq auth-sources
+	'((:source "~/.spacemacs.d/authinfo.gpg")))
   ;; Why isn't this here already?
   (spacemacs/set-leader-keys "gc" 'magit-clone)
   ;; Make a key binding for avy
@@ -174,6 +179,7 @@ layers configuration. You are free to put any user code."
   (global-set-key [(control return)] 'reverse-newline)
   ;; Setup esh eldoc
   (setup-esh-help-eldoc)
+  (setq ivy-use-selectable-prompt t)
   ;; Use ivy for eshell completion https://emacs.stackexchange.com/questions/27849/how-can-i-setup-eshell-to-use-ivy-for-tab-completionhttps://emacs.stackexchange.com/questions/27849/how-can-i-setup-eshell-to-use-ivy-for-tab-completion
   (add-hook 'eshell-mode-hook
 	    (lambda ()
@@ -201,8 +207,7 @@ layers configuration. You are free to put any user code."
   (defun make-flash () (interactive) (compile "make flash"))
   (fringe-mode 4)
   ;; I'm not scared of saving everything.
-  (setq compilation-ask-about-save nil)
-  ;; Stop on the first error.
+  (setq compilation-ask-about-save nil) ;; Stop on the first error.
   (setq compilation-scroll-output 'next-error)
   ;; Don't stop on info or warnings.
   (setq compilation-skip-threshold 2)
@@ -244,6 +249,7 @@ layers configuration. You are free to put any user code."
      'org-babel-load-languages
      '((python . t)
        (gnuplot . t)
+       (ruby . t)
        (ditaa . t)
        (plantuml . t)
        (sh . t)
@@ -277,6 +283,10 @@ layers configuration. You are free to put any user code."
 		   ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
 		   ("\\paragraph{%s}" . "\\paragraph*{%s}")
 		   ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
+  ;; Use xelatex for unicode support
+  (setq org-latex-to-pdf-process
+	'("xelatex -interaction nonstopmode %f"
+	  "xelatex -interaction nonstopmode %f"))
   ;; Exit snippet editing with ~, ,~
   (with-eval-after-load 'org-src
     ;; When editing a code snippet, use the current window rather than popping
@@ -301,8 +311,9 @@ layers configuration. You are free to put any user code."
   (setq org-plantuml-jar-path "/opt/plantuml/plantuml.jar")
   ;; gas mode
   (require 'gas-mode)
-  ;; ttrss
-  (require 'ttrss)
+  ;; tt-rss
+  (require 'avandu)
+  (setq avandu-tt-rss-api-url "https://dsawatzke.duckdns.org/tt-rss/api/")
   ;; Constants
   (require 'constants)
   (add-to-list 'auto-mode-alist '("\\.S\\'" . gas-mode))
@@ -337,6 +348,12 @@ layers configuration. You are free to put any user code."
   (setq calc-full-float-format '(eng 0))
   (setq calc-float-format '(eng 6))
   (setq calc-group-digits t)
+  (defun my-compile ()
+    (interactive)
+    (let ((default-directory (locate-dominating-file "." "Makefile")))
+      (compile "make")))
+  (setq lua-documentation-function 'eww)
+  (setq evil-want-Y-yank-to-eol t)
   ;; WARNING SECURITY FIX!!! http://seclists.org/oss-sec/2017/q3/422
   ;; https://debbugs.gnu.org/cgi/bugreport.cgi?bug=28350
   (eval-after-load "enriched"
@@ -355,6 +372,7 @@ layers configuration. You are free to put any user code."
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
  '(dired-recursive-deletes (quote always))
+ '(dired-recursive-copies (quote always))
  '(evil-want-Y-yank-to-eol nil)
  '(eww-search-prefix "https://duckduckgo.com/html/?kd=-1&q=")
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
@@ -385,7 +403,6 @@ layers configuration. You are free to put any user code."
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
- '(org-agenda-files (quote ("~/usr/log/agenda.org")))
  '(org-babel-load-languages (quote ((python . t) (gnuplot . t) (ditaa . t))))
  '(org-calc-default-modes
    (quote
