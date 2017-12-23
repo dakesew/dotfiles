@@ -13,10 +13,10 @@ Xft.dpi: 96
 ! User: Rasi
 ! Copyright: Rasmus Steinke
 ! ------------------------------------------------------------------------------
-rofi.bw: 2
-rofi.hide-scrollbar: true
-rofi.color-enabled: true
-rofi.color-window: S_base03, S_base02, S_base02
-rofi.color-normal: S_base03, #819396, S_base03, S_base02, #819396
-rofi.color-active: S_base03, #008ed4, S_base03, S_base02, #008ed4
-rofi.color-urgent: S_base03, #da4281, S_base03, S_base02, #da4281
+! rofi.bw: 2
+! rofi.hide-scrollbar: true
+! rofi.color-enabled: true
+! rofi.color-window: S_base03, S_base02, S_base02
+! rofi.color-normal: S_base03, #819396, S_base03, S_base02, #819396
+! rofi.color-active: S_base03, #008ed4, S_base03, S_base02, #008ed4
+! rofi.color-urgent: S_base03, #da4281, S_base03, S_base02, #da4281
