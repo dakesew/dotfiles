@@ -7,10 +7,11 @@ font pango:Source Code Pro 7
 floating_modifier $mod
 
 # Run apps
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec qterminal
 bindsym $mod+space  exec lxqt-runner
 #bindsym $mod+space exec dmenu_run
 bindsym $mod+Shift+e exec "emacsclient -ca ''"
+bindsym $mod+Shift+Return exec "emacsclient -ca '' -e '(eshell t)'"
 bindsym $mod+Shift+f exec firefox
 # Lock
 # bindsym $mod+q exec python2 ~/.i3/py3lock.py
