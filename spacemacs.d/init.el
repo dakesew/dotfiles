@@ -13,6 +13,9 @@ values."
    dotspacemacs-configuration-layer-path '()
    dotspacemacs-configuration-layers
    '(
+     sql
+     extra-langs
+     nginx
      csv
      yaml
      asciidoc
@@ -50,15 +53,21 @@ values."
      latex
      shell-scripts
      syntax-checking
-     vim-empty-lines
      spacemacs-completion
+     spacemacs-ui-visual
      rust
      graphviz
      plantuml
+     pdf-tools
+     (rcirc :variables rcirc-enable-authinfo-support t)
+     my-dired
+     my-org
      clojure)
-   dotspacemacs-additional-packages '(editorconfig mingus rainbow-mode babel color-theme-sanityinc-solarized material-theme ox-reveal zpresent org-page avandu)
+   dotspacemacs-additional-packages '(editorconfig mingus rainbow-mode
+  color-theme-sanityinc-solarized material-theme rhtml-mode evil-collection
+  avandu kotlin-mode )
    dotspacemacs-frozen-packages '()
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(exec-path-from-shell)
    dotspacemacs-install-packages 'used-only))
 
 (defun dotspacemacs/init ()
@@ -68,7 +77,7 @@ before layers configuration.
 You should not put any user code in there besides modifying the variable
 values."
   (setq-default
-   spacemacs-buffer-logo-title "[E M A C S]"
+   spacemacs-buffer-logo-title "Emacs"
    dotspacemacs-elpa-https t
    dotspacemacs-elpa-timeout 5
    dotspacemacs-check-for-update t
@@ -76,17 +85,14 @@ values."
    dotspacemacs-editing-style 'vim
    dotspacemacs-verbose-loading nil
    dotspacemacs-startup-banner 'official
-   dotspacemacs-startup-lists '(agenda
-                                todos
-                                (recents . 5)
-                                (projects . 7))
+   dotspacemacs-startup-lists '()
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-themes '(solarized-dark
                          material-light)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 9
+                               :size 11
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -96,8 +102,8 @@ values."
    dotspacemacs-emacs-leader-key "M-m"
    dotspacemacs-major-mode-leader-key ","
    dotspacemacs-major-mode-emacs-leader-key "C-M-m"
-   dotspacemacs-distinguish-gui-tab nil
-   dotspacemacs-remap-Y-to-y$ nil
+   dotspacemacs-distinguish-gui-tab t
+   dotspacemacs-remap-Y-to-y$ t
    dotspacemacs-retain-visual-state-on-shift t
    dotspacemacs-visual-line-move-text nil
    dotspacemacs-ex-substitute-global nil
@@ -143,18 +149,8 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setq custom-file "~/.spacemacs.d/elisp/custom-settings.el")
-  ;; Disable emphasis markers (it's obvious that markers there and hiding
-  ;; them cleans up the buffer visually)
-  (setq org-hide-emphasis-markers t)
-  ;; Show "real" bullet point markers (only works for bullet points with dash (-))
-  (font-lock-add-keywords 'org-mode
-                          '(("^ *\\([-]\\) "
-                             (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
-  (font-lock-add-keywords 'org-mode
-                          '(("^ *-.*\\( ::\\) "
-                             (0 (prog1 () (compose-region (match-beginning 1)
-							  (match-end 1) ""))))))
   (add-to-list 'load-path "~/.spacemacs.d/")
+  (defun exec-path-from-shell-copy-env (name) ())
   )
 
 (defun dotspacemacs/user-config ()
@@ -188,16 +184,46 @@ layers configuration. You are free to put any user code."
 	    (lambda ()
 	      (define-key eshell-mode-map (kbd "C-r")
           (lambda () (interactive) (counsel-esh-history)))))
-  (with-eval-after-load 'em-alias 
+  (with-eval-after-load 'em-alias
     ;; Define permanent eshell aliases
+    ;; Somehow system sudo is called per default, and it has strange behaviour
+    (eshell/alias "sudo" "eshell/sudo $*")
     (eshell/alias "ff" "find-file")
     (eshell/alias "ee" "find-file-other-window")
     (eshell/alias "cover" "wget -O cover.jpg {xclip -o}")
-    (eshell/alias "gain" "mp3gain -r $* && mp3gain -s d $*"))
+    (eshell/alias "gain" "mp3gain -r ./**/*.mp3"))
   (defun eshell/d ()
     (dired "."))
+  (defun eshell-open ()
+    (interactive)
+      ;; With (eshell t) a new eshell will be opened
+      (if (eq major-mode 'eshell-mode)
+	  (eshell t)
+	(let ((cwd default-directory))
+	  (eshell)
+	  (if (eshell-process-interact 'process-live-p)
+	      (message "Won't change CWD because of running process.")
+	    (setq default-directory cwd)
+	    (eshell-reset)))))
+  (spacemacs/set-leader-keys "'" 'eshell-open)
+  (spacemacs/set-leader-keys "." 'eshell)
+  ;; Shared history.
+  (defvar eshell-history-global-ring nil
+    "The history ring shared across Eshell sessions.")
+
+  (defun eshell-hist-use-global-history ()
+    "Make Eshell history shared across different sessions."
+    (unless eshell-history-global-ring
+      (let (eshell-history-ring)
+	(when eshell-history-file-name
+	  (eshell-read-history nil t))
+	(setq eshell-history-global-ring eshell-history-ring))
+      (unless eshell-history-ring (setq eshell-history-global-ring (make-ring eshell-history-size))))
+    (setq eshell-history-ring eshell-history-global-ring))
+
   (add-hook 'eshell-mode-hook
 	    (lambda ()
+	      (eshell-hist-use-global-history)
 	      (local-set-key (kbd "M-P") 'eshell-previous-prompt)
 	      (local-set-key (kbd "M-N") 'eshell-next-prompt)
 	      (local-set-key (kbd "M-R") 'eshell-list-history)
@@ -208,16 +234,15 @@ layers configuration. You are free to put any user code."
 				(ido-completing-read "Eshell history: "
 						     (delete-dups
 						      (ring-elements eshell-history-ring))))))))
-  (defun eshell-open ()
-    (interactive)
-    (let ((cwd default-directory))
-      (eshell)
-       (if (eshell-process-interact 'process-live-p)
-	   (message "Won't change CWD because of running process.")
-	 (setq default-directory cwd)
-	 (eshell-reset))))
-  (spacemacs/set-leader-keys "'" 'eshell-open)
 
+  ;; Locate is faster when not ignoring case and we usually don't need more than
+  ;; the first few lines of output 
+  (defun counsel-locate-cmd-default (input)
+    "Return a shell command based on INPUT."
+    (counsel-require-program "locate")
+    (format "locate -n 100 --regex '%s'"
+	    (counsel-unquote-regex-parens
+	     (ivy--regex input))))
 
   ;; Easily edit files as root
   (defun user/edit-as-root ()
@@ -238,73 +263,18 @@ layers configuration. You are free to put any user code."
   (setq compilation-scroll-output 'next-error)
   ;; Don't stop on info or warnings.
   (setq compilation-skip-threshold 2)
-  (setq dired-listing-switches "-aFGh")
-  (setq find-ls-option '("-exec ls -adFGhlN {} +" . "-adFGhlN"))
   (setq powerline-default-separator 'nil)
   (setq diff-hl-side 'left)
   ;;Disable evil for teminal modes
   (evil-set-initial-state 'term-mode 'emacs)
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
-  (setq-default tab-width 8)
-  (setq-default indent-tabs-mode t)
+  (setq-default tab-width 8
+                indent-tabs-mode t
+		standard-indent 8)
   (setq c-default-style "linux")
   (spacemacs/toggle-truncate-lines-off)
   (use-package editorconfig
     :config (editorconfig-mode 1))
-  ;; Load everything after org
-  (with-eval-after-load 'org
-    ;; Async export per default
-    (setq org-export-in-background t)
-  ;;; enable babel languages
-    (org-babel-do-load-languages
-     'org-babel-load-languages
-     '((python . t)
-       (gnuplot . t)
-       (ruby . t)
-       (ditaa . t)
-       (plantuml . t)
-       (sh . t)
-       (shell . t)))
-    ;; Set inline image size
-    (setq org-image-actual-width (/ (display-pixel-width) 4))
-    ;; Display pdfs inline https://stackoverflow.com/a/35261577
-    (add-to-list 'image-type-file-name-regexps '("\\.pdf\\'" . imagemagick))
-    (add-to-list 'image-file-name-extensions "pdf")
-    (setq imagemagick-types-inhibit (remove 'PDF imagemagick-types-inhibit))
-    ;; EPS too
-    (add-to-list 'image-type-file-name-regexps '("\\.eps\\'" . imagemagick)  )
-    (add-to-list 'image-file-name-extensions "eps")
-
-    ;; Define a custom link type to reference dead paper
-    (org-add-link-type "paper" 'org-paper-open)
-    (defun org-paper-open (path)
-      (message path)))
-  (with-eval-after-load 'ox-latex
-    (setq org-export-latex-listings 'minted)
-    ;;(add-to-list 'org-export-latex-packages-alist '("" "minted"))
-    ;; Add the org-mode latex class that I use
-    (unless (boundp 'org-latex-classes)
-      (setq org-latex-classes nil))
-    (add-to-list 'org-latex-classes
-		 '("default"
-		   "\\documentclass[11pt]{article}\n
-\\usepackage[a4paper, margin=2.5cm]{geometry}"
-		   ("\\section{%s}" . "\\section*{%s}")
-		   ("\\subsection{%s}" . "\\subsection*{%s}")
-		   ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-		   ("\\paragraph{%s}" . "\\paragraph*{%s}")
-		   ("\\subparagraph{%s}" . "\\subparagraph*{%s}"))))
-  ;; Use xelatex for unicode support
-  (setq org-latex-to-pdf-process
-	'("xelatex -interaction nonstopmode %f"
-	  "xelatex -interaction nonstopmode %f"))
-  ;; Exit snippet editing with ~, ,~
-  (with-eval-after-load 'org-src
-    ;; When editing a code snippet, use the current window rather than popping
-    ;; open a new one (which shows the same information)
-    (setq org-src-window-setup 'current-window)
-    (spacemacs/set-leader-keys-for-minor-mode 'org-src-mode
-      "," 'org-edit-src-exit))
   ;; Incease gcons threshhold to reduce freezing
   ;;(setq gc-cons-threshold '20000000)
   (defun nothing() (interactive))
@@ -315,50 +285,35 @@ layers configuration. You are free to put any user code."
   (add-to-list 'default-frame-alist '(tty-color-mode . -1))
   ;; Use ssh as the default connect method in tramp
   (setq tramp-default-method "ssh")
+  (setq tramp-use-ssh-controlmaster-options nil)
   ;; Set calc-config file in .spacemacs.d
   (setq calc-settings-file "~/.spacemacs.d/calc.el")
   (setq calc-multiplication-has-precedence nil)
   (load calc-settings-file t)
-  (setq org-plantuml-jar-path "/opt/plantuml/plantuml.jar")
   ;; gas mode
   (require 'gas-mode)
   ;; tt-rss
   (require 'avandu)
   (setq avandu-tt-rss-api-url "https://dsawatzke.duckdns.org/tt-rss/api/")
+  (spacemacs/set-leader-keys-for-major-mode 'avandu-article-mode "q"
+    (lambda () (interactive) (switch-to-buffer "*avandu-overview*")))
   ;; Constants
   (require 'constants)
   (add-to-list 'auto-mode-alist '("\\.S\\'" . gas-mode))
+  (add-to-list 'auto-mode-alist '("\\.rhtml\\'" . rhtml-mode))
   (spacemacs/toggle-auto-fill-mode-on)
   ;; So tramp remebers passwords https://stackoverflow.com/questions/840279/passwords-in-emacs-tramp-mode-editing
   (setq password-cache-expiry nil)
-  ;; Don't show the output buffer of async shell commands 
+  ;; Don't show the output buffer of async shell commands
   (add-to-list 'display-buffer-alist (cons "\\Async Shell Command\\.*" (cons
 									#'display-buffer-no-window
 									nil)))
-  ;; Add directories to recentf too
-  ;; https://www.emacswiki.org/emacs/recentf-ext.el
-  (defun recentf-add-dired-directory ()
-    (when (and (stringp dired-directory)
-	       (equal "" (file-name-nondirectory dired-directory)))
-      (recentf-add-file dired-directory)))
-  (add-hook 'dired-mode-hook 'recentf-add-dired-directory)
-  (define-key dired-mode-map "e"
-    ;; Force the creation of a new Eshell instance at this path.
-    (lambda ()
-      (interactive)
-      (eshell t)))
-
-  ;; Use integrated lisp ls for maximal compatability
-  (setq ls-lisp-use-insert-directory-program nil)
-  (require 'ls-lisp)
-  (setq ls-lisp-format-time-list
-	'("%Y-%m-%d %H:%M"
-	  "%Y-%m-%d %H:%M"))
-  (setq ls-lisp-dirs-first t)
-  (setq ls-lisp-use-string-collate nil)
-  (dired-async-mode t)
-  ;; So image dired doesn't clutter the .emacs.d directory
-  (setq image-dired-dir "~./emacs.d/.cache/image-dired/")
+  (defun copy-name ()
+    (interactive)
+    (let ((file-name (or (buffer-file-name) list-buffers-directory)))
+      (if file-name
+	  (message (kill-new (file-name-nondirectory file-name)))
+	(error "Buffer not visiting a file"))))
   (setq calc-show-banner nil)
   (setq calc-full-mode t)
   (setq calc-window-height 34)
@@ -373,6 +328,34 @@ layers configuration. You are free to put any user code."
       (compile "make")))
   (setq lua-documentation-function 'eww)
   (setq evil-want-Y-yank-to-eol t)
+  ;; Shift by tab
+  (setq-default evil-shift-width 8)
+  (setq neo-theme 'ascii)
+  ;; Fold ruby(eval-after-load "hideshow"
+  (eval-after-load "hideshow"
+    '(add-to-list 'hs-special-modes-alist
+		  `(ruby-mode
+		    ,(rx (or "def" "class" "module" "do" "{" "[" "if" "else" "unless")) ; Block start
+		    ,(rx (or "}" "]" "end"))                       ; Block end
+		    ,(rx (or "#" "=begin"))                        ; Comment start
+		    ruby-forward-sexp nil)))
+  ;; Enable evil-collection (more vi-like keybindings)
+  (with-eval-after-load 'calendar
+    (require 'evil-collection-calendar)
+    (evil-collection-calendar-setup))
+  (with-eval-after-load 'compile
+    (require 'evil-collection-compile)
+    (evil-collection-compile-setup))
+  (with-eval-after-load 'eww
+    (require 'evil-collection-eww)
+    (evil-collection-eww-setup))
+  (with-eval-after-load 'ibuffer
+    (require 'evil-collection-ibuffer)
+    (evil-collection-ibuffer-setup))
+  (with-eval-after-load 'proced
+    (require 'evil-collection-proced)
+    (evil-collection-proced-setup))
+
   ;; WARNING SECURITY FIX!!! http://seclists.org/oss-sec/2017/q3/422
   ;; https://debbugs.gnu.org/cgi/bugreport.cgi?bug=28350
   (eval-after-load "enriched"
