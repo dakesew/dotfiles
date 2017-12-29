@@ -19,7 +19,7 @@ values."
      csv
      yaml
      asciidoc
-     ruby
+     (ruby :variables ruby-enable-enh-ruby-mode t)
      python
      windows-scripts
      markdown
