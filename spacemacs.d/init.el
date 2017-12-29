@@ -314,7 +314,7 @@ It is assumed that the author has only one or two names."
   (setq tramp-default-method "ssh")
   (setq tramp-use-ssh-controlmaster-options nil)
   ;; Set calc-config file in .spacemacs.d
-  (setq calc-settings-file "~/.spacemacs.d/calc.el")
+  (setq calc-settings-file "~/.spacemacs.d/custom-calc.el")
   (setq calc-multiplication-has-precedence nil)
   (load calc-settings-file t)
   ;; gas mode
