@@ -305,6 +305,9 @@ It is assumed that the author has only one or two names."
   ;; Disable the mouse
   (define-key evil-normal-state-map (kbd "<down-mouse-1>") 'nothing)
   (define-key evil-normal-state-map (kbd "<mouse-1>") 'nothing)
+  (define-key evil-normal-state-map (kbd "<mouse-3>") 'nothing)
+  (define-key evil-normal-state-map (kbd "<mouse-2>") 'nothing)
+  (define-key evil-normal-state-map (kbd "<drag-mouse-1>") 'nothing)
   ;; Disable colorscheme in terminal
   (add-to-list 'default-frame-alist '(tty-color-mode . -1))
   ;; Use ssh as the default connect method in tramp
