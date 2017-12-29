@@ -367,6 +367,9 @@ It is assumed that the author has only one or two names."
 		    ,(rx (or "#" "=begin"))                        ; Comment start
 		    ruby-forward-sexp nil)))
   ;; Enable evil-collection (more vi-like keybindings)
+  (require 'evil-collection-minibuffer)
+  (evil-collection-minibuffer-setup)
+  (add-hook 'minibuffer-setup-hook 'evil-collection-minibuffer-insert)
   (with-eval-after-load 'calendar
     (require 'evil-collection-calendar)
     (evil-collection-calendar-setup))
@@ -382,7 +385,10 @@ It is assumed that the author has only one or two names."
   (with-eval-after-load 'proced
     (require 'evil-collection-proced)
     (evil-collection-proced-setup))
-
+  (defvar evil-collection-setup-minibuffer t)
+  (with-eval-after-load 'ivy
+    (require 'evil-collection-ivy)
+    (evil-collection-ivy-setup))
   ;; WARNING SECURITY FIX!!! http://seclists.org/oss-sec/2017/q3/422
   ;; https://debbugs.gnu.org/cgi/bugreport.cgi?bug=28350
   (eval-after-load "enriched"
