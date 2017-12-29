@@ -267,7 +267,31 @@ layers configuration. You are free to put any user code."
   (setq diff-hl-side 'left)
   ;;Disable evil for teminal modes
   (evil-set-initial-state 'term-mode 'emacs)
+
+  ;; https://scripter.co/narrowing-the-author-column-in-magit/
+  (defun magit-log--abbreviate-author (&rest args)
+    "The first arg is AUTHOR, abbreviate it.
+First Last  -> F Last
+First.Last  -> F Last
+Last, First -> F Last
+First       -> First (no change).
+
+It is assumed that the author has only one or two names."
+    ;; ARGS             -> '((AUTHOR DATE))
+    ;; (car ARGS)       -> '(AUTHOR DATE)
+    ;; (car (car ARGS)) -> AUTHOR
+    (let* ((author (car (car args)))
+	   (author-abbr (if (string-match-p "," author)
+			    ;; Last, First -> F Last
+			    (replace-regexp-in-string "\\(.*?\\), *\\(.\\).*" "\\2 \\1" author)
+			  ;; First Last -> F Last
+			  (replace-regexp-in-string "\\(.\\).*?[. ]+\\(.*\\)" "\\1 \\2" author))))
+      (setf (car (car args)) author-abbr))
+    (car args))                       ;'(AUTHOR-ABBR DATE)
+  (advice-add 'magit-log-format-margin :filter-args #'magit-log--abbreviate-author)
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
+  (setq magit-log-margin '(t age-abbreviated magit-log-margin-width :author 11))
+
   (setq-default tab-width 8
                 indent-tabs-mode t
 		standard-indent 8)
