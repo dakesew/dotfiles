@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# key: =
+# name: calc
+# --
+$1 = ${1:$(calc-eval
+(replace-regexp-in-string "p" "perm" (replace-regexp-in-string "c" "choose" yas-text)))}$0

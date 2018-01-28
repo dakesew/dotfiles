@@ -2,7 +2,6 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/.emacs.d: emacs.d/
     ~/.i3: i3/
     ~/.vimperatorrc: vimperatorrc
     ~/.zshrc: zshrc
@@ -13,3 +12,5 @@
     ~/.xinitrc: xinitrc
     ~/.spacemacs.d: spacemacs.d
     ~/.vimrc: vimrc
+    ~/.emacs.d/modules/private/dotdoomacs: dotdoomacs
+    ~/.emacs.d/init.el: init.el

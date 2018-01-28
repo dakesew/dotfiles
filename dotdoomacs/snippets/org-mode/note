@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# key: note
+# name: note
+# --
+Note
+:PROPERTIES:
+:BEAMER_env: note
+:END:

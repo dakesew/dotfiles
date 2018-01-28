@@ -21,30 +21,34 @@ values."
      asciidoc
      (ruby :variables ruby-enable-enh-ruby-mode t)
      python
+     (my-keyboard-layout :variables
+			 kl-layout 'neo
+			 kl-enabled-configurations '(ace-window avy evil-escape))
      windows-scripts
      markdown
      spacemacs-evil
      ivy
      lua
+     go
      (auto-completion :disabled-for
-                      org
-                      eshell)
+		      org
+		      eshell)
      (c-c++ :variables
-            c-c++-enable-clang-support t
-            c-c++-default-mode-for-headers 'c++-mode)
+	    c-c++-enable-clang-support t
+	    c-c++-default-mode-for-headers 'c++-mode)
      (org :variables
-          org-enable-github-support t
-          org-startup-indented t)
+	  org-enable-github-support t
+	  org-startup-indented t)
      spacemacs-org
      (shell :variables
-            shell-default-term-shell "/bin/zsh"
-            shell-default-position 'full
-            shell-default-shell 'eshell)
+	    shell-default-term-shell "/bin/zsh"
+	    shell-default-position 'full
+	    shell-default-shell 'eshell)
      (spell-checking :variables
-                     spell-checking-enable-by-default nil)
+		     spell-checking-enable-by-default nil)
      (version-control :variables
-                      version-control-diff-tool 'diff-hl
-                      version-control-global-margin t)
+		      version-control-diff-tool 'diff-hl
+		      version-control-global-margin t)
      docker
      emacs-lisp
      git
@@ -63,9 +67,9 @@ values."
      my-dired
      my-org
      clojure)
-   dotspacemacs-additional-packages '(editorconfig mingus rainbow-mode
-  color-theme-sanityinc-solarized material-theme rhtml-mode evil-collection
-  avandu kotlin-mode )
+   dotspacemacs-additional-packages '(mingus rainbow-mode editorconfig
+					     color-theme-sanityinc-solarized  ox-reveal material-theme rhtml-mode evil-collection
+					     avandu kotlin-mode)
    dotspacemacs-frozen-packages '()
    dotspacemacs-excluded-packages '(exec-path-from-shell)
    dotspacemacs-install-packages 'used-only))
@@ -89,13 +93,13 @@ values."
    dotspacemacs-startup-buffer-responsive t
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-themes '(solarized-dark
-                         material-light)
+			 material-light)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 11
-                               :weight normal
-                               :width normal
-                               :powerline-scale 1.1)
+			       :size 11
+			       :weight normal
+			       :width normal
+			       :powerline-scale 1.1)
    dotspacemacs-leader-key "SPC"
    dotspacemacs-emacs-command-key "SPC"
    dotspacemacs-ex-command-key ":"
@@ -157,12 +161,16 @@ before packages are loaded. If you are unsure, you should try in setting them in
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+  (setq org-reveal-root "file://~/.spacemacs/reveal.js")
   (setq auth-sources
 	'((:source "~/.spacemacs.d/authinfo.gpg")))
   ;; Why isn't this here already?
   (spacemacs/set-leader-keys "gc" 'magit-clone)
   ;; Make a key binding for avy
-  (spacemacs/set-leader-keys "j <SPC>" 'avy-goto-char-timer)
+  (spacemacs/set-leader-keys "j <SPC>" 'avy-goto-char-2)
+					; (setq avy-keys '(?e ?a ?i ?u ?n ?r ?t ?d))
+					; (setq-default evil-escape-key-sequence "nr")
+
   (spacemacs/set-leader-keys "jl" 'avy-goto-line)
   ;; use eshell instead of shell command
   (spacemacs/set-leader-keys "!" 'eshell-command)
@@ -183,7 +191,7 @@ layers configuration. You are free to put any user code."
   (add-hook 'eshell-mode-hook
 	    (lambda ()
 	      (define-key eshell-mode-map (kbd "C-r")
-          (lambda () (interactive) (counsel-esh-history)))))
+		(lambda () (interactive) (counsel-esh-history)))))
   (with-eval-after-load 'em-alias
     ;; Define permanent eshell aliases
     ;; Somehow system sudo is called per default, and it has strange behaviour
@@ -196,15 +204,15 @@ layers configuration. You are free to put any user code."
     (dired "."))
   (defun eshell-open ()
     (interactive)
-      ;; With (eshell t) a new eshell will be opened
-      (if (eq major-mode 'eshell-mode)
-	  (eshell t)
-	(let ((cwd default-directory))
-	  (eshell)
-	  (if (eshell-process-interact 'process-live-p)
-	      (message "Won't change CWD because of running process.")
-	    (setq default-directory cwd)
-	    (eshell-reset)))))
+    ;; With (eshell t) a new eshell will be opened
+    (if (eq major-mode 'eshell-mode)
+	(eshell t)
+      (let ((cwd default-directory))
+	(eshell)
+	(if (eshell-process-interact 'process-live-p)
+	    (message "Won't change CWD because of running process.")
+	  (setq default-directory cwd)
+	  (eshell-reset)))))
   (spacemacs/set-leader-keys "'" 'eshell-open)
   (spacemacs/set-leader-keys "." 'eshell)
   ;; Shared history.
@@ -236,7 +244,7 @@ layers configuration. You are free to put any user code."
 						      (ring-elements eshell-history-ring))))))))
 
   ;; Locate is faster when not ignoring case and we usually don't need more than
-  ;; the first few lines of output 
+  ;; the first few lines of output
   (defun counsel-locate-cmd-default (input)
     "Return a shell command based on INPUT."
     (counsel-require-program "locate")
@@ -250,7 +258,7 @@ layers configuration. You are free to put any user code."
     (interactive)
     (let ((file (buffer-file-name)))
       (unless (file-writable-p file)
-        (setq file (concat "/sudo:root@localhost:" file)))
+	(setq file (concat "/sudo:root@localhost:" file)))
       (find-file file)))
   (spacemacs/set-leader-keys "os" 'user/edit-as-root)
 
@@ -293,7 +301,7 @@ It is assumed that the author has only one or two names."
   (setq magit-log-margin '(t age-abbreviated magit-log-margin-width :author 11))
 
   (setq-default tab-width 8
-                indent-tabs-mode t
+		indent-tabs-mode t
 		standard-indent 8)
   (setq c-default-style "linux")
   (spacemacs/toggle-truncate-lines-off)
@@ -341,6 +349,7 @@ It is assumed that the author has only one or two names."
       (if file-name
 	  (message (kill-new (file-name-nondirectory file-name)))
 	(error "Buffer not visiting a file"))))
+  (setq eshell-prompt-regexp "^[^λ]+ λ ")
   (setq calc-show-banner nil)
   (setq calc-full-mode t)
   (setq calc-window-height 34)
@@ -358,7 +367,7 @@ It is assumed that the author has only one or two names."
   ;; Shift by tab
   (setq-default evil-shift-width 8)
   (setq neo-theme 'ascii)
-  ;; Fold ruby(eval-after-load "hideshow"
+  ;; Fold ruby
   (eval-after-load "hideshow"
     '(add-to-list 'hs-special-modes-alist
 		  `(ruby-mode
@@ -366,6 +375,10 @@ It is assumed that the author has only one or two names."
 		    ,(rx (or "}" "]" "end"))                       ; Block end
 		    ,(rx (or "#" "=begin"))                        ; Comment start
 		    ruby-forward-sexp nil)))
+  ;; I really want something like this, but it uses a timer and takes like
+  ;; 3-5% CPU when idle
+  ;;(require 'feebleline)
+  ;;(feebleline-default-settings)
   ;; Enable evil-collection (more vi-like keybindings)
   (require 'evil-collection-minibuffer)
   (evil-collection-minibuffer-setup)

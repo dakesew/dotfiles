@@ -13,6 +13,7 @@
                           '(("^ *-.*\\( ::\\) "
                              (0 (prog1 () (compose-region (match-beginning 1)
 							  (match-end 1) "")))))))
+
 (defun my-org/post-init-org ()
   (setq org-plantuml-jar-path "/opt/plantuml/plantuml.jar")
   ;; Load everything after org
@@ -43,6 +44,7 @@
       (message path)))
   (with-eval-after-load 'ox-latex
     ;; Use xelatex for unicode support
+    (setq org-latex-compiler "xelatex")
     (setq org-latex-pdf-process
 	  '("xelatex -interaction nonstopmode %f"
 	    "xelatex -interaction nonstopmode %f"))
