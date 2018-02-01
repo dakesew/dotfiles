@@ -20,6 +20,7 @@
         "%Y-%m-%d %H:%M"))
 (setq ls-lisp-dirs-first t)
 (setq ls-lisp-use-string-collate nil)
+(autoload 'dired-async-mode "dired-async.el" nil t)
 (dired-async-mode t)
 ;; So image dired doesn't clutter the .emacs.d directory
 (setq image-dired-dir "~./emacs.d/.local/image-dired/")
