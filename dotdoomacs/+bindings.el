@@ -162,13 +162,13 @@
         (:desc "code" :prefix "c"
           :desc "List errors"               :n  "x" #'flycheck-list-errors
           :desc "Evaluate buffer/region"    :n  "e" #'+eval/buffer
-                                            :v  "e" #'+eval/region
+          :v  "e" #'+eval/region
           :desc "Evaluate & replace region" :nv "E" #'+eval:replace-region
           :desc "Build tasks"               :nv "b" #'+eval/build
           :desc "Jump to definition"        :n  "d" #'+lookup/definition
           :desc "Jump to references"        :n  "D" #'+lookup/references
           :desc "Open REPL"                 :n  "r" #'+eval/open-repl
-                                            :v  "r" #'+eval:repl)
+          :v  "r" #'+eval:repl)
 
         (:desc "file" :prefix "f"
           :desc "Find file"                 :n "." #'find-file
@@ -237,12 +237,10 @@
         (:desc "open" :prefix "o"
           :desc "Default browser"       :n  "b" #'browse-url-of-file
           :desc "Debugger"              :n  "d" #'+debug/open
-          :desc "REPL"                  :n  "r" #'+eval/open-repl
-                                        :v  "r" #'+eval:repl
+          :desc "REPL"                  :n  "R" #'+eval/open-repl
+                                        ; :v  "r" #'+eval:repl
           :desc "Neotree"               :n  "n" #'+neotree/toggle
           :desc "Imenu sidebar"         :nv "i" #'imenu-list-minor-mode
-          :desc "Terminal"              :n  "t" #'+term/open-popup
-          :desc "Terminal in project"   :n  "T" #'+term/open-popup-in-project
 
           ;; applications
           :desc "APP: elfeed"           :n "E" #'=rss
@@ -251,44 +249,44 @@
           :desc "APP: regex"            :n "X" #'=regex
 
 
-        (:desc "project" :prefix "p"
-          :desc "Browse project"          :n  "." #'+default/browse-project
-          :desc "Find file in project"    :n  "/" #'projectile-find-file
-          :desc "Run cmd in project root" :nv "!" #'projectile-run-shell-command-in-root
-          :desc "Switch project"          :n  "p" #'projectile-switch-project
-          :desc "Recent project files"    :n  "r" #'projectile-recentf
-          :desc "List project tasks"      :n  "t" #'+ivy/tasks
-          :desc "Pop term in project"     :n  "o" #'+term/open-popup-in-project
-          :desc "Invalidate cache"        :n  "x" #'projectile-invalidate-cache)
+          (:desc "project" :prefix "p"
+            :desc "Browse project"          :n  "." #'+default/browse-project
+            :desc "Find file in project"    :n  "/" #'projectile-find-file
+            :desc "Run cmd in project root" :nv "!" #'projectile-run-shell-command-in-root
+            :desc "Switch project"          :n  "p" #'projectile-switch-project
+            :desc "Recent project files"    :n  "r" #'projectile-recentf
+            :desc "List project tasks"      :n  "t" #'+ivy/tasks
+            :desc "Pop term in project"     :n  "o" #'+term/open-popup-in-project
+            :desc "Invalidate cache"        :n  "x" #'projectile-invalidate-cache)
 
-        (:desc "quit" :prefix "q"
-          :desc "Quit"                   :n "q" #'evil-save-and-quit
-          :desc "Quit (forget session)"  :n "Q" #'+workspace/kill-session-and-quit)
+          (:desc "quit" :prefix "q"
+            :desc "Quit"                   :n "q" #'evil-save-and-quit
+            :desc "Quit (forget session)"  :n "Q" #'+workspace/kill-session-and-quit)
 
-        (:desc "remote" :prefix "r"
-          :desc "Upload local"           :n "u" #'+upload/local
-          :desc "Upload local (force)"   :n "U" (λ! (+upload/local t))
-          :desc "Download remote"        :n "d" #'+upload/remote-download
-          :desc "Diff local & remote"    :n "D" #'+upload/diff
-          :desc "Browse remote files"    :n "." #'+upload/browse
-          :desc "Detect remote changes"  :n ">" #'+upload/check-remote)
+          (:desc "remote" :prefix "r"
+            :desc "Upload local"           :n "u" #'+upload/local
+            :desc "Upload local (force)"   :n "U" (λ! (+upload/local t))
+            :desc "Download remote"        :n "d" #'+upload/remote-download
+            :desc "Diff local & remote"    :n "D" #'+upload/diff
+            :desc "Browse remote files"    :n "." #'+upload/browse
+            :desc "Detect remote changes"  :n ">" #'+upload/check-remote)
 
-        (:desc "snippets" :prefix "s"
-          :desc "New snippet"            :n  "n" #'yas-new-snippet
-          :desc "Insert snippet"         :nv "i" #'yas-insert-snippet
-          :desc "Find snippet for mode"  :n  "s" #'yas-visit-snippet-file
-          :desc "Find snippet"           :n  "S" #'+default/find-in-snippets)
+          (:desc "snippets" :prefix "s"
+            :desc "New snippet"            :n  "n" #'yas-new-snippet
+            :desc "Insert snippet"         :nv "i" #'yas-insert-snippet
+            :desc "Find snippet for mode"  :n  "s" #'yas-visit-snippet-file
+            :desc "Find snippet"           :n  "S" #'+default/find-in-snippets)
 
-        (:desc "toggle" :prefix "t"
-          :desc "Flyspell"               :n "s" #'flyspell-mode
-          :desc "Flycheck"               :n "f" #'flycheck-mode
-          :desc "Line numbers"           :n "l" #'doom/toggle-line-numbers
-          :desc "Frame fullscreen"       :n "f" #'toggle-frame-fullscreen
-          :desc "Indent guides"          :n "i" #'highlight-indentation-mode
-          :desc "Indent guides (column)" :n "I" #'highlight-indentation-current-column-mode
-          :desc "Impatient mode"         :n "h" #'+impatient-mode/toggle
-          :desc "Big mode"               :n "b" #'doom-big-font-mode
-          :desc "Evil goggles"           :n "g" #'+evil-goggles/toggle))
+          (:desc "toggle" :prefix "t"
+            :desc "Flyspell"               :n "s" #'flyspell-mode
+            :desc "Flycheck"               :n "f" #'flycheck-mode
+            :desc "Line numbers"           :n "l" #'doom/toggle-line-numbers
+            :desc "Frame fullscreen"       :n "f" #'toggle-frame-fullscreen
+            :desc "Indent guides"          :n "i" #'highlight-indentation-mode
+            :desc "Indent guides (column)" :n "I" #'highlight-indentation-current-column-mode
+            :desc "Impatient mode"         :n "h" #'+impatient-mode/toggle
+            :desc "Big mode"               :n "b" #'doom-big-font-mode
+            :desc "Evil goggles"           :n "g" #'+evil-goggles/toggle)))
 
 
       ;; --- Personal vim-esque bindings ------------------
@@ -677,10 +675,10 @@
 ;; This section is dedicated to "fixing" certain keys so that they behave
 ;; properly, more like vim, or how I like it.
 (map! ( :nvieomr "<down-mouse-1>" #'nothing
-        :nvieomr "<drag-mouse-1>" #'nothing
-        :nvieomr "<mouse-1>" #'nothing
-        :nvieomr "<mouse-2>" #'nothing
-        :nvieomr "<mouse-3>" #'nothing))
+                 :nvieomr "<drag-mouse-1>" #'nothing
+                 :nvieomr "<mouse-1>" #'nothing
+                 :nvieomr "<mouse-2>" #'nothing
+                 :nvieomr "<mouse-3>" #'nothing))
 
 (defun nothing() (interactive))
 (map! (:map input-decode-map
@@ -725,25 +723,25 @@
              minibuffer-local-must-match-map
              minibuffer-local-isearch-map
              read-expression-map)
-        [escape] #'abort-recursive-edit
-        "C-r" #'evil-paste-from-register
-        "C-a" #'move-beginning-of-line
-        "C-w" #'doom/minibuffer-kill-word
-        "C-u" #'doom/minibuffer-kill-line
-        "C-b" #'backward-word
-        "C-f" #'forward-word
-        "M-z" #'doom/minibuffer-undo)
+	    [escape] #'abort-recursive-edit
+	    "C-r" #'evil-paste-from-register
+	    "C-a" #'move-beginning-of-line
+	    "C-w" #'doom/minibuffer-kill-word
+	    "C-u" #'doom/minibuffer-kill-line
+	    "C-b" #'backward-word
+	    "C-f" #'forward-word
+	    "M-z" #'doom/minibuffer-undo)
 
       (:after evil
         (:map evil-ex-completion-map
           "C-a" #'move-beginning-of-line))
 
       (:map messages-buffer-mode-map
-        "M-;" #'eval-expression
-        "A-;" #'eval-expression)
+	    "M-;" #'eval-expression
+	    "A-;" #'eval-expression)
 
       (:after tabulated-list
-      (:map tabulated-list-mode-map
+        (:map tabulated-list-mode-map
           [remap evil-record-macro] #'quit-window))
 
       (:after view
