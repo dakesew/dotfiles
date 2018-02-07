@@ -76,7 +76,7 @@
         :desc "Ex command"              :nv ";"  #'evil-ex
         :desc "M-x"                     :nv "SPC"#'execute-extended-command
         :desc "Pop up scratch buffer"   :nv "x"  #'doom/open-scratch-buffer
-        :desc "Org Capture"             :nv "X"  #'+org-capture/open
+        :desc "Org Capture"             :nv "X"  #'org-capture
         :desc "Execute eshell command"  :nv "!"  #'eshell-command
         :desc "Open eshell"             :nv "'"  #'eshell-open
 

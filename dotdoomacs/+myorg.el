@@ -22,8 +22,10 @@
 (add-hook 'org-babel-after-execute-hook
           'org-display-inline-images 'append)
 
+(after! ob-plantuml
+    (setq org-plantuml-jar-path "/opt/plantuml/plantuml.jar"))
+
 (after! org-mode
-  (setq org-plantuml-jar-path "/opt/plantuml/plantuml.jar")
   ;;; enable babel languages
   (org-babel-do-load-languages
    'org-babel-load-languages

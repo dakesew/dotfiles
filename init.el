@@ -64,7 +64,7 @@
        :tools
        dired             ; making dired pretty [functional]
        electric-indent   ; smarter, keyword-based electric-indent
-       eshell            ; a consistent, cross-platform shell (WIP)
+       ; eshell            ; a consistent, cross-platform shell (WIP)
        gist              ; interacting with github gists
        imenu             ; an imenu sidebar and searchable code index
        impatient-mode    ; show off code over HTTP
