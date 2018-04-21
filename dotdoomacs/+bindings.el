@@ -157,6 +157,8 @@
           :desc "Bury buffer"             :n "z" #'bury-buffer
           :desc "Next buffer"             :n "]" #'next-buffer
           :desc "Previous buffer"         :n "[" #'previous-buffer
+          :desc "Next buffer"             :n "n" #'next-buffer
+          :desc "Previous buffer"         :n "p" #'previous-buffer
           :desc "Sudo edit this file"     :n "S" #'doom/sudo-this-file)
 
         (:desc "code" :prefix "c"
@@ -186,6 +188,7 @@
           :desc "Browse emacs.d"            :n "E" #'+default/browse-emacsd
           :desc "Recent files"              :n "r" #'recentf-open-files
           :desc "Recent project files"      :n "R" #'projectile-recentf
+          :desc "Toggle Writable"           :n "w" #'read-only-mode
           :desc "Yank filename"             :n "y" #'+default/yank-buffer-filename)
 
         (:desc "git" :prefix "g"
@@ -226,6 +229,10 @@
         (:desc "insert" :prefix "i"
           :desc "From kill-ring"        :nv "y" #'yank-pop
           :desc "From snippet"          :nv "s" #'yas-insert-snippet)
+
+        (:desc "jump to" :prefix "t"
+          :desc "To line"               :nv "n" #'avy-goto-line
+          :desc "To chars"              :nv "a" #'avy-goto-char-2)
 
         (:desc "notes" :prefix "n"
           :desc "Find file in notes"    :n  "n" #'+default/find-in-notes
@@ -672,6 +679,10 @@
 ;; Keybinding fixes
 ;;
 
+;; Neo specific changes
+      (setq-default avy-keys '(?u ?i ?a ?e ?n ?r ?t ?d))
+      (setq avy-keys '(?u ?i ?a ?e ?n ?r ?t ?d))
+
 ;; This section is dedicated to "fixing" certain keys so that they behave
 ;; properly, more like vim, or how I like it.
 (map! ( :nvieomr "<down-mouse-1>" #'nothing
@@ -746,3 +757,5 @@
 
       (:after view
         (:map view-mode-map "<escape>" #'View-quit-all)))
+;; End
+
