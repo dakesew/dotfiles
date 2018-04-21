@@ -8,7 +8,8 @@
       org-hide-emphasis-markers t
       org-startup-indented t
       org-html-validation-link nil
-      org-startup-with-inline-images t)
+      org-startup-with-inline-images t
+      org-highlight-latex-and-related '(latex script entities))
 (setq org-image-actual-width (quote (500)))
 
 (font-lock-add-keywords 'org-mode
