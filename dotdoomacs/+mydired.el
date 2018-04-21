@@ -22,6 +22,9 @@
 (setq ls-lisp-use-string-collate nil)
 (autoload 'dired-async-mode "dired-async.el" nil t)
 (dired-async-mode t)
+(remove-hook 'dired-after-readin-hook #'+dired|sort-directories-first)
+(remove-hook 'dired-initial-position-hook #'dired-k)
+(remove-hook 'dired-after-readin-hook #'dired-k-no-revert)
 ;; So image dired doesn't clutter the .emacs.d directory
 (setq image-dired-dir "~./emacs.d/.local/image-dired/")
 (setq dired-listing-switches "-AFGh")

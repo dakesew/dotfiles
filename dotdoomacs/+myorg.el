@@ -27,16 +27,6 @@
     (setq org-plantuml-jar-path "/opt/plantuml/plantuml.jar"))
 
 (after! org-mode
-  ;;; enable babel languages
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '((python . t)
-     (gnuplot . t)
-     (ruby . t)
-     (ditaa . t)
-     (plantuml . t)
-     (sh . t)
-     (shell . t)))
   ;; Set inline image size
   (setq org-image-actual-width (/ (display-pixel-width) 4))
   ;; Display pdfs inline https://stackoverflow.com/a/35261577
@@ -46,7 +36,6 @@
   ;; EPS too
   (add-to-list 'image-type-file-name-regexps '("\\.eps\\'" . imagemagick)  )
   (add-to-list 'image-file-name-extensions "eps")
-
   ;; Define a custom link type to reference dead paper
   (org-add-link-type "paper" 'org-paper-open)
   (defun org-paper-open (path)
@@ -61,3 +50,6 @@
   ;; When editing a code snippet, use the current window rather than popping
   ;; open a new one (which shows the same information)
   (setq org-src-window-setup 'current-window))
+
+(after! org
+    (setq org-agenda-files (list (expand-file-name "~/usr/log/agenda.org"))))

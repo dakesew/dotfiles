@@ -94,7 +94,7 @@
       (set-transient-map evilem-map)
       (which-key-reload-key-sequence prefix))))
 
-(remove-hook 'doom-post-init-hook #'blink-cursor-mode)
+(remove-hook 'doom-init-ui-hook #'blink-cursor-mode)
 (remove-hook 'doom-post-init-hook #'shackle-mode)
 (remove-hook 'doom-popup-mode-hook #'doom|hide-modeline-in-popup)
 ;; (defface doom-modeline-panel
@@ -231,3 +231,23 @@ It is assumed that the author has only one or two names."
                               (mb  "1024 * kb"      "MB")
                               (kb  "1024 * bytes"   "KB")
                               ))
+;; Edit files as root with sudo
+(defun +sudo-edit (&optional arg)
+  (interactive "p")
+  (let ((fname (if (or arg (not buffer-file-name))
+                   (read-file-name "File: ")
+                 buffer-file-name)))
+    (find-file
+     (cond ((string-match-p "^/ssh:" fname)
+            (with-temp-buffer
+              (insert fname)
+              (search-backward ":")
+              (let ((last-match-end nil)
+                    (last-ssh-hostname nil))
+                (while (string-match "@\\\([^:|]+\\\)" fname last-match-end)
+                  (setq last-ssh-hostname (or (match-string 1 fname)
+                                              last-ssh-hostname))
+                  (setq last-match-end (match-end 0)))
+                (insert (format "|sudo:%s" (or last-ssh-hostname "localhost"))))
+              (buffer-string)))
+           (t (concat "/sudo:root@localhost:" fname))))))
