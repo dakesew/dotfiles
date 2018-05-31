@@ -8,3 +8,4 @@
 (package! evil-collection)
 (package! evil-magit)
 (package! pdf-tools)
+(package! geiser)

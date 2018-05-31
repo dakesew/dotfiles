@@ -7,12 +7,12 @@ font pango:Source Code Pro 7
 floating_modifier $mod
 
 # Run apps
-bindsym $mod+Return exec qterminal
+bindsym $mod+Return exec urxvt
 bindsym $mod+space  exec lxqt-runner
 #bindsym $mod+space exec dmenu_run
 bindsym $mod+Shift+e exec "emacsclient -ca ''"
 bindsym $mod+Shift+Return exec "emacsclient -ca '' -e '(eshell t)'"
-bindsym $mod+Shift+f exec firefox
+bindsym $mod+Shift+f exec icecat
 # Lock
 # bindsym $mod+q exec python2 ~/.i3/py3lock.py
 # bindsym $mod+Shift+q exec "i3lock -c 002b36"
@@ -154,6 +154,8 @@ exec --no-startup-id setxkbmap -layout de neo
 #exec --no-startup-id xbindkeys
 exec --no-startup-id "~/.i3/wallpaper.sh 600"
 exec --no-startup-id xrdb -merge ~/.Xresources
+# Fix https://bugzilla.kernel.org/show_bug.cgi?id=109051
+exec --no-startup-id ~/.i3/c6off+c7on.sh
 # exec --no-startup-id polybar -c "$HOME/.i3/polybar" example
 # exec --no-startup-id xss-lock -- /bin/i3lock -c 002b36
 # exec --no-startup-id blueberry-tray
