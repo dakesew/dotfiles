@@ -10,7 +10,5 @@
     ~/.themes: themes/
     ~/.gitconfig: gitconfig
     ~/.xinitrc: xinitrc
-    ~/.spacemacs.d: spacemacs.d
     ~/.vimrc: vimrc
-    ~/.emacs.d/modules/private/dotdoomacs: dotdoomacs
-    ~/.emacs.d/init.el: init.el
+    ~/.doom.d/: doom.d

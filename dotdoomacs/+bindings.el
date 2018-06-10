@@ -260,7 +260,6 @@
           :desc "Neotree"               :n  "n" #'+neotree/open
           :desc "Neotree: on this file" :n  "N" #'+neotree/find-this-file
           :desc "Imenu sidebar"         :nv "i" #'imenu-list-smart-toggle
-          :desc "Terminal"              :n  "t" #'+term/open-popup-in-project
 
           ;; applications
           :desc "APP: elfeed"           :n "E" #'=rss
