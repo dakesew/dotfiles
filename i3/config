@@ -152,7 +152,7 @@ exec --no-startup-id "~/.i3/wallpaper.sh 600"
 exec --no-startup-id xrdb -merge ~/.Xresources
 # Fix https://bugzilla.kernel.org/show_bug.cgi?id=109051
 exec --no-startup-id ~/.i3/c6off+c7on.sh
-# exec --no-startup-id polybar -c "$HOME/.i3/polybar" example
+ exec --no-startup-id polybar -c "$HOME/.i3/polybar" example
 # exec --no-startup-id xss-lock -- /bin/i3lock -c 002b36
 # exec --no-startup-id blueberry-tray
 exec pidgin
