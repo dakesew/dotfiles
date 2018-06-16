@@ -1,5 +1,5 @@
 !!! Workaround for emacsclient !!!
-Emacs.font: Source Code Pro-7
+!!! Emacs.font: Source Code Pro-7
 Xft.lcdfilter: lcddefault
 Xft.antialias: true
 Xft.autohint: 0
