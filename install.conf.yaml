@@ -11,4 +11,4 @@
     ~/.gitconfig: gitconfig
     ~/.xinitrc: xinitrc
     ~/.vimrc: vimrc
-    ~/.doom.d/: doom.d
+    ~/.doom.d: doom.d/
