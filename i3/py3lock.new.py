@@ -1,10 +1,9 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 import os
 import xcffib
 from xcffib.xproto import *
 from PIL import Image, ImageFilter
-import pyscreenshot as ImageGrab
 
 XCB_MAP_STATE_VIEWABLE = 2
 
