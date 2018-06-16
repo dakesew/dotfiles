@@ -1,18 +1,20 @@
 #!/bin/sh
 brightness=$(light -rG)
+max_brightness=$(light -rm)
+brightness_step=$(expr $max_brightness / 4)
 echo $brightness
-if [ $brightness = 3125 ]
+if [ $brightness -eq $max_brightness ]
 then
-    light -rS 0
-elif [ $brightness = 2343 ]
+    light -rS 1
+elif [ $(expr $brightness_step '*' 3) -eq $brightness ]
 then
-    light -rS 3125
-elif [ $brightness = 1562 ]
+    light -rS $max_brightness
+elif [ $(expr $brightness_step '*' 2) -eq $brightness ]
 then
-     light -rS 2343
-elif [ $brightness = 781 ]
+     light -rS $(expr $brightness_step '*' 3)
+elif [ $brightness = $brightness_step ]
 then
-    light -rS 1562
+    light -rS $(expr $brightness_step '*' 2)
 else
-    light -rS 781
+    light -rS $brightness_step
 fi
