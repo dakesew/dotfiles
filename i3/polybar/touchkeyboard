@@ -1,0 +1,6 @@
+[module/touchkeyboard]
+;; Open onscreen keyboard (onboard)
+type=custom/text
+content="   "
+content-foreground=#fff
+click-left=onboard

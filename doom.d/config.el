@@ -1,5 +1,9 @@
 ;;; ~/.doom.d/config.el -*- lexical-binding: t; -*-
 
+
+(load! "+bindings")
+(load! "+dired")
+
 (setq evil-escape-key-sequence "nr")
 
 (remove-hook 'doom-init-ui-hook #'blink-cursor-mode)
@@ -159,13 +163,11 @@ Set `doom-modeline-highlight-face-func' to
 (advice-add 'doom-modeline-format--main :before  #'doom-modeline-highlight-face-evil-state)
 (advice-remove 'doom-modeline-format--main  #'doom-modeline-highlight-face-evil-state)
 
-(map!
- (:leader
-   (:prefix "f"
-     :desc "Find File" :n "f" #'counsel-find-file)
-   (:prefix "w"
-     :desc "Maxmimize window" :n "m" #'delete-other-windows)))
-
+(after! epa
+  (setq epa-file-encrypt-to (or epa-file-encrypt-to user-mail-address)
+        ;; With GPG 2.1, this forces gpg-agent to use the Emacs minibuffer to
+        ;; prompt for the key passphrase.
+        epa-pinentry-mode 'loopback))
 (setq ivy-display-function #'ivy-posframe-display-at-frame-bottom-left)
 
 ;; Aliases

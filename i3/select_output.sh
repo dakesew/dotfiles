@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #Displays a menu and runs xrandr to provide the selection
-selection=$(rofi -p "Display mode:" -only-match -dmenu <<EOF
+selection=$(rofi -p "Display mode:" -dmenu <<EOF
 internal_only
 HDMI1_only
 internal_HDMI1

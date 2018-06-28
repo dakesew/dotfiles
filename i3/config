@@ -8,11 +8,11 @@ floating_modifier $mod
 
 # Run apps
 bindsym $mod+Return exec urxvt
-bindsym $mod+space  exec lxqt-runner
+bindsym $mod+space  exec rofi -show run
 #bindsym $mod+space exec dmenu_run
 bindsym $mod+Shift+e exec "emacsclient -ca ''"
 bindsym $mod+Shift+Return exec "emacsclient -ca '' -e '(eshell t)'"
-bindsym $mod+Shift+f exec icecat
+bindsym $mod+Shift+f exec MOZ_USE_XINPUT2=1 icecat
 # Lock
  bindsym $mod+q exec python ~/.i3/py3lock.new.py
 # bindsym $mod+Shift+q exec "i3lock -c 002b36"
@@ -23,7 +23,6 @@ bindsym $mod+Control+r exec "systemctl reboot"
 
 bindsym $mod+d kill
 
-bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 # change focus
@@ -44,14 +43,8 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# split in horizontal orientation
-bindsym $mod+g split h
-
-# split in vertical orientation
-bindsym $mod+v split v
-
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+g fullscreen toggle
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -64,7 +57,6 @@ bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
-bindsym $mod+p workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
@@ -78,6 +70,26 @@ bindsym $mod+ctrl+7 workspace 17
 bindsym $mod+ctrl+8 workspace 18
 bindsym $mod+ctrl+9 workspace 19
 bindsym $mod+ctrl+0 workspace 20
+bindsym $mod+KP_1 workspace 1
+bindsym $mod+KP_2 workspace 2
+bindsym $mod+KP_3 workspace 3
+bindsym $mod+KP_4 workspace 4
+bindsym $mod+KP_5 workspace 5
+bindsym $mod+KP_6 workspace 6
+bindsym $mod+KP_7 workspace 7
+bindsym $mod+KP_8 workspace 8
+bindsym $mod+KP_9 workspace 9
+bindsym $mod+KP_0 workspace 10
+bindsym $mod+ctrl+KP_1 workspace 11
+bindsym $mod+ctrl+KP_2 workspace 12
+bindsym $mod+ctrl+KP_3 workspace 13
+bindsym $mod+ctrl+KP_4 workspace 14
+bindsym $mod+ctrl+KP_5 workspace 15
+bindsym $mod+ctrl+KP_6 workspace 16
+bindsym $mod+ctrl+KP_7 workspace 17
+bindsym $mod+ctrl+KP_8 workspace 18
+bindsym $mod+ctrl+KP_9 workspace 19
+bindsym $mod+ctrl+KP_0 workspace 20
 bindsym $mod+m workspace 21
 
 # move focused container to workspace
@@ -101,6 +113,26 @@ bindsym $mod+ctrl+Shift+7 move container to workspace 17
 bindsym $mod+ctrl+Shift+8 move container to workspace 18
 bindsym $mod+ctrl+Shift+9 move container to workspace 19
 bindsym $mod+ctrl+Shift+0 move container to workspace 20
+bindsym $mod+Shift+KP_1 move container to workspace 1
+bindsym $mod+Shift+KP_2 move container to workspace 2
+bindsym $mod+Shift+KP_3 move container to workspace 3
+bindsym $mod+Shift+KP_4 move container to workspace 4
+bindsym $mod+Shift+KP_5 move container to workspace 5
+bindsym $mod+Shift+KP_6 move container to workspace 6
+bindsym $mod+Shift+KP_7 move container to workspace 7
+bindsym $mod+Shift+KP_8 move container to workspace 8
+bindsym $mod+Shift+KP_9 move container to workspace 9
+bindsym $mod+Shift+KP_0 move container to workspace 10
+bindsym $mod+ctrl+Shift+KP_1 move container to workspace 11
+bindsym $mod+ctrl+Shift+KP_2 move container to workspace 12
+bindsym $mod+ctrl+Shift+KP_3 move container to workspace 13
+bindsym $mod+ctrl+Shift+KP_4 move container to workspace 14
+bindsym $mod+ctrl+Shift+KP_5 move container to workspace 15
+bindsym $mod+ctrl+Shift+KP_6 move container to workspace 16
+bindsym $mod+ctrl+Shift+KP_7 move container to workspace 17
+bindsym $mod+ctrl+Shift+KP_8 move container to workspace 18
+bindsym $mod+ctrl+Shift+KP_9 move container to workspace 19
+bindsym $mod+ctrl+Shift+KP_0 move container to workspace 20
 bindsym $mod+Shift+m move container to workspace 21
 
 # reload the configuration file
@@ -138,12 +170,10 @@ bindsym $mod+F7 exec --no-startup-id "~/.i3/backlight.sh"
 #various helperscripts
 bindsym $mod+F6 exec --no-startup-id "~/.i3/select_output.sh"
 bindsym $mod+F5 exec --no-startup-id "~/.i3/select_keyboardlayout.sh"
-#mpv
-for_window [title="lxqt-notificationd"] floating enable
 
 gaps inner 6
 gaps outer 2
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 0 
 
 # exec --no-startup-id sh -c "while true; do compton --config ~/.i3/compton; sleep 1s; done"
 exec --no-startup-id setxkbmap -layout de neo
@@ -152,7 +182,7 @@ exec --no-startup-id "~/.i3/wallpaper.sh 600"
 exec --no-startup-id xrdb -merge ~/.Xresources
 # Fix https://bugzilla.kernel.org/show_bug.cgi?id=109051
 exec --no-startup-id ~/.i3/c6off+c7on.sh
- exec --no-startup-id polybar -c "$HOME/.i3/polybar" example
+exec --no-startup-id sh -c 'polybar -c "$HOME/.i3/polybar/config" example'
 # exec --no-startup-id xss-lock -- /bin/i3lock -c 002b36
 # exec --no-startup-id blueberry-tray
 exec pidgin
