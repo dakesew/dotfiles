@@ -3,12 +3,15 @@
 
 (load! "+bindings")
 (load! "+dired")
+(load! "xournalpp")
 
 (setq evil-escape-key-sequence "nr")
 
 (remove-hook 'doom-init-ui-hook #'blink-cursor-mode)
                                         ;(remove-hook 'doom-post-init-hook #'shackle-mode)
                                         ;(remove-hook 'doom-popup-mode-hook #'doom|hide-modeline-in-popup)
+(remove-hook 'after-change-major-mode-hook #'doom|highlight-non-default-indentation)
+
 (defun evil-cursor-proper (&rest _)
   (setq evil-default-cursor '(t "#f0c674")
         evil-visual-state-cursor '("#81a2be" hollow)
@@ -49,7 +52,6 @@ It is assumed that the author has only one or two names."
     (setf (car (car args)) author-abbr))
   (car args))                       ;'(AUTHOR-ABBR DATE)
 (advice-add 'magit-log-format-margin :filter-args #'magit-log--abbreviate-author)
-(add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
 (setq magit-log-margin '(t age-abbreviated magit-log-margin-width :author 11))
 
 ;; So tramp remebers passwords https://stackoverflow.com/questions/840279/passwords-in-emacs-tramp-mode-editing
@@ -168,7 +170,9 @@ Set `doom-modeline-highlight-face-func' to
         ;; With GPG 2.1, this forces gpg-agent to use the Emacs minibuffer to
         ;; prompt for the key passphrase.
         epa-pinentry-mode 'loopback))
-(setq ivy-display-function #'ivy-posframe-display-at-frame-bottom-left)
+(after! ivy
+  (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-bottom-left)))
+  )
 
 ;; Aliases
 (setq eshell-command-aliases-list
@@ -181,3 +185,82 @@ Set `doom-modeline-highlight-face-func' to
         ("ee" "find-file-other-window")
         ("cover" "wget -O cover.jpg {xclip -o}")
         ("gain" "mp3gain -r ./**/*.mp3")))
+
+(setq
+ +doom-modeline-height 15
+ ivy-posframe-font (font-spec :family "Source Code Pro" :size 10)
+ doom-font (font-spec :family "Source Code Pro" :size 10))
+
+
+(setq
+ indend-tabs-mode t)
+
+;; For Org preview
+(require 'ox-latex)
+(setq org-latex-packages-alist 'nil)
+(setq org-latex-default-packages-alist
+  '(("AUTO" "inputenc"  t ("pdflatex"))
+    ("T1"   "fontenc"   t ("pdflatex"))
+    (""     "graphicx"  t)
+    (""     "grffile"   t)
+    (""     "longtable" nil)
+    (""     "wrapfig"   nil)
+    (""     "rotating"  nil)
+    ("normalem" "ulem"  t)
+    (""     "amsmath"   t)
+    (""     "amssymb"   t)
+    (""     "unicode-math"   t)
+    (""     "textcomp"  t)
+    (""     "capt-of"   nil)
+    (""     "hyperref"  nil)))
+(add-to-list 'org-preview-latex-process-alist '(imagexetex :programs
+         ("xetex" "convert")
+         :description "pdf > png" :message "you need to install the programs: xetex and imagemagick." :image-input-type "pdf" :image-output-type "png" :image-size-adjust
+         (1.0 . 1.0)
+         :latex-compiler
+         ("xelatex -interaction nonstopmode -output-directory %o %f")
+         :image-converter
+         ("convert -density %D -trim -antialias %f -quality 100 %O")))
+;; From https://github.com/LionyxML/ros
+;; Rahul Org-mode Screenshot takes a screenshot with scrot -s (waits for screen
+;; selection), saves it as orgfileopened.org_YYYYMMDD_hhmmss.png, inserts
+;; the link and turns on the display-inline-images, showing your screenshot directly
+;; to the org-file"
+(add-hook 'org-mode-hook
+	  (lambda ()
+	  (defun ros ()
+	  (interactive)
+	  (let ((filename
+		 (concat "./"
+			 (file-name-nondirectory buffer-file-name)
+			 "_"
+			 (format-time-string "%Y%m%d_%H%M%S")
+			 ".png")))
+	    (call-process "scrot" nil nil nil "-s" filename)
+	    (insert (concat "[[" filename "]]"))
+	    (org-display-inline-images t t)))))
+
+(turn-on-org-cdlatex)
+(setq org-preview-latex-default-process 'imagexetex
+      org-catch-invisible-edits 'show-and-error
+      c-default-style "linux"
+      indent-tabs-mode t)
+(after!  smartparens
+  (smartparens-global-mode -1))
+(setq cdlatex-command-alist '(("tt" "insert text element" "\\text{?}" cdlatex-position-cursor nil nil t)))
+
+(mouse-wheel-mode -1)
+
+(global-set-key [wheel-up] 'ignore)
+(global-set-key [wheel-down] 'ignore)
+(global-set-key [double-wheel-up] 'ignore)
+(global-set-key [double-wheel-down] 'ignore)
+(global-set-key [triple-wheel-up] 'ignore)
+(global-set-key [triple-wheel-down] 'ignore)
+
+(autoload 'ojs-export-to-blog "ox-jekyll-subtree")
+(setq org-jekyll-use-src-plugin t)
+
+(setq ojs-blog-base-url "https://blowenfusen.dev/")
+(setq ojs-blog-dir (expand-file-name "~/usr/blog/jekyll/"))
+(setq select-enable-primary t)
