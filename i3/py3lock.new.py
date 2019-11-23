@@ -8,7 +8,7 @@ from PIL import Image, ImageFilter
 XCB_MAP_STATE_VIEWABLE = 2
 
 def screenshot():
-  os.system('scrot -q 100 /tmp/.i3lock.png')
+  os.system('grim /tmp/.i3lock.png')
 
 def xcffib_fetch_windows():
   """ Returns an array of rects of currently visible windows. """
@@ -55,7 +55,7 @@ def obscure(rects):
   image.save('/tmp/.i3lock.png',optimize=False,compress_level=0)
 
 def lock_screen():
-  os.system('i3lock -i /tmp/.i3lock.png')
+  os.system('swaylock -i /tmp/.i3lock.png')
 
 
 if __name__ == '__main__':

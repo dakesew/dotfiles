@@ -2,7 +2,7 @@
 ;;; ~/dotfiles/doom.d/packages.el
 
   (package! cdlatex)
+  (package! org-download)
   (package! org-noter)
-  (package! anki-editor)
-  (package! magit-todos)
-  (package! ox-jekyll :recipe (:fetcher github :repo "Malabarba/ox-jekyll-subtree"))
+  (package! zetteldeft :recipe (:host github :repo "EFLS/zetteldeft"))
+  (package! ox-jekyll :recipe (:host github :repo "Malabarba/ox-jekyll-subtree"))

@@ -4,6 +4,7 @@
 (load! "+bindings")
 (load! "+dired")
 (load! "xournalpp")
+(load! "aweshell-redux")
 
 (setq evil-escape-key-sequence "nr")
 
@@ -124,6 +125,7 @@ It is assumed that the author has only one or two names."
   (add-to-list 'image-file-name-extensions "eps")
   ;; Define a custom link type to reference dead paper
   (org-add-link-type "paper" 'org-paper-open)
+  (setcar (nthcdr 4 org-emphasis-regexp-components) 10)
   (defun org-paper-open (path)
     (message path)))
 (after! ox-latex
@@ -175,6 +177,8 @@ Set `doom-modeline-highlight-face-func' to
   )
 
 ;; Aliases
+;; Load modules for this
+(require 'em-tramp)
 (setq eshell-command-aliases-list
       '(("q"   "exit")
         ("l"   "ls -1")
@@ -243,7 +247,7 @@ Set `doom-modeline-highlight-face-func' to
 (turn-on-org-cdlatex)
 (setq org-preview-latex-default-process 'imagexetex
       org-catch-invisible-edits 'show-and-error
-      c-default-style "linux"
+      ;c-default-style "linux"
       indent-tabs-mode t)
 (after!  smartparens
   (smartparens-global-mode -1))
@@ -264,3 +268,8 @@ Set `doom-modeline-highlight-face-func' to
 (setq ojs-blog-base-url "https://blowenfusen.dev/")
 (setq ojs-blog-dir (expand-file-name "~/usr/blog/jekyll/"))
 (setq select-enable-primary t)
+
+(after! org
+  (set-company-backend! 'org-mode nil))
+
+(require 'aweshell-redux)

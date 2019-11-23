@@ -10,12 +10,19 @@ EOF
 )
 case $selection in
 internal_only)
-	xrandr --output eDP-1 --auto --output DP-1-3 --off --output DP-1-2 --off --output DP-1-1 --off --output DP-1 --off
+	swaymsg output eDP-1 enable
+	swaymsg output DP-3 disable
+	swaymsg output DP-4 disable
+	swaymsg output DP-5 disable
+	swaymsg output DP-6 disable
 	;;
 home)
-	xrandr --output DP-1-2 --mode 1280x1024 --pos 1280x0 --rotate normal
-	xrandr --output DP-1-3 --mode 1280x1024 --pos 0x0 --rotate normal
-	xrandr --output eDP-1 --primary --mode 1920x1080 --pos 320x1024 --rotate normal
+	swaymsg output DP-3  enable mode 1280x1024 pos 1280 0   transform normal
+	swaymsg output DP-4  enable mode 1280x1024 pos 0 0      transform normal
+	# Sometimes They change names 
+	swaymsg output DP-5  enable mode 1280x1024 pos 1280 0   transform normal
+	swaymsg output DP-6  enable mode 1280x1024 pos 0 0      transform normal
+	swaymsg output eDP-1 enable mode 1920x1080 pos 320 1024 transform normal
 	;;
 HDMI2_only)
 	xrandr --output eDP-1 --off
@@ -45,10 +52,6 @@ clone_HDMI2)
 	;;
 esac
 # Apply background again
-feh --no-fehbg --bg-fill "$(cat /tmp/wallpaper)"
+# feh --no-fehbg --bg-fill "$(cat /tmp/wallpaper)"
 # Reload polybar so the tray position matches reality
-killall -USR1 polybar
-xrandr --dpi 96
-xinput map-to-output "Wacom ISDv4 EC Pen stylus" eDP-1
-xinput map-to-output "Wacom ISDv4 EC Pen eraser" eDP-1
-xinput map-to-output "ELAN Touchscreen" eDP-1
+# xrandr --dpi 96
