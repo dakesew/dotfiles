@@ -12,3 +12,4 @@
     ~/.xinitrc: xinitrc
     ~/.vimrc: vimrc
     ~/.doom.d: doom.d/
+    ~/.config/sway: sway/

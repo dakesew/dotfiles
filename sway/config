@@ -1,0 +1,292 @@
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+# Display Options uses Base 16  olors
+font pango:Source Code Pro 7
+# Run apps
+bindsym $mod+Return exec urxvt
+bindsym $mod+space  exec rofi -show run
+#bindsym $mod+space exec dmenu_run
+bindsym $mod+Shift+e exec "emacsclient -ca ''"
+bindsym $mod+Shift+Return exec "emacsclient -ca '' -e '(eshell t)'"
+bindsym $mod+Shift+f exec MOZ_USE_XINPUT2=1 firefox
+bindsym $mod+p exec sh -c 'mpv "$(xclip -o)"'
+# Lock
+set $lock exec swaylock -f --screenshots --indicator --indicator-radius 100 --indicator-thickness 2 --effect-blur 7x5 --effect-greyscale --ring-color bb00ccFF --key-hl-color 008800 --line-color 00000000 --inside-color 00000000 --separator-color 00000000 --ring-color 00000080
+exec swayidle -w \
+         timeout 300 "$lock" \
+         timeout 360 'swaymsg "output * dpms off"' \
+              resume 'swaymsg "output * dpms on"' \
+    before-sleep "$lock" \
+    lock "$lock$"
+bindsym --release $mod+q exec loginctl lock-session
+# bindsym $mod+Shift+q exec "i3lock -c 002b36"
+
+bindsym $mod+d kill
+
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
+# Your preferred application launcher
+# Note: it's recommended that you pass the final command to sway
+# set $menu dmenu_path | dmenu | xargs swaymsg exec --
+
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+### Idle configuration
+#
+# Example configuration:
+#
+# exec swayidle -w \
+#          timeout 300 'swaylock -f -c 000000' \
+#          timeout 600 'swaymsg "output * dpms off"' \
+#               resume 'swaymsg "output * dpms on"' \
+#          before-sleep 'swaylock -f -c 000000'
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+### Input configuration
+#
+# Example configuration:
+#
+#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+
+### Key bindings
+#
+# Basics:
+#
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# enter fullscreen mode for the focused container
+bindsym $mod+g fullscreen toggle
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+floating_modifier $mod normal
+# exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+# Workspaces:
+#
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+bindsym $mod+ctrl+1 workspace 11
+bindsym $mod+ctrl+2 workspace 12
+bindsym $mod+ctrl+3 workspace 13
+bindsym $mod+ctrl+4 workspace 14
+bindsym $mod+ctrl+5 workspace 15
+bindsym $mod+ctrl+6 workspace 16
+bindsym $mod+ctrl+7 workspace 17
+bindsym $mod+ctrl+8 workspace 18
+bindsym $mod+ctrl+9 workspace 19
+bindsym $mod+ctrl+0 workspace 20
+bindsym $mod+KP_1 workspace 1
+bindsym $mod+KP_2 workspace 2
+bindsym $mod+KP_3 workspace 3
+bindsym $mod+KP_4 workspace 4
+bindsym $mod+KP_5 workspace 5
+bindsym $mod+KP_6 workspace 6
+bindsym $mod+KP_7 workspace 7
+bindsym $mod+KP_8 workspace 8
+bindsym $mod+KP_9 workspace 9
+bindsym $mod+KP_0 workspace 10
+bindsym $mod+ctrl+KP_1 workspace 11
+bindsym $mod+ctrl+KP_2 workspace 12
+bindsym $mod+ctrl+KP_3 workspace 13
+bindsym $mod+ctrl+KP_4 workspace 14
+bindsym $mod+ctrl+KP_5 workspace 15
+bindsym $mod+ctrl+KP_6 workspace 16
+bindsym $mod+ctrl+KP_7 workspace 17
+bindsym $mod+ctrl+KP_8 workspace 18
+bindsym $mod+ctrl+KP_9 workspace 19
+bindsym $mod+ctrl+KP_0 workspace 20
+bindsym $mod+m workspace 21
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+ctrl+Shift+1 move container to workspace 11
+bindsym $mod+ctrl+Shift+2 move container to workspace 12
+bindsym $mod+ctrl+Shift+3 move container to workspace 13
+bindsym $mod+ctrl+Shift+4 move container to workspace 14
+bindsym $mod+ctrl+Shift+5 move container to workspace 15
+bindsym $mod+ctrl+Shift+6 move container to workspace 16
+bindsym $mod+ctrl+Shift+7 move container to workspace 17
+bindsym $mod+ctrl+Shift+8 move container to workspace 18
+bindsym $mod+ctrl+Shift+9 move container to workspace 19
+bindsym $mod+ctrl+Shift+0 move container to workspace 20
+bindsym $mod+Shift+KP_1 move container to workspace 1
+bindsym $mod+Shift+KP_2 move container to workspace 2
+bindsym $mod+Shift+KP_3 move container to workspace 3
+bindsym $mod+Shift+KP_4 move container to workspace 4
+bindsym $mod+Shift+KP_5 move container to workspace 5
+bindsym $mod+Shift+KP_6 move container to workspace 6
+bindsym $mod+Shift+KP_7 move container to workspace 7
+bindsym $mod+Shift+KP_8 move container to workspace 8
+bindsym $mod+Shift+KP_9 move container to workspace 9
+bindsym $mod+Shift+KP_0 move container to workspace 10
+bindsym $mod+ctrl+Shift+KP_1 move container to workspace 11
+bindsym $mod+ctrl+Shift+KP_2 move container to workspace 12
+bindsym $mod+ctrl+Shift+KP_3 move container to workspace 13
+bindsym $mod+ctrl+Shift+KP_4 move container to workspace 14
+bindsym $mod+ctrl+Shift+KP_5 move container to workspace 15
+bindsym $mod+ctrl+Shift+KP_6 move container to workspace 16
+bindsym $mod+ctrl+Shift+KP_7 move container to workspace 17
+bindsym $mod+ctrl+Shift+KP_8 move container to workspace 18
+bindsym $mod+ctrl+Shift+KP_9 move container to workspace 19
+bindsym $mod+ctrl+Shift+KP_0 move container to workspace 20
+bindsym $mod+Shift+m move container to workspace 21
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+minus scratchpad show
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+
+    # ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+#colors
+client.focused #676d3d #676d3d #ebdbb2 #676d3d #676d3d
+client.focused_inactive #323232 #333333 #ebdbb2 #323232 #323232
+client.unfocused #323232 #323232 #ebdbb2 #323232 #323232
+client.urgent #383a3b #383a3b #ee0000 #383a3b #383a3b
+gaps inner 6
+gaps outer 2
+default_border none
+for_window [class="^.*"] border pixel 0
+
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+    swaybar_command waybar
+    #position top
+#
+    ## When the status_command prints a new line to stdout, swaybar updates.
+    ## The default just shows the current date and time.
+    #status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+#
+    #colors {
+        #statusline #ffffff
+        #background #00000080
+        #inactive_workspace #32323288 #32323288 #888888
+    #}
+}
+
+input type:keyboard {
+	xkb_layout de
+	xkb_variant neo
+}
+input type:touchpad {
+    tap enabled
+    dwt enabled
+    tap_button_map lmr
+}
+
+input type:touch map_to_output eDP-1
+input type:tablet_tool map_to_output eDP-1
+input type:tablet_pad map_to_output eDP-1
+input "2:10:TPPS/2_IBM_TrackPoint" pointer_accel -0.2
+
+exec xrdb -load ~/.Xresources
+
+exec --no-startup-id "~/.i3/wallpaper.sh 600"
+bindsym $mod+F7 exec ~/.i3/backlight.sh
+bindsym $mod+F6 exec ~/.i3/select_output.sh
